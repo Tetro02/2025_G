@@ -117,7 +117,7 @@ void test_fft_adc(const uint16_t *dataOut)
         peak_digital_amp = max_mag / 2048.0f;
         peak_digital_amp *= HAMMING_CORRECT;
     }
-    peak_voltage_amp = peak_digital_amp * ADC_RES;
+    peak_voltage_amp = peak_digital_amp * ADC_RES * 2.0f;
 
     // ========== 打印峰值结果（核心新增功能） ==========
     printf("峰值频率: %.2f Hz; 峰值数字幅值: %.2f; 峰值真实电压: %.4f V\n", peak_freq, peak_digital_amp, peak_voltage_amp);
