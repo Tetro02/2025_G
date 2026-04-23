@@ -1,4 +1,4 @@
-# 2026-04-21T12:49:49.231569500
+# 2026-04-23T16:45:15.566527600
 import vitis
 
 client = vitis.create_client()
@@ -10,35 +10,24 @@ status = platform.build()
 comp = client.get_component(name="hello_world")
 comp.build()
 
-status = platform.build()
+comp = client.get_component(name="hello_world")
+comp.set_app_config(key = "USER_LINK_LIBRARIES", values = ["CMSISDSP"])
 
-comp.build()
+comp.set_app_config(key = "USER_LINK_DIRECTORIES", values = ["."])
 
-status = platform.build()
+comp.set_app_config(key = "USER_LINK_DIRECTORIES", values = [".", "C:/Users/Tetro/Documents/FPGA_Project/2025_G/hello_world/src"])
 
-comp.build()
+comp.set_app_config(key = "USER_LINK_DIRECTORIES", values = ["."])
 
-status = platform.build()
+comp.set_app_config(key = "USER_LINK_DIRECTORIES", values = ["."])
 
-comp.build()
+comp.set_app_config(key = "USER_LINK_DIRECTORIES", values = ["."])
 
-status = platform.build()
+comp.set_app_config(key = "USER_LINK_DIRECTORIES", values = ["."])
 
-comp.build()
+comp.set_app_config(key = "USER_LINK_DIRECTORIES", values = ["."])
 
-status = platform.build()
+comp.set_app_config(key = "USER_LINK_DIRECTORIES", values = ["."])
 
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
-
-status = platform.build()
-
-comp.build()
+vitis.dispose()
 

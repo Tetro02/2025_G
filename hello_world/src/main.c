@@ -167,10 +167,11 @@ void psReadBram(void)
 // ==============================================================================
 // 中断服务函数
 // ==============================================================================
-void PL_IRQHandler(void *CallbackRef)
+void PL_IRQHandler(void *CallbackRef) // PL中断服务函数
 {
     (void)CallbackRef;
     Xil_Out32(ADC_START_ADDR, 0);
+
     psReadBram();
 
     FFT_Result_TypeDef ch1 = test_fft_adc(dataOut_1);
