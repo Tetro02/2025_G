@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Thu Apr 23 23:08:08 2026
+| Date         : Fri Apr 24 18:46:10 2026
 | Host         : LAPTOP-OJ78FPOQ running 64-bit major release  (build 9200)
 | Command      : report_utilization -file Test_Top_utilization_synth.rpt -pb Test_Top_utilization_synth.pb
 | Design       : Test_Top
@@ -31,17 +31,17 @@ Table of Contents
 +----------------------------+------+-------+------------+-----------+-------+
 |          Site Type         | Used | Fixed | Prohibited | Available | Util% |
 +----------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*                | 3714 |     0 |          0 |     53200 |  6.98 |
-|   LUT as Logic             | 3296 |     0 |          0 |     53200 |  6.20 |
+| Slice LUTs*                | 3733 |     0 |          0 |     53200 |  7.02 |
+|   LUT as Logic             | 3315 |     0 |          0 |     53200 |  6.23 |
 |   LUT as Memory            |  418 |     0 |          0 |     17400 |  2.40 |
 |     LUT as Distributed RAM |  308 |     0 |            |           |       |
 |     LUT as Shift Register  |  110 |     0 |            |           |       |
-| Slice Registers            | 4328 |     0 |          0 |    106400 |  4.07 |
-|   Register as Flip Flop    | 4328 |     0 |          0 |    106400 |  4.07 |
+| Slice Registers            | 4319 |     0 |          0 |    106400 |  4.06 |
+|   Register as Flip Flop    | 4319 |     0 |          0 |    106400 |  4.06 |
 |   Register as Latch        |    0 |     0 |          0 |    106400 |  0.00 |
 | F7 Muxes                   |    0 |     0 |          0 |     26600 |  0.00 |
 | F8 Muxes                   |    0 |     0 |          0 |     13300 |  0.00 |
-| Unique Control Sets        |  304 |       |          0 |     13300 |  2.29 |
+| Unique Control Sets        |  307 |       |          0 |     13300 |  2.31 |
 +----------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 Warning! LUT value is adjusted to account for LUT combining.
@@ -62,9 +62,9 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 2     |          Yes |           - |          Set |
-| 202   |          Yes |           - |        Reset |
-| 192   |          Yes |         Set |            - |
-| 3932  |          Yes |       Reset |            - |
+| 204   |          Yes |           - |        Reset |
+| 193   |          Yes |         Set |            - |
+| 3920  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -100,7 +100,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +-----------------------------+------+-------+------------+-----------+--------+
 |          Site Type          | Used | Fixed | Prohibited | Available |  Util% |
 +-----------------------------+------+-------+------------+-----------+--------+
-| Bonded IOB                  |   57 |     0 |          0 |       200 |  28.50 |
+| Bonded IOB                  |   37 |     0 |          0 |       200 |  18.50 |
 | Bonded IPADs                |    0 |     0 |          0 |         2 |   0.00 |
 | Bonded IOPADs               |  130 |     0 |          0 |       130 | 100.00 |
 | PHY_CONTROL                 |    0 |     0 |          0 |         4 |   0.00 |
@@ -113,7 +113,8 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | PHASER_IN/PHASER_IN_PHY     |    0 |     0 |          0 |        16 |   0.00 |
 | IDELAYE2/IDELAYE2_FINEDELAY |    0 |     0 |          0 |       200 |   0.00 |
 | ILOGIC                      |    0 |     0 |          0 |       200 |   0.00 |
-| OLOGIC                      |    0 |     0 |          0 |       200 |   0.00 |
+| OLOGIC                      |    3 |     0 |          0 |       200 |   1.50 |
+|   ODDR                      |    3 |       |            |           |        |
 +-----------------------------+------+-------+------------+-----------+--------+
 
 
@@ -156,24 +157,25 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+----------------------+
 | Ref Name | Used |  Functional Category |
 +----------+------+----------------------+
-| FDRE     | 3932 |         Flop & Latch |
-| LUT6     | 1203 |                  LUT |
-| LUT3     | 1084 |                  LUT |
-| LUT5     |  702 |                  LUT |
-| LUT4     |  551 |                  LUT |
+| FDRE     | 3920 |         Flop & Latch |
+| LUT6     | 1209 |                  LUT |
+| LUT3     | 1087 |                  LUT |
+| LUT5     |  721 |                  LUT |
+| LUT4     |  544 |                  LUT |
 | RAMD32   |  452 |   Distributed Memory |
-| LUT2     |  411 |                  LUT |
-| LUT1     |  269 |                  LUT |
-| FDCE     |  202 |         Flop & Latch |
-| FDSE     |  192 |         Flop & Latch |
+| LUT2     |  416 |                  LUT |
+| LUT1     |  271 |                  LUT |
+| FDCE     |  204 |         Flop & Latch |
+| FDSE     |  193 |         Flop & Latch |
 | RAMS32   |  144 |   Distributed Memory |
 | BIBUF    |  130 |                   IO |
 | RAMB36E1 |  128 |         Block Memory |
 | SRL16E   |  101 |   Distributed Memory |
 | CARRY4   |   49 |           CarryLogic |
-| OBUF     |   32 |                   IO |
 | IBUF     |   25 |                   IO |
+| OBUF     |   12 |                   IO |
 | SRLC32E  |    9 |   Distributed Memory |
+| ODDR     |    3 |                   IO |
 | RAMB18E1 |    2 |         Block Memory |
 | FDPE     |    2 |         Flop & Latch |
 | PS7      |    1 | Specialized Resource |
