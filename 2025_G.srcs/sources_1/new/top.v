@@ -136,7 +136,8 @@ assign fir_dac_mode = !fir_coef_reload_mode && !ctrl_start_end_flag[0] && !ctrl_
       .R(1'b0),
       .S(1'b0)
   );
-  // 用 ODDR 输出 DAC 时钟
+  // ===================== DAC 时钟：50MHz 连续时钟 =====================
+  // 用 ODDR 输出持续的 50MHz 时钟给 DAC
   ODDR #(
       .DDR_CLK_EDGE("OPPOSITE_EDGE"),
       .INIT(1'b0),
@@ -145,8 +146,8 @@ assign fir_dac_mode = !fir_coef_reload_mode && !ctrl_start_end_flag[0] && !ctrl_
       .Q(clk_out_dac),
       .C(FCLK_CLK0),
       .CE(1'b1),
-      .D1(clk_out_dac_reg),
-      .D2(clk_out_dac_reg),
+      .D1(1'b1),
+      .D2(1'b0),
       .R(1'b0),
       .S(1'b0)
   );
@@ -245,38 +246,45 @@ assign fir_dac_mode = !fir_coef_reload_mode && !ctrl_start_end_flag[0] && !ctrl_
   // bit3=1 → FIR模式：输出滤波数据 + dac_valid作为时钟（时序天然匹配）
   // bit2=1 → DDS模式：预留位置（后续添加DDS模块）
   // 其他 → 输出0
-  // 修复1：组合逻辑改时序逻辑，和FIR有效信号同步，消除毛刺
-  // 修复6：用dac_valid作为DAC时钟，保证时钟和数据同源，时序天然匹配
-  // 修复7：完善case覆盖，明确所有状态行为
-always @(posedge FCLK_CLK0) begin
-    if(!rst_n_fir_synced) begin
-        clk_out_dac_reg  <= 1'b0;
-        dac_data_out_reg <= 8'd128; // 复位默认输出DAC中点128
-    end
-    else begin
-        case({fir_dac_mode, dds_mode})
-            2'b10: begin // FIR工作模式
-                clk_out_dac_reg <= dac_valid; // 用dac_valid作为时钟
-                if(dac_valid) begin
-                    dac_data_out_reg <= (dac_data_sat + OFFSET_37) >> 30;
-                end
-            end
-            2'b01: begin // DDS模式（预留）
-                // DDS模式独立工作，不影响ADC
-                clk_out_dac_reg  <= 1'b0; // 这里后续接你的DDS时钟
-                dac_data_out_reg <= 8'd0;  // 这里后续接你的DDS数据
-            end
-            2'b00: begin // 空闲或仅ADC工作模式
-                clk_out_dac_reg  <= 1'b0;
-                dac_data_out_reg <= 8'd0;
-            end
-            default: begin // 2'b11：FIR和DDS互斥，不会出现
-                clk_out_dac_reg  <= 1'b0;
-                dac_data_out_reg <= 8'd128;
-            end
-        endcase
-    end
-end
+  // 组合逻辑改时序逻辑，和FIR有效信号同步，消除毛刺
+  // 用dac_valid作为DAC时钟，保证时钟和数据同源，时序天然匹配
+  // 完善case覆盖，明确所有状态行为
+  // 检测 dac_valid 的上升沿，保证数据只更新一次
+  reg        dac_valid_prev;
+  wire       dac_valid_pulse;
+  
+  always @(posedge FCLK_CLK0) begin
+      dac_valid_prev <= dac_valid;
+  end
+  assign dac_valid_pulse = dac_valid && !dac_valid_prev; // 上升沿脉冲
+
+  always @(posedge FCLK_CLK0) begin
+      if(!rst_n_fir_synced) begin
+          dac_data_out_reg <= 8'd128; // 复位默认输出DAC中点128
+      end
+      else begin
+          case({fir_dac_mode, dds_mode})
+              2'b10: begin // FIR工作模式
+                  // 仅在 dac_valid 上升沿时更新数据
+                  if(dac_valid_pulse) begin
+                      dac_data_out_reg <= (dac_data_sat + OFFSET_37) >> 30;
+                  end
+                  else begin
+                      dac_data_out_reg <= dac_data_out_reg; // 保持不变，避免毛刺
+                  end
+              end
+              2'b01: begin // DDS模式（预留）
+                  dac_data_out_reg <= 8'd0; // 这里后续接你的DDS数据
+              end
+              2'b00: begin // 空闲或仅ADC工作模式
+                  dac_data_out_reg <= 8'd0;
+              end
+              default: begin // 2'b11：FIR和DDS互斥，不会出现
+                  dac_data_out_reg <= 8'd128;
+              end
+          endcase
+      end
+  end
 
   // ==================================================================================
   // 1. 原有验证正常模块：ADC1/2采样 + 写入BRAM（bit0控制，修复问题2：复位逻辑）
