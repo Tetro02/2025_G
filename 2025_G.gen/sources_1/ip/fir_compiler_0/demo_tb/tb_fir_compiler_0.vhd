@@ -131,7 +131,7 @@ architecture tb of tb_fir_compiler_0 is
   signal s_axis_reload_tdata_coef           : std_logic_vector(15 downto 0) := (others => '0');
 
   -- Data master channel alias signals
-  signal m_axis_data_tdata_data        : std_logic_vector(37 downto 0) := (others => '0');
+  signal m_axis_data_tdata_data        : std_logic_vector(36 downto 0) := (others => '0');
   signal m_axis_data_tuser_data_valid  : std_logic := '0';
 
 
@@ -348,7 +348,7 @@ begin
   s_axis_reload_tdata_coef          <= s_axis_reload_tdata(15 downto 0);
 
   -- Data master channel alias signals: update these only when they are valid
-  m_axis_data_tdata_data        <= m_axis_data_tdata(37 downto 0) when m_axis_data_tvalid = '1';
+  m_axis_data_tdata_data        <= m_axis_data_tdata(36 downto 0) when m_axis_data_tvalid = '1';
   m_axis_data_tuser_data_valid  <= m_axis_data_tuser(0) when m_axis_data_tvalid = '1';
 
 end tb;

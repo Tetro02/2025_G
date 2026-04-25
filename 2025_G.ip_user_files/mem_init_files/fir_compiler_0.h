@@ -71,11 +71,11 @@
 // chan_seq: 0
 // num_channels: 1
 // num_paths: 1
-// data_width: 13
+// data_width: 12
 // data_fract_width: 0
 // output_rounding_mode: 0
-// output_width: 38
-// accum_width: 38
+// output_width: 37
+// accum_width: 37
 // output_fract_width: 0
 // config_method: 0
 
@@ -105,11 +105,11 @@ static xip_fir_v7_2_config gen_fir_compiler_0_config() {
   config.num_channels        = 1;
   config.init_pattern        = fir_compiler_0_chanpats[0];
   config.num_paths           = 1;
-  config.data_width          = 13;
+  config.data_width          = 12;
   config.data_fract_width    = 0;
   config.output_rounding_mode= XIP_FIR_FULL_PRECISION;
-  config.output_width        = 38;
-  config.accum_width         = 38;
+  config.output_width        = 37;
+  config.accum_width         = 37;
   config.output_fract_width  = 0;
   config.config_method       = XIP_FIR_CONFIG_SINGLE;
   return config;

@@ -56,8 +56,10 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param tcl.notrace 1
 set_param general.usePosixSpawnForFork 1
 set_param chipscope.maxJobs 8
+set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg484-1
 
@@ -77,7 +79,7 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 add_files C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.srcs/sources_1/imports/ROM_mif/wave_rom.coe
-add_files c:/Users/Tetro/Desktop/FIR1.coe
+add_files C:/Users/Tetro/Desktop/FIR1.coe
 read_verilog -library xil_defaultlib {
   C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.srcs/sources_1/new/bram_ctrl_my.v
   C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.srcs/sources_1/new/bram_fir_reload.v
@@ -117,7 +119,7 @@ set_property used_in_implementation false [get_files -all c:/Users/Tetro/Documen
 set_property used_in_implementation false [get_files -all c:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.gen/sources_1/bd/design_1/design_1_ooc.xdc]
 
-read_ip -quiet c:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.srcs/sources_1/ip/fir_compiler_0/fir_compiler_0.xci
+read_ip -quiet C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.srcs/sources_1/ip/fir_compiler_0/fir_compiler_0.xci
 set_property used_in_implementation false [get_files -all c:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.gen/sources_1/ip/fir_compiler_0/constraints/fir_compiler_v7_2.xdc]
 
 OPTRACE "Adding files" END { }

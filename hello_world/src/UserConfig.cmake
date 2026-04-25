@@ -28,7 +28,6 @@ set(USER_UNDEFINED_SYMBOLS
 
 set(USER_INCLUDE_DIRECTORIES
 "CMSIS_DSP"
-"CMSIS_DSP/dsp"
 )
 
 #Add any source below, they will be added as Compile sources.
@@ -36,8 +35,8 @@ set(USER_INCLUDE_DIRECTORIES
 #Example 2: Adding ../../common/helloworld.c will consider the path as relative to this component directory
 #Example 3: Adding ${MY_ENV}/data/helloworld.c are expanded using project-specific environment settings.
 set(USER_COMPILE_SOURCES
+"helloworld.c"
 "platform.c"
-"main.c"
 )
 
 # -----------------------------------------
