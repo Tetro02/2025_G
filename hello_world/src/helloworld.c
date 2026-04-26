@@ -1,9 +1,9 @@
-// ========== å¿…å¤‡å¤´æ–‡ä»¶ ==========
+// ========== ±Ø±¸Í·ÎÄ¼ş ==========
 #include <stdio.h>
 #include <string.h>
 #include <stdint.h>
 
-// Cortex-A9 é€‚é…å®
+// Cortex-A9 ÊÊÅäºê
 #define ARM_MATH_CA9
 #define __FPU_PRESENT 1U
 #include "arm_math.h"
@@ -12,7 +12,7 @@
 #include "xscugic.h"
 #include "xil_exception.h"
 
-// ========== FFT & ADC æ ¸å¿ƒå‚æ•° ==========
+// ========== FFT & ADC ºËĞÄ²ÎÊı ==========
 #define FFT_LENGTH 4096
 #define SAMPLE_FREQ 299401.1976047f
 #define ADC_BIAS 2048.0f
@@ -20,14 +20,14 @@
 #define ADC_RES (ADC_V_RANGE / 2048.0f)
 #define HAMMING_CORRECT 1.85f
 
-// ===================== é€‚é…æ–°Top.vï¼šæ§åˆ¶ä½å®å®šä¹‰ =====================
-// å¯¹åº”Verilogä¸­ ctrl_start_end_flag[3:0]
-#define CTRL_BIT_ADC_SAMPLE (1 << 0) // bit0: ADCé‡‡æ ·+å†™BRAM ä½¿èƒ½
-#define CTRL_BIT_FIR_COEF (1 << 1)   // bit1: FIRç³»æ•°é‡è½½
-#define CTRL_BIT_DDS (1 << 2)        // bit2: DDSä½¿èƒ½
-#define CTRL_BIT_FIR_DAC (1 << 3)    // bit3: FIR+DACä½¿èƒ½
+// ===================== ÊÊÅäĞÂTop.v£º¿ØÖÆÎ»ºê¶¨Òå =====================
+// ¶ÔÓ¦VerilogÖĞ ctrl_start_end_flag[3:0]
+#define CTRL_BIT_ADC_SAMPLE (1 << 0) // bit0: ADC²ÉÑù+Ğ´BRAM Ê¹ÄÜ
+#define CTRL_BIT_FIR_COEF (1 << 1)   // bit1: FIRÏµÊıÖØÔØ
+#define CTRL_BIT_DDS (1 << 2)        // bit2: DDSÊ¹ÄÜ
+#define CTRL_BIT_FIR_DAC (1 << 3)    // bit3: FIR+DACÊ¹ÄÜ
 
-// ===================== å…¨å±€å¤§æ•°ç»„ =====================
+// ===================== È«¾Ö´óÊı×é =====================
 float32_t fft_in[FFT_LENGTH * 2];
 float32_t fft_mag[FFT_LENGTH];
 float32_t fft_phase[FFT_LENGTH];
@@ -35,15 +35,15 @@ float32_t hamming_window[FFT_LENGTH];
 uint16_t dataOut_1[FFT_LENGTH];
 uint16_t dataOut_2[FFT_LENGTH];
 
-// ========== BRAM / AXI åœ°å€ï¼ˆä¸æ–°Top.vå®Œå…¨åŒ¹é…ï¼‰ ==========
+// ========== BRAM / AXI µØÖ·£¨ÓëĞÂTop.vÍêÈ«Æ¥Åä£© ==========
 #define BRAM_ADDR XPAR_AXI_BRAM_CTRL_0_BASEADDR
 #define LITE_ADDR XPAR_AXI_LITE_PS_TO_PL_PL_0_BASEADDR
-#define CTRL_REG_ADDR (LITE_ADDR + 0x00) // æ€»æ§åˆ¶å¯„å­˜å™¨(å¯¹åº”slv_reg0)
+#define CTRL_REG_ADDR (LITE_ADDR + 0x00) // ×Ü¿ØÖÆ¼Ä´æÆ÷(¶ÔÓ¦slv_reg0)
 #define LITE1_ADDR (LITE_ADDR + 0x04)
 #define LITE2_ADDR (LITE_ADDR + 0x08)
 #define LITE3_ADDR (LITE_ADDR + 0x0C)
 
-// ========== ä¸­æ–­é…ç½® ==========
+// ========== ÖĞ¶ÏÅäÖÃ ==========
 #define INTC_DEVICE_ID XPAR_SCUGIC_SINGLE_DEVICE_ID
 #define PL_IRQ_ID 61
 XScuGic Intc;
@@ -57,21 +57,21 @@ typedef struct
 } FFT_Result_TypeDef;
 
 // ==============================================================================
-// ã€æ ¸å¿ƒå‡½æ•°ã€‘ç»Ÿä¸€æ§åˆ¶æ€»ä¿¡å·ï¼ˆ0-15ï¼‰
-// å‚æ•°ï¼šflags - æ§åˆ¶å­—ï¼Œç›´æ¥è®¾ç½® ctrl_start_end_flag[3:0]
-// ç¤ºä¾‹ï¼š
-//   SetControlFlags(0x01); // ä»…bit0=1ï¼ŒADCé‡‡æ ·æ¨¡å¼
-//   SetControlFlags(0x08); // ä»…bit3=1ï¼ŒFIR+DACæ¨¡å¼
-//   SetControlFlags(0x05); // bit0+bit2=1ï¼ŒADC+DDSåŒæ—¶å·¥ä½œ
+// ¡¾ºËĞÄº¯Êı¡¿Í³Ò»¿ØÖÆ×ÜĞÅºÅ£¨0-15£©
+// ²ÎÊı£ºflags - ¿ØÖÆ×Ö£¬Ö±½ÓÉèÖÃ ctrl_start_end_flag[3:0]
+// Ê¾Àı£º
+//   SetControlFlags(0x01); // ½öbit0=1£¬ADC²ÉÑùÄ£Ê½
+//   SetControlFlags(0x08); // ½öbit3=1£¬FIR+DACÄ£Ê½
+//   SetControlFlags(0x05); // bit0+bit2=1£¬ADC+DDSÍ¬Ê±¹¤×÷
 // ==============================================================================
 void SetControlFlags(uint32_t flags)
 {
-    // åªä¿®æ”¹ä½4ä½ï¼Œé«˜28ä½ä¿æŒä¸º0
+    // Ö»ĞŞ¸ÄµÍ4Î»£¬¸ß28Î»±£³ÖÎª0
     Xil_Out32(CTRL_REG_ADDR, flags & 0x0000000F);
 }
 
 // ==============================================================================
-// çº¯Cæ‰‹å†™é«˜ç²¾åº¦atan2ï¼ˆé›¶ä¾èµ–ï¼Œä¸è°ƒç”¨ä»»ä½•åº“å‡½æ•°ï¼ŒFFTç›¸ä½ä¸“ç”¨ï¼‰
+// ´¿CÊÖĞ´¸ß¾«¶Èatan2£¨ÁãÒÀÀµ£¬²»µ÷ÓÃÈÎºÎ¿âº¯Êı£¬FFTÏàÎ»×¨ÓÃ£©
 // ==============================================================================
 static float fast_atan2f(float y, float x)
 {
@@ -93,7 +93,7 @@ static float fast_atan2f(float y, float x)
 }
 
 // ==============================================================================
-// çº¯Cæ‰‹å†™coså‡½æ•°ï¼ˆå½»åº•æŠ›å¼ƒarm_cos_f32ï¼Œé›¶ä¾èµ–ï¼‰
+// ´¿CÊÖĞ´cosº¯Êı£¨³¹µ×Å×Æúarm_cos_f32£¬ÁãÒÀÀµ£©
 // ==============================================================================
 static float fast_cosf(float x)
 {
@@ -106,7 +106,7 @@ static float fast_cosf(float x)
 }
 
 // ==============================================================================
-// æ±‰æ˜çª—ï¼ˆçº¯Cå®ç°ï¼Œæ— CMSISä¾èµ–ï¼‰
+// ººÃ÷´°£¨´¿CÊµÏÖ£¬ÎŞCMSISÒÀÀµ£©
 // ==============================================================================
 void generate_hamming_window(float32_t *window, uint32_t length)
 {
@@ -118,7 +118,7 @@ void generate_hamming_window(float32_t *window, uint32_t length)
 }
 
 // ==============================================================================
-// FFTä¸»å‡½æ•°ï¼ˆé›¶æ•°å­¦åº“ä¾èµ–ï¼Œçº¯CMSIS FFT + çº¯Cç›¸ä½è®¡ç®—ï¼‰
+// FFTÖ÷º¯Êı£¨ÁãÊıÑ§¿âÒÀÀµ£¬´¿CMSIS FFT + ´¿CÏàÎ»¼ÆËã£©
 // ==============================================================================
 FFT_Result_TypeDef test_fft_adc(const uint16_t *dataOut)
 {
@@ -132,7 +132,7 @@ FFT_Result_TypeDef test_fft_adc(const uint16_t *dataOut)
 
     memset(fft_in, 0, sizeof(fft_in));
 
-    // ADCæ•°æ®é¢„å¤„ç†
+    // ADCÊı¾İÔ¤´¦Àí
     for (i = 0; i < FFT_LENGTH; i++)
     {
         float adc_real = (float)dataOut[i] - ADC_BIAS;
@@ -140,12 +140,12 @@ FFT_Result_TypeDef test_fft_adc(const uint16_t *dataOut)
         fft_in[2 * i + 1] = 0.0f;
     }
 
-    // CMSIS FFTï¼ˆä»…ä¿ç•™FFTæ ¸å¿ƒï¼Œæ— æ•°å­¦å‡½æ•°ï¼‰
+    // CMSIS FFT£¨½ö±£ÁôFFTºËĞÄ£¬ÎŞÊıÑ§º¯Êı£©
     arm_cfft_init_f32(&fft_inst, FFT_LENGTH);
     arm_cfft_f32(&fft_inst, fft_in, 0, 1);
     arm_cmplx_mag_f32(fft_in, fft_mag, FFT_LENGTH);
 
-    // çº¯Cè®¡ç®—ç›¸ä½ï¼Œé›¶ä¾èµ–
+    // ´¿C¼ÆËãÏàÎ»£¬ÁãÒÀÀµ
     for (i = 0; i < FFT_LENGTH; i++)
     {
         float real = fft_in[2 * i];
@@ -153,7 +153,7 @@ FFT_Result_TypeDef test_fft_adc(const uint16_t *dataOut)
         fft_phase[i] = fast_atan2f(imag, real);
     }
 
-    // æ‰¾å³°å€¼
+    // ÕÒ·åÖµ
     for (i = 0; i < FFT_LENGTH / 2; i++)
     {
         if (fft_mag[i] > max_mag)
@@ -163,7 +163,7 @@ FFT_Result_TypeDef test_fft_adc(const uint16_t *dataOut)
         }
     }
 
-    // ç»“æœè®¡ç®—
+    // ½á¹û¼ÆËã
     res.freq = max_index * freq_res;
     res.digital_amp = (max_index == 0) ? (max_mag / 4096.0f) : (max_mag / 2048.0f * HAMMING_CORRECT);
     res.voltage_amp = res.digital_amp * ADC_RES * 2.0f;
@@ -173,7 +173,7 @@ FFT_Result_TypeDef test_fft_adc(const uint16_t *dataOut)
 }
 
 // ==============================================================================
-// BRAM è¯»ï¼ˆå®Œå…¨ä¸å˜ï¼‰
+// BRAM ¶Á£¨ÍêÈ«²»±ä£©
 // ==============================================================================
 void psReadBram(void)
 {
@@ -185,12 +185,12 @@ void psReadBram(void)
 }
 
 // ==============================================================================
-// ä¸­æ–­æœåŠ¡å‡½æ•°ï¼ˆä½¿ç”¨ç»Ÿä¸€æ§åˆ¶å‡½æ•°ï¼‰
+// ÖĞ¶Ï·şÎñº¯Êı£¨Ê¹ÓÃÍ³Ò»¿ØÖÆº¯Êı£©
 // ==============================================================================
-void PL_IRQHandler(void *CallbackRef) // PLä¸­æ–­æœåŠ¡å‡½æ•°
+void PL_IRQHandler(void *CallbackRef) // PLÖĞ¶Ï·şÎñº¯Êı
 {
     (void)CallbackRef;
-    SetControlFlags(0x00); // åœæ­¢æ‰€æœ‰åŠŸèƒ½
+    SetControlFlags(0x00); // Í£Ö¹ËùÓĞ¹¦ÄÜ
 
     psReadBram();
 
@@ -201,18 +201,18 @@ void PL_IRQHandler(void *CallbackRef) // PLä¸­æ–­æœåŠ¡å‡½æ•°
     float phase_diff = ch2.phase_deg - ch1.phase_deg;
 
     printf("=========================================\r\n");
-    printf("å³°å€¼é¢‘ç‡ï¼š%.2f Hz\r\n", ch1.freq);
-    printf("é€šé“1 å¹…å€¼ï¼š%.4f V | ç›¸ä½ï¼š%.2f Â°\r\n", ch1.voltage_amp, ch1.phase_deg);
-    printf("é€šé“2 å¹…å€¼ï¼š%.4f V | ç›¸ä½ï¼š%.2f Â°\r\n", ch2.voltage_amp, ch2.phase_deg);
-    printf("å¹…åº¦æ¯”å€¼(Ch2/Ch1): %.4f\r\n", amp_ratio);
-    printf("ç›¸ä½å·®(Ch2-Ch1): %.2f Â°\r\n", phase_diff);
+    printf("·åÖµÆµÂÊ£º%.2f Hz\r\n", ch1.freq);
+    printf("Í¨µÀ1 ·ùÖµ£º%.4f V | ÏàÎ»£º%.2f ¡ã\r\n", ch1.voltage_amp, ch1.phase_deg);
+    printf("Í¨µÀ2 ·ùÖµ£º%.4f V | ÏàÎ»£º%.2f ¡ã\r\n", ch2.voltage_amp, ch2.phase_deg);
+    printf("·ù¶È±ÈÖµ(Ch2/Ch1): %.4f\r\n", amp_ratio);
+    printf("ÏàÎ»²î(Ch2-Ch1): %.2f ¡ã\r\n", phase_diff);
     printf("=========================================\r\n\r\n");
 
-    SetControlFlags(0x01); // é‡å¯ADCé‡‡æ ·æ¨¡å¼
+    SetControlFlags(0x01); // ÖØÆôADC²ÉÑùÄ£Ê½
 }
 
 // ==============================================================================
-// ä¸­æ–­åˆå§‹åŒ–ï¼ˆå®Œå…¨ä¸å˜ï¼‰
+// ÖĞ¶Ï³õÊ¼»¯£¨ÍêÈ«²»±ä£©
 // ==============================================================================
 int SetupInterruptSystem(void)
 {
@@ -243,12 +243,12 @@ int SetupPLInterrupt(void)
         return XST_FAILURE;
 
     XScuGic_SetPriorityTriggerType(&Intc, PL_IRQ_ID, 0xA0, 0x3);
-    XScuGic_Enable(&Intc, PL_IRQ_ID); // <-- ä¿®å¤æ‹¼å†™é”™è¯¯
+    XScuGic_Enable(&Intc, PL_IRQ_ID); // <-- ĞŞ¸´Æ´Ğ´´íÎó
     return XST_SUCCESS;
 }
 
 // ==============================================================================
-// mainï¼ˆä½¿ç”¨ç»Ÿä¸€æ§åˆ¶å‡½æ•°ï¼‰
+// main£¨Ê¹ÓÃÍ³Ò»¿ØÖÆº¯Êı£©
 // ==============================================================================
 int main(void)
 {
@@ -256,13 +256,13 @@ int main(void)
     SetupInterruptSystem();
     SetupPLInterrupt();
 
-    // ä½¿ç”¨ç»Ÿä¸€æ§åˆ¶å‡½æ•°ï¼šå…ˆåœæ­¢ï¼Œå†å¯åŠ¨ADCé‡‡æ ·æ¨¡å¼
+    // Ê¹ÓÃÍ³Ò»¿ØÖÆº¯Êı£ºÏÈÍ£Ö¹£¬ÔÙÆô¶¯ADC²ÉÑùÄ£Ê½
     SetControlFlags(0x00);
     SetControlFlags(CTRL_BIT_FIR_DAC);
 
     while (1)
     {
-        // ä¸»å¾ªç¯ç©ºé—²ï¼Œä¸­æ–­å¤„ç†é‡‡æ ·
+        // Ö÷Ñ­»·¿ÕÏĞ£¬ÖĞ¶Ï´¦Àí²ÉÑù
     }
     return 0;
 }
