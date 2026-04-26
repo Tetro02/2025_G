@@ -74,7 +74,7 @@ module Test_Top  (
   // 29bit有符号数偏移量 2^28，用于29bit→8bit转换
   localparam signed OFFSET_28 = 29'sd268435456;
   // 29bit有符号数最大值和最小值，用于饱和限幅（修复问题9）
-  localparam signed DAC_DATA_MIN = -29'sd268435456; // -2^28
+  localparam signed DAC_DATA_MIN = -29'sd268435455; // -2^28
   localparam signed DAC_DATA_MAX =  29'sd268435455; //  2^28
 
 // ===================== 模式互斥逻辑 =====================
@@ -266,8 +266,8 @@ assign fir_dac_mode = !fir_coef_reload_mode && !ctrl_start_end_flag[0] && !ctrl_
           case({fir_dac_mode, dds_mode})
               2'b10: begin // FIR工作模式
                   // 仅在 dac_valid 上升沿时更新数据
-                  if(1'd1) begin
-                      dac_data_out_reg <= ((dac_data_sat + OFFSET_28) >> 20) - 128;
+                  if(dac_valid_pulse) begin
+                      dac_data_out_reg <= (dac_data_sat + OFFSET_28) >> 21;
                   end
                   else begin
                       dac_data_out_reg <= dac_data_out_reg; // 保持不变，避免毛刺
