@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Sat Apr 25 16:19:30 2026
-# Process ID         : 30520
+# Start of session at: Mon Apr 27 22:34:01 2026
+# Process ID         : 13832
 # Current directory  : C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.runs/synth_1
 # Command line       : vivado.exe -log Test_Top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Test_Top.tcl
 # Log file           : C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.runs/synth_1/Test_Top.vds
@@ -13,13 +13,13 @@
 # Platform           : Windows Server 2016 or Windows 10
 # Operating System   : 22631
 # Processor Detail   : AMD Ryzen 9 7940HX with Radeon Graphics        
-# CPU Frequency      : 2395 MHz
+# CPU Frequency      : 2396 MHz
 # CPU Physical cores : 16
 # CPU Logical cores  : 32
 # Host memory        : 16337 MB
-# Swap memory        : 21878 MB
-# Total Virtual      : 38216 MB
-# Available Virtual  : 10277 MB
+# Swap memory        : 21474 MB
+# Total Virtual      : 37812 MB
+# Available Virtual  : 15053 MB
 #-----------------------------------------------------------
 source Test_Top.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
@@ -37,9 +37,9 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 21184
+INFO: [Synth 8-7075] Helper process launched with PID 30672
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1378.082 ; gain = 539.805
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1378.355 ; gain = 540.031
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'Test_Top' [C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.srcs/sources_1/new/top.v:1]
 INFO: [Synth 8-6157] synthesizing module 'ODDR' [D:/Tetro/Tools/Vivado/2025.2/Vivado/scripts/rt/data/unisim_comp.v:117225]
@@ -73,60 +73,61 @@ INFO: [Synth 8-638] synthesizing module 'fir_compiler_0' [c:/Users/Tetro/Documen
 	Parameter C_NUM_RELOAD_SLOTS bound to: 1 - type: integer 
 	Parameter C_COL_MODE bound to: 1 - type: integer 
 	Parameter C_COL_PIPE_LEN bound to: 4 - type: integer 
-	Parameter C_COL_CONFIG bound to: 1 - type: string 
+	Parameter C_COL_CONFIG bound to: 4 - type: string 
 	Parameter C_OPTIMIZATION bound to: 0 - type: integer 
-	Parameter C_DATA_PATH_WIDTHS bound to: 12 - type: string 
-	Parameter C_DATA_IP_PATH_WIDTHS bound to: 12 - type: string 
-	Parameter C_DATA_PX_PATH_WIDTHS bound to: 12 - type: string 
+	Parameter C_DATA_PATH_WIDTHS bound to: 12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12 - type: string 
+	Parameter C_DATA_IP_PATH_WIDTHS bound to: 12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12 - type: string 
+	Parameter C_DATA_PX_PATH_WIDTHS bound to: 12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12 - type: string 
 	Parameter C_DATA_WIDTH bound to: 12 - type: integer 
-	Parameter C_COEF_PATH_WIDTHS bound to: 16 - type: string 
+	Parameter C_COEF_PATH_WIDTHS bound to: 16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16 - type: string 
 	Parameter C_COEF_WIDTH bound to: 16 - type: integer 
-	Parameter C_DATA_PATH_SRC bound to: 0 - type: string 
-	Parameter C_COEF_PATH_SRC bound to: 0 - type: string 
-	Parameter C_PX_PATH_SRC bound to: 0 - type: string 
-	Parameter C_DATA_PATH_SIGN bound to: 0 - type: string 
-	Parameter C_COEF_PATH_SIGN bound to: 0 - type: string 
-	Parameter C_ACCUM_PATH_WIDTHS bound to: 37 - type: string 
+	Parameter C_DATA_PATH_SRC bound to: 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 - type: string 
+	Parameter C_COEF_PATH_SRC bound to: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 - type: string 
+	Parameter C_PX_PATH_SRC bound to: 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 - type: string 
+	Parameter C_DATA_PATH_SIGN bound to: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 - type: string 
+	Parameter C_COEF_PATH_SIGN bound to: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 - type: string 
+	Parameter C_ACCUM_PATH_WIDTHS bound to: 37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37 - type: string 
 	Parameter C_OUTPUT_WIDTH bound to: 37 - type: integer 
-	Parameter C_OUTPUT_PATH_WIDTHS bound to: 37 - type: string 
-	Parameter C_ACCUM_OP_PATH_WIDTHS bound to: 37 - type: string 
+	Parameter C_OUTPUT_PATH_WIDTHS bound to: 37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37 - type: string 
+	Parameter C_ACCUM_OP_PATH_WIDTHS bound to: 37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37 - type: string 
 	Parameter C_EXT_MULT_CNFG bound to: none - type: string 
 	Parameter C_DATA_PATH_PSAMP_SRC bound to: 0 - type: string 
 	Parameter C_OP_PATH_PSAMP_SRC bound to: 0 - type: string 
-	Parameter C_NUM_MADDS bound to: 1 - type: integer 
+	Parameter C_NUM_MADDS bound to: 4 - type: integer 
 	Parameter C_OPT_MADDS bound to: none - type: string 
-	Parameter C_OVERSAMPLING_RATE bound to: 151 - type: integer 
-	Parameter C_INPUT_RATE bound to: 250 - type: integer 
-	Parameter C_OUTPUT_RATE bound to: 250 - type: integer 
-	Parameter C_DATA_MEMTYPE bound to: 1 - type: integer 
-	Parameter C_COEF_MEMTYPE bound to: 1 - type: integer 
+	Parameter C_OVERSAMPLING_RATE bound to: 38 - type: integer 
+	Parameter C_INPUT_RATE bound to: 50 - type: integer 
+	Parameter C_OUTPUT_RATE bound to: 50 - type: integer 
+	Parameter C_DATA_MEMTYPE bound to: 0 - type: integer 
+	Parameter C_COEF_MEMTYPE bound to: 2 - type: integer 
 	Parameter C_IPBUFF_MEMTYPE bound to: 0 - type: integer 
 	Parameter C_OPBUFF_MEMTYPE bound to: 0 - type: integer 
 	Parameter C_DATAPATH_MEMTYPE bound to: 0 - type: integer 
 	Parameter C_MEM_ARRANGEMENT bound to: 3 - type: integer 
-	Parameter C_DATA_MEM_PACKING bound to: 1 - type: integer 
+	Parameter C_DATA_MEM_PACKING bound to: 0 - type: integer 
 	Parameter C_COEF_MEM_PACKING bound to: 0 - type: integer 
 	Parameter C_FILTS_PACKED bound to: 0 - type: integer 
-	Parameter C_LATENCY bound to: 164 - type: integer 
+	Parameter C_LATENCY bound to: 54 - type: integer 
 	Parameter C_HAS_ARESETn bound to: 2 - type: integer 
 	Parameter C_HAS_ACLKEN bound to: 0 - type: integer 
 	Parameter C_DATA_HAS_TLAST bound to: 0 - type: integer 
 	Parameter C_S_DATA_HAS_FIFO bound to: 1 - type: integer 
 	Parameter C_S_DATA_HAS_TUSER bound to: 0 - type: integer 
-	Parameter C_S_DATA_TDATA_WIDTH bound to: 16 - type: integer 
+	Parameter C_S_DATA_TDATA_WIDTH bound to: 256 - type: integer 
 	Parameter C_S_DATA_TUSER_WIDTH bound to: 1 - type: integer 
 	Parameter C_M_DATA_HAS_TREADY bound to: 0 - type: integer 
 	Parameter C_M_DATA_HAS_TUSER bound to: 0 - type: integer 
-	Parameter C_M_DATA_TDATA_WIDTH bound to: 40 - type: integer 
+	Parameter C_M_DATA_TDATA_WIDTH bound to: 640 - type: integer 
 	Parameter C_M_DATA_TUSER_WIDTH bound to: 1 - type: integer 
 	Parameter C_HAS_CONFIG_CHANNEL bound to: 1 - type: integer 
 	Parameter C_CONFIG_SYNC_MODE bound to: 0 - type: integer 
 	Parameter C_CONFIG_PACKET_SIZE bound to: 0 - type: integer 
 	Parameter C_CONFIG_TDATA_WIDTH bound to: 8 - type: integer 
 	Parameter C_RELOAD_TDATA_WIDTH bound to: 16 - type: integer 
-INFO: [Synth 8-3491] module 'fir_compiler_v7_2_26' declared at 'c:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.gen/sources_1/ip/fir_compiler_0/hdl/fir_compiler_v7_2_vh_rfs.vhd:73330' bound to instance 'U0' of component 'fir_compiler_v7_2_26' [c:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.gen/sources_1/ip/fir_compiler_0/synth/fir_compiler_0.vhd:233]
+INFO: [Synth 8-3491] module 'fir_compiler_v7_2_26' declared at 'c:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.gen/sources_1/ip/fir_compiler_0/hdl/fir_compiler_v7_2_vh_rfs.vhd:73330' bound to instance 'U0' of component 'fir_compiler_v7_2_26' [c:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.gen/sources_1/ip/fir_compiler_0/synth/fir_compiler_0.vhd:234]
 INFO: [Synth 8-256] done synthesizing module 'fir_compiler_0' (0#1) [c:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.gen/sources_1/ip/fir_compiler_0/synth/fir_compiler_0.vhd:80]
-WARNING: [Synth 8-689] width (29) of port connection 'm_axis_data_tdata' does not match port width (40) of module 'fir_compiler_0' [C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.srcs/sources_1/new/fir.v:66]
+WARNING: [Synth 8-689] width (16) of port connection 's_axis_data_tdata' does not match port width (256) of module 'fir_compiler_0' [C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.srcs/sources_1/new/fir.v:51]
+WARNING: [Synth 8-689] width (29) of port connection 'm_axis_data_tdata' does not match port width (640) of module 'fir_compiler_0' [C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.srcs/sources_1/new/fir.v:66]
 WARNING: [Synth 8-7071] port 'event_s_reload_tlast_missing' of module 'fir_compiler_0' is unconnected for instance 'u_fir' [C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.srcs/sources_1/new/fir.v:44]
 WARNING: [Synth 8-7071] port 'event_s_reload_tlast_unexpected' of module 'fir_compiler_0' is unconnected for instance 'u_fir' [C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.srcs/sources_1/new/fir.v:44]
 WARNING: [Synth 8-7023] instance 'u_fir' of module 'fir_compiler_0' has 16 connections declared, but only 14 given [C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.srcs/sources_1/new/fir.v:44]
@@ -544,7 +545,6 @@ INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_r
 INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_reg' through user attribute
 INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_reg' through user attribute
 INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_AB_reg_slice.state_reg' through user attribute
-WARNING: [Synth 8-6014] Unused sequential element dac_valid_prev_reg was removed.  [C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.srcs/sources_1/new/top.v:257]
 WARNING: [Synth 8-7129] Port src_clk in module xpm_cdc_single is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ENET0_GMII_COL in module processing_system7_v5_5_processing_system7 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ENET0_GMII_CRS in module processing_system7_v5_5_processing_system7 is either unconnected or has no load
@@ -647,19 +647,19 @@ WARNING: [Synth 8-7129] Port RDADDRECC_I[1] in module blk_mem_output_block is ei
 WARNING: [Synth 8-7129] Port RDADDRECC_I[0] in module blk_mem_output_block is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 2085.809 ; gain = 1247.531
+Finished RTL Elaboration : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 2119.961 ; gain = 1281.637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 2085.809 ; gain = 1247.531
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 2119.961 ; gain = 1281.637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 2085.809 ; gain = 1247.531
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 2119.961 ; gain = 1281.637
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2085.809 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 143 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2132.777 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 222 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -692,31 +692,31 @@ Resolution: To avoid this warning, move constraints listed in [.Xil/Test_Top_pro
 INFO: [Project 1-1714] 69 XPM XDC files have been applied to the design.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.067 . Memory (MB): peak = 2244.664 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.132 . Memory (MB): peak = 2541.168 ; gain = 1.520
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 7 instances were transformed.
   FDR => FDRE: 1 instance 
   MUXCY_L => MUXCY: 4 instances
   SRL16 => SRL16E: 2 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.950 . Memory (MB): peak = 2244.664 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2541.168 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:08 ; elapsed = 00:01:11 . Memory (MB): peak = 2245.715 ; gain = 1407.438
+Finished Constraint Validation : Time (s): cpu = 00:01:50 ; elapsed = 00:01:52 . Memory (MB): peak = 2543.641 ; gain = 1705.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:08 ; elapsed = 00:01:11 . Memory (MB): peak = 2245.715 ; gain = 1407.438
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:50 ; elapsed = 00:01:52 . Memory (MB): peak = 2543.641 ; gain = 1705.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:08 ; elapsed = 00:01:11 . Memory (MB): peak = 2245.715 ; gain = 1407.438
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:50 ; elapsed = 00:01:52 . Memory (MB): peak = 2543.641 ; gain = 1705.316
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_write_reg' in module 'AXI_Lite_PS_To_PL_PL_slave_lite_v1_0_S00_AXI'
 INFO: [Synth 8-802] inferred FSM for state register 'state_read_reg' in module 'AXI_Lite_PS_To_PL_PL_slave_lite_v1_0_S00_AXI'
@@ -752,7 +752,6 @@ INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_pipelined.state_r
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'sc_transaction_regulator_v1_0_12_multithread'
 INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_AB_reg_slice.state_reg' through user attribute
 INFO: [Synth 8-4490] FSM extraction disabled for register 'gen_AB_reg_slice.state_reg' through user attribute
-INFO: [Synth 8-3971] The signal "dpt_mem:/gen_bram.gen_write_first.gen_double_reg.ram_reg" was recognized as a true dual port RAM template.
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -922,10 +921,8 @@ INFO: [Synth 8-3354] encoded FSM with state register 'ar_state_reg' using encodi
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'sc_transaction_regulator_v1_0_12_multithread'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:12 ; elapsed = 00:01:15 . Memory (MB): peak = 2245.715 ; gain = 1407.438
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:54 ; elapsed = 00:01:57 . Memory (MB): peak = 2543.641 ; gain = 1705.316
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-223] decloning instance 'fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_cntrl_signals[0].i_delay' (delay__parameterized15) to 'fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_cntrl_signals[1].i_delay'
-INFO: [Synth 8-223] decloning instance 'fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_cntrl_signals[5].i_delay' (delay__parameterized16) to 'fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_cntrl_signals[8].i_delay'
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -964,7 +961,6 @@ WARNING: [Synth 8-13161] RAM (\design_1_wrapper_inst/design_1_i /axi_smc/inst/i_
 WARNING: [Synth 8-6014] Unused sequential element gen_wr_a.gen_word_narrow.mem_reg was removed. 
 WARNING: [Synth 8-13161] RAM (\design_1_wrapper_inst/design_1_i /axi_smc/inst/i_0/\s00_nodes/s00_r_node/inst /\inst_mi_handler/gen_normal_area.gen_node_prog_full.inst_node_prog_full/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory /xpm_memory_base_inst/i_0) is optimized away because it doesn't have any load.
 WARNING: [Synth 8-6014] Unused sequential element gen_wr_a.gen_word_narrow.mem_reg was removed. 
-INFO: [Synth 8-3971] The signal "i_0/\fir_adc12_dac8_inst/u_fir /U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_mem_array[0].i_mem/g_packed.g_true_dual_port.i_mem/gen_bram.gen_write_first.gen_double_reg.ram_reg" was recognized as a true dual port RAM template.
 INFO: [Synth 8-3332] Sequential element (U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/Data_Exists_DFF) is unused and will be removed from module design_1_axi_bram_ctrl_0_0.
 INFO: [Synth 8-3332] Sequential element (U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/Addr_Counters[0].FDRE_I) is unused and will be removed from module design_1_axi_bram_ctrl_0_0.
 INFO: [Synth 8-3332] Sequential element (U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/Addr_Counters[1].FDRE_I) is unused and will be removed from module design_1_axi_bram_ctrl_0_0.
@@ -975,27 +971,123 @@ WARNING: [Synth 8-3332] Sequential element (BSR_OUT_DFF[0].FDRE_BSR) is unused a
 WARNING: [Synth 8-3332] Sequential element (ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N) is unused and will be removed from module proc_sys_reset__parameterized1.
 WARNING: [Synth 8-3332] Sequential element (PR_OUT_DFF[0].FDRE_PER) is unused and will be removed from module proc_sys_reset__parameterized1.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:03 ; elapsed = 00:02:11 . Memory (MB): peak = 2245.715 ; gain = 1407.438
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:41 ; elapsed = 00:02:45 . Memory (MB): peak = 2543.641 ; gain = 1705.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:09 ; elapsed = 00:02:18 . Memory (MB): peak = 2367.113 ; gain = 1528.836
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:47 ; elapsed = 00:02:51 . Memory (MB): peak = 2543.641 ; gain = 1705.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:16 ; elapsed = 00:02:25 . Memory (MB): peak = 2475.488 ; gain = 1637.211
+Finished Timing Optimization : Time (s): cpu = 00:02:52 ; elapsed = 00:02:57 . Memory (MB): peak = 2543.641 ; gain = 1705.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_cnfg_and_reload.i_cnfg_and_reload/g_fsel_store.i_update_chan_dly/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
 WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_cnfg_and_reload.i_cnfg_and_reload/g_fsel_store.i_reset_fill_chan_dly/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_wrap_buff.i_data_wrap_buff/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_wrap_buff.i_data_wrap_buff/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_wrap_buff.i_data_wrap_buff/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_wrap_buff.i_data_wrap_buff/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_wrap_buff.i_data_wrap_buff/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_wrap_buff.i_data_wrap_buff/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_wrap_buff.i_data_wrap_buff/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_wrap_buff.i_data_wrap_buff/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_wrap_buff.i_data_wrap_buff/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_wrap_buff.i_data_wrap_buff/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_wrap_buff.i_data_wrap_buff/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_wrap_buff.i_data_wrap_buff/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_wrap_buff.i_data_wrap_buff/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_wrap_buff.i_data_wrap_buff/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_wrap_buff.i_data_wrap_buff/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_wrap_buff.i_data_wrap_buff/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_wrap_buff.i_data_wrap_buff/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_wrap_buff.i_data_wrap_buff/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_wrap_buff.i_data_wrap_buff/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_wrap_buff.i_data_wrap_buff/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_wrap_buff.i_data_wrap_buff/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_wrap_buff.i_data_wrap_buff/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_wrap_buff.i_data_wrap_buff/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_wrap_buff.i_data_wrap_buff/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:20 ; elapsed = 00:02:31 . Memory (MB): peak = 2476.516 ; gain = 1638.238
+Finished Technology Mapping : Time (s): cpu = 00:02:57 ; elapsed = 00:03:01 . Memory (MB): peak = 2543.641 ; gain = 1705.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -1013,48 +1105,52 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:22 ; elapsed = 00:02:36 . Memory (MB): peak = 2608.891 ; gain = 1770.613
+Finished IO Insertion : Time (s): cpu = 00:03:00 ; elapsed = 00:03:05 . Memory (MB): peak = 2658.875 ; gain = 1820.551
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:22 ; elapsed = 00:02:36 . Memory (MB): peak = 2608.891 ; gain = 1770.613
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:00 ; elapsed = 00:03:05 . Memory (MB): peak = 2658.875 ; gain = 1820.551
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:23 ; elapsed = 00:02:37 . Memory (MB): peak = 2608.891 ; gain = 1770.613
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:01 ; elapsed = 00:03:06 . Memory (MB): peak = 2658.875 ; gain = 1820.551
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:23 ; elapsed = 00:02:37 . Memory (MB): peak = 2608.891 ; gain = 1770.613
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:01 ; elapsed = 00:03:06 . Memory (MB): peak = 2658.875 ; gain = 1820.551
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:24 ; elapsed = 00:02:37 . Memory (MB): peak = 2608.891 ; gain = 1770.613
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:01 ; elapsed = 00:03:06 . Memory (MB): peak = 2658.875 ; gain = 1820.551
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:24 ; elapsed = 00:02:37 . Memory (MB): peak = 2608.891 ; gain = 1770.613
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:01 ; elapsed = 00:03:06 . Memory (MB): peak = 2658.875 ; gain = 1820.551
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 DSP Final Report (the ' indicates corresponding REG is set)
-+------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|calc        | Dynamic     | -      | -      | -      | -      | 48     | -    | -    | -    | -    | 1     | 1    | 1    | 
-+------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
++---------------------+------------------------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name          | DSP Mapping                                    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++---------------------+------------------------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|calc__parameterized0 | Dynamic                                        | -      | -      | -      | -      | 48     | -    | -    | -    | -    | -     | 0    | 1    | 
+|calc_21              | (C'+((D'+A')'*B')')'                           | 30     | 18     | 0      | 25     | 48     | 1    | 1    | 1    | 1    | 1     | 1    | 1    | 
+|calc_20              | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_19              | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc                 | (PCIN+((Dynamically Configured Multiplier))')' | -      | -      | -      | -      | 48     | -    | -    | -    | -    | 1     | 1    | 1    | 
++---------------------+------------------------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 
 Report BlackBoxes: 
@@ -1064,62 +1160,68 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+---------+------+
-|      |Cell     |Count |
-+------+---------+------+
-|1     |BIBUF    |   130|
-|2     |BUFG     |     1|
-|3     |CARRY4   |    49|
-|4     |DSP48E1  |     1|
-|5     |LUT1     |   271|
-|6     |LUT2     |   416|
-|7     |LUT3     |  1086|
-|8     |LUT4     |   545|
-|9     |LUT5     |   726|
-|10    |LUT6     |  1208|
-|11    |ODDR     |     3|
-|12    |PS7      |     1|
-|13    |RAM16X1D |     1|
-|14    |RAM32M   |    72|
-|15    |RAM32X1D |     9|
-|16    |RAMB18E1 |     2|
-|18    |RAMB36E1 |   128|
-|20    |SRL16    |     2|
-|21    |SRL16E   |    99|
-|22    |SRLC32E  |     9|
-|23    |FDCE     |   204|
-|24    |FDPE     |     2|
-|25    |FDRE     |  3931|
-|26    |FDSE     |   193|
-|27    |IBUF     |    25|
-|28    |OBUF     |    12|
-+------+---------+------+
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |BIBUF     |   130|
+|2     |BUFG      |     1|
+|3     |CARRY4    |    51|
+|4     |DSP48E1   |     5|
+|6     |LUT1      |   268|
+|7     |LUT2      |   431|
+|8     |LUT3      |  1104|
+|9     |LUT4      |   546|
+|10    |LUT5      |   724|
+|11    |LUT6      |  1217|
+|12    |MUXF7     |    96|
+|13    |ODDR      |     3|
+|14    |PS7       |     1|
+|15    |RAM128X1D |    48|
+|16    |RAM16X1D  |     1|
+|17    |RAM32M    |    72|
+|18    |RAM32X1D  |     9|
+|19    |RAM64M    |    10|
+|20    |RAM64X1D  |     2|
+|21    |RAMB36E1  |   128|
+|23    |SRL16     |     2|
+|24    |SRL16E    |    98|
+|25    |SRLC32E   |   201|
+|26    |FDCE      |   204|
+|27    |FDPE      |     2|
+|28    |FDRE      |  4368|
+|29    |FDSE      |   200|
+|30    |IBUF      |    25|
+|31    |OBUF      |    12|
++------+----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:24 ; elapsed = 00:02:37 . Memory (MB): peak = 2608.891 ; gain = 1770.613
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:01 ; elapsed = 00:03:06 . Memory (MB): peak = 2658.875 ; gain = 1820.551
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 2092 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:22 ; elapsed = 00:02:10 . Memory (MB): peak = 2608.891 ; gain = 1610.707
-Synthesis Optimization Complete : Time (s): cpu = 00:02:24 ; elapsed = 00:02:38 . Memory (MB): peak = 2608.891 ; gain = 1770.613
+Synthesis finished with 0 errors, 0 critical warnings and 2188 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:16 ; elapsed = 00:01:58 . Memory (MB): peak = 2658.875 ; gain = 1396.871
+Synthesis Optimization Complete : Time (s): cpu = 00:03:01 ; elapsed = 00:03:06 . Memory (MB): peak = 2658.875 ; gain = 1820.551
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.409 . Memory (MB): peak = 2625.062 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 267 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.403 . Memory (MB): peak = 2675.332 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 427 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 2634.734 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 2683.031 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 84 instances were transformed.
+  A total of 144 instances were transformed.
+  RAM128X1D => RAM128X1D (MUXF7(x2), RAMD64E(x4)): 48 instances
   RAM16X1D => RAM32X1D (RAMD32(x2)): 1 instance 
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 72 instances
   RAM32X1D => RAM32X1D (RAMD32(x2)): 9 instances
+  RAM64M => RAM64M (RAMD64E(x4)): 10 instances
+  RAM64X1D => RAM64X1D (RAMD64E(x2)): 2 instances
   SRL16 => SRL16E: 2 instances
 
-Synth Design complete | Checksum: 442c7cde
+Synth Design complete | Checksum: cdc045ea
 INFO: [Common 17-83] Releasing license: Synthesis
-358 Infos, 154 Warnings, 0 Critical Warnings and 0 Errors encountered.
+354 Infos, 250 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:31 ; elapsed = 00:02:49 . Memory (MB): peak = 2634.734 ; gain = 2036.578
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 2634.734 ; gain = 0.000
+synth_design: Time (s): cpu = 00:03:09 ; elapsed = 00:03:17 . Memory (MB): peak = 2683.031 ; gain = 2084.383
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 2683.031 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.runs/synth_1/Test_Top.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file Test_Top_utilization_synth.rpt -pb Test_Top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Apr 25 16:22:30 2026...
+INFO: [Common 17-206] Exiting Vivado at Mon Apr 27 22:37:28 2026...

@@ -1035,7 +1035,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:92d9d4ad</spirit:value>
+            <spirit:value>9:de09447f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1050,11 +1050,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Apr 25 05:27:07 UTC 2026</spirit:value>
+            <spirit:value>Tue Apr 28 08:44:37 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:92d9d4ad</spirit:value>
+            <spirit:value>9:de09447f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1068,11 +1068,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Apr 25 05:27:08 UTC 2026</spirit:value>
+            <spirit:value>Tue Apr 28 08:44:38 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:92d9d4ad</spirit:value>
+            <spirit:value>9:de09447f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1083,7 +1083,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:92d9d4ad</spirit:value>
+            <spirit:value>9:de09447f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1098,11 +1098,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Apr 25 05:27:06 UTC 2026</spirit:value>
+            <spirit:value>Tue Apr 28 08:44:34 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:92d9d4ad</spirit:value>
+            <spirit:value>9:de09447f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1116,11 +1116,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Apr 25 05:27:08 UTC 2026</spirit:value>
+            <spirit:value>Tue Apr 28 08:44:38 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:92d9d4ad</spirit:value>
+            <spirit:value>9:de09447f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1145,11 +1145,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Apr 25 05:27:07 UTC 2026</spirit:value>
+            <spirit:value>Tue Apr 28 08:44:35 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:8e36834e</spirit:value>
+            <spirit:value>9:d1c1a29a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1165,11 +1165,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Apr 25 05:27:07 UTC 2026</spirit:value>
+            <spirit:value>Tue Apr 28 08:44:35 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:8e36834e</spirit:value>
+            <spirit:value>9:d1c1a29a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1194,11 +1194,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Apr 25 05:27:07 UTC 2026</spirit:value>
+            <spirit:value>Tue Apr 28 08:44:35 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:92d9d4ad</spirit:value>
+            <spirit:value>9:de09447f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1214,11 +1214,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Apr 25 05:27:07 UTC 2026</spirit:value>
+            <spirit:value>Tue Apr 28 08:44:35 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:92d9d4ad</spirit:value>
+            <spirit:value>9:de09447f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1234,11 +1234,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Apr 25 05:27:07 UTC 2026</spirit:value>
+            <spirit:value>Tue Apr 28 08:44:37 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:92d9d4ad</spirit:value>
+            <spirit:value>9:de09447f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1887,7 +1887,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_COEF_FILE_LINES</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_COEF_FILE_LINES">512</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_COEF_FILE_LINES">804</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_DATA_COEFFICIENT_TYPE</spirit:name>
@@ -1919,7 +1919,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_NUM_TAPS</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_NUM_TAPS">301</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_NUM_TAPS">801</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_NUM_CHANNELS</spirit:name>
@@ -1951,11 +1951,11 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="string">
         <spirit:name>C_COL_CONFIG</spirit:name>
-        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_COL_CONFIG">1</spirit:value>
+        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_COL_CONFIG">20,20,60,60,41</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_OPTIMIZATION</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OPTIMIZATION">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OPTIMIZATION">2046</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="string">
         <spirit:name>C_DATA_PATH_WIDTHS</spirit:name>
@@ -2003,19 +2003,19 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="string">
         <spirit:name>C_ACCUM_PATH_WIDTHS</spirit:name>
-        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_ACCUM_PATH_WIDTHS">37</spirit:value>
+        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_ACCUM_PATH_WIDTHS">38</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_OUTPUT_WIDTH</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OUTPUT_WIDTH">37</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OUTPUT_WIDTH">38</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="string">
         <spirit:name>C_OUTPUT_PATH_WIDTHS</spirit:name>
-        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OUTPUT_PATH_WIDTHS">37</spirit:value>
+        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OUTPUT_PATH_WIDTHS">38</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="string">
         <spirit:name>C_ACCUM_OP_PATH_WIDTHS</spirit:name>
-        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_ACCUM_OP_PATH_WIDTHS">37</spirit:value>
+        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_ACCUM_OP_PATH_WIDTHS">38</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="string">
         <spirit:name>C_EXT_MULT_CNFG</spirit:name>
@@ -2031,7 +2031,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_NUM_MADDS</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_NUM_MADDS">1</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_NUM_MADDS">201</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="string">
         <spirit:name>C_OPT_MADDS</spirit:name>
@@ -2039,23 +2039,23 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_OVERSAMPLING_RATE</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OVERSAMPLING_RATE">151</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OVERSAMPLING_RATE">2</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_INPUT_RATE</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_INPUT_RATE">250</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_INPUT_RATE">2</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_OUTPUT_RATE</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OUTPUT_RATE">250</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OUTPUT_RATE">2</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_DATA_MEMTYPE</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_DATA_MEMTYPE">1</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_DATA_MEMTYPE">2</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_COEF_MEMTYPE</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_COEF_MEMTYPE">1</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_COEF_MEMTYPE">2</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_IPBUFF_MEMTYPE</spirit:name>
@@ -2075,7 +2075,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_DATA_MEM_PACKING</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_DATA_MEM_PACKING">1</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_DATA_MEM_PACKING">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_COEF_MEM_PACKING</spirit:name>
@@ -2087,7 +2087,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_LATENCY</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_LATENCY">164</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_LATENCY">88</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_HAS_ARESETn</spirit:name>
@@ -2514,7 +2514,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Coefficient_File</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Coefficient_File" spirit:order="5">../../../../../../../Desktop/FIR1.coe</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Coefficient_File" spirit:order="5">../../../../../../../Desktop/20000G_2M_800_HMwindow.coe</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Coefficient_Sets</spirit:name>
@@ -2566,7 +2566,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>RateSpecification</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.RateSpecification" spirit:choiceRef="choice_pairs_2b265cc8" spirit:order="18">Frequency_Specification</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.RateSpecification" spirit:choiceRef="choice_pairs_2b265cc8" spirit:order="18">Input_Sample_Period</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>HardwareOversamplingRate</spirit:name>
@@ -2574,15 +2574,15 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SamplePeriod</spirit:name>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.SamplePeriod" spirit:order="20" spirit:minimum="1" spirit:maximum="1e+07">1</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.SamplePeriod" spirit:order="20" spirit:minimum="0.00390625" spirit:maximum="1e+07">2</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Sample_Frequency</spirit:name>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.Sample_Frequency" spirit:order="21" spirit:minimum="1e-06" spirit:maximum="189952">0.2</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.Sample_Frequency" spirit:order="21" spirit:minimum="1e-06" spirit:maximum="189952">1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Clock_Frequency</spirit:name>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.Clock_Frequency" spirit:order="22" spirit:minimum="0.00078125" spirit:maximum="742">50</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.Clock_Frequency" spirit:order="22" spirit:minimum="0.00390625" spirit:maximum="742">50</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Coefficient_Sign</spirit:name>
@@ -2594,7 +2594,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Coefficient_Width</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Coefficient_Width" spirit:order="25" spirit:minimum="15" spirit:maximum="49" spirit:rangeType="long">16</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Coefficient_Width" spirit:order="25" spirit:minimum="11" spirit:maximum="49" spirit:rangeType="long">16</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>BestPrecision</spirit:name>
@@ -2626,7 +2626,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Output_Width</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Output_Width" spirit:order="33" spirit:minimum="1" spirit:maximum="37" spirit:rangeType="long">37</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Output_Width" spirit:order="33" spirit:minimum="1" spirit:maximum="38" spirit:rangeType="long">38</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Filter_Architecture</spirit:name>
@@ -2634,47 +2634,47 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Optimization_Goal</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Optimization_Goal" spirit:choiceRef="choice_list_a63914d2" spirit:order="35">Area</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Optimization_Goal" spirit:choiceRef="choice_list_a63914d2" spirit:order="35">Speed</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Optimization_Selection</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Optimization_Selection" spirit:choiceRef="choice_pairs_2074757d" spirit:order="35.3">None</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Optimization_Selection" spirit:choiceRef="choice_pairs_2074757d" spirit:order="35.3">All</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Data_Path_Fanout</spirit:name>
-      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.Data_Path_Fanout" spirit:order="35.302">false</spirit:value>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.Data_Path_Fanout" spirit:order="35.302">true</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Pre_Adder_Pipeline</spirit:name>
-      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.Pre_Adder_Pipeline" spirit:order="35.303">false</spirit:value>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.Pre_Adder_Pipeline" spirit:order="35.303">true</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Coefficient_Fanout</spirit:name>
-      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.Coefficient_Fanout" spirit:order="35.304">false</spirit:value>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.Coefficient_Fanout" spirit:order="35.304">true</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Control_Path_Fanout</spirit:name>
-      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.Control_Path_Fanout" spirit:order="35.305">false</spirit:value>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.Control_Path_Fanout" spirit:order="35.305">true</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Control_Column_Fanout</spirit:name>
-      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.Control_Column_Fanout" spirit:order="35.306">false</spirit:value>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.Control_Column_Fanout" spirit:order="35.306">true</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Control_Broadcast_Fanout</spirit:name>
-      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.Control_Broadcast_Fanout" spirit:order="35.307">false</spirit:value>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.Control_Broadcast_Fanout" spirit:order="35.307">true</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Control_LUT_Pipeline</spirit:name>
-      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.Control_LUT_Pipeline" spirit:order="35.308">false</spirit:value>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.Control_LUT_Pipeline" spirit:order="35.308">true</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>No_BRAM_Read_First_Mode</spirit:name>
-      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.No_BRAM_Read_First_Mode" spirit:order="35.309">false</spirit:value>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.No_BRAM_Read_First_Mode" spirit:order="35.309">true</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Optimal_Column_Lengths</spirit:name>
-      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.Optimal_Column_Lengths" spirit:order="35.31">false</spirit:value>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.Optimal_Column_Lengths" spirit:order="35.31">true</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Data_Path_Broadcast</spirit:name>
@@ -2690,11 +2690,11 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Other</spirit:name>
-      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.Other" spirit:order="35.314">false</spirit:value>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.Other" spirit:order="35.314">true</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Optimization_List</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Optimization_List" spirit:order="35.6">None</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Optimization_List" spirit:order="35.6">Data_Path_Fanout,Pre-Adder_Pipeline,Coefficient_Fanout,Control_Path_Fanout,Control_Column_Fanout,Control_Broadcast_Fanout,Control_LUT_Pipeline,No_BRAM_Read_First_Mode,Optimal_Column_Lengths,Other</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Data_Buffer_Type</spirit:name>
@@ -2726,7 +2726,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>ColumnConfig</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.ColumnConfig" spirit:order="43">1</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.ColumnConfig" spirit:order="43">20,20,60,60,41</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DATA_Has_TLAST</spirit:name>
@@ -2859,6 +2859,7 @@
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXIS_RELOAD.TUSER_WIDTH" xilinx:valueSource="constant"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Clock_Frequency" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.CoefficientSource" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Coefficient_Fanout" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Coefficient_File" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Coefficient_Fractional_Bits" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Coefficient_Reload" xilinx:valueSource="user"/>
@@ -2866,14 +2867,33 @@
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Coefficient_Sign" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Coefficient_Structure" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Coefficient_Width" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.ColumnConfig" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Control_Broadcast_Fanout" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Control_Column_Fanout" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Control_LUT_Pipeline" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Control_Path_Fanout" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Data_Fractional_Bits" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Data_Path_Broadcast" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Data_Path_Fanout" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Data_Sign" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Data_Width" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Disable_Half_Band_Centre_Tap" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Filter_Architecture" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Has_ARESETn" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.No_BRAM_Read_First_Mode" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.No_SRL_Attributes" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Number_Paths" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Optimal_Column_Lengths" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Optimization_Goal" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Optimization_List" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Optimization_Selection" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Other" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Output_Rounding_Mode" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Output_Width" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Pre_Adder_Pipeline" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Quantization" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.RateSpecification" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SamplePeriod" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Sample_Frequency" xilinx:valueSource="user"/>
       </xilinx:configElementInfos>
     </xilinx:coreExtensions>

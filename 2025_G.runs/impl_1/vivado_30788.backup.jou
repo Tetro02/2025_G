@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Sat Apr 25 13:30:44 2026
-# Process ID         : 30000
+# Start of session at: Mon Apr 27 22:37:46 2026
+# Process ID         : 30788
 # Current directory  : C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.runs/impl_1
 # Command line       : vivado.exe -log Test_Top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source Test_Top.tcl -notrace
 # Log file           : C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.runs/impl_1/Test_Top.vdi
@@ -13,12 +13,12 @@
 # Platform           : Windows Server 2016 or Windows 10
 # Operating System   : 22631
 # Processor Detail   : AMD Ryzen 9 7940HX with Radeon Graphics        
-# CPU Frequency      : 2395 MHz
+# CPU Frequency      : 2396 MHz
 # CPU Physical cores : 16
 # CPU Logical cores  : 32
 # Host memory        : 16337 MB
-# Swap memory        : 21878 MB
-# Total Virtual      : 38216 MB
-# Available Virtual  : 11956 MB
+# Swap memory        : 21474 MB
+# Total Virtual      : 37812 MB
+# Available Virtual  : 15079 MB
 #-----------------------------------------------------------
 source Test_Top.tcl -notrace

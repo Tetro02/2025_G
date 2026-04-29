@@ -56,10 +56,7 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param tcl.notrace 1
 set_param general.usePosixSpawnForFork 1
-set_param chipscope.maxJobs 8
-set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg484-1
 
@@ -80,6 +77,7 @@ OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 add_files C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.srcs/sources_1/imports/ROM_mif/wave_rom.coe
 add_files C:/Users/Tetro/Desktop/FIR1.coe
+add_files C:/Users/Tetro/Desktop/G.coe
 read_verilog -library xil_defaultlib {
   C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.srcs/sources_1/new/bram_ctrl_my.v
   C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.srcs/sources_1/new/bram_fir_reload.v

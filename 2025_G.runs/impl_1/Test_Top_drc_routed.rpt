@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Sat Apr 25 16:25:06 2026
+| Date         : Mon Apr 27 22:39:21 2026
 | Host         : LAPTOP-OJ78FPOQ running 64-bit major release  (build 9200)
 | Command      : report_drc -file Test_Top_drc_routed.rpt -pb Test_Top_drc_routed.pb -rpx Test_Top_drc_routed.rpx
 | Design       : Test_Top
@@ -24,14 +24,16 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max checks: <unlimited>
-             Checks found: 37
-+-----------+----------+----------------------------+--------+
-| Rule      | Severity | Description                | Checks |
-+-----------+----------+----------------------------+--------+
-| CHECK-3   | Warning  | Report rule limit reached  | 1      |
-| RBOR-1    | Warning  | RAMB output registers      | 16     |
-| REQP-1839 | Warning  | RAMB36 async control check | 20     |
-+-----------+----------+----------------------------+--------+
+             Checks found: 39
++-----------+----------+-------------------------------------+--------+
+| Rule      | Severity | Description                         | Checks |
++-----------+----------+-------------------------------------+--------+
+| CHECK-3   | Warning  | Report rule limit reached           | 1      |
+| RBOR-1    | Warning  | RAMB output registers               | 16     |
+| REQP-1839 | Warning  | RAMB36 async control check          | 20     |
+| REQP-28   | Advisory | enum_USE_MULT_NONE_connects_CEM_GND | 1      |
+| REQP-30   | Advisory | enum_MREG_0_connects_CEM_GND        | 1      |
++-----------+----------+-------------------------------------+--------+
 
 2. REPORT DETAILS
 -----------------
@@ -157,7 +159,7 @@ Related violations: <none>
 
 REQP-1839#8 Warning
 RAMB36 async control check  
-The RAMB36E1 design_1_wrapper_inst/design_1_i/blk_mem_gen_0/U0/inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.CASCADED_PRIM36.ram_B has an input control pin design_1_wrapper_inst/design_1_i/blk_mem_gen_0/U0/inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.CASCADED_PRIM36.ram_B/ADDRBWRADDR[3] (net: design_1_wrapper_inst/design_1_i/blk_mem_gen_0/U0/inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/addrb[3]) which is driven by a register (bram_read_fir_reload_inst/addra_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 design_1_wrapper_inst/design_1_i/blk_mem_gen_0/U0/inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.CASCADED_PRIM36.ram_B has an input control pin design_1_wrapper_inst/design_1_i/blk_mem_gen_0/U0/inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.CASCADED_PRIM36.ram_B/ADDRBWRADDR[3] (net: design_1_wrapper_inst/design_1_i/blk_mem_gen_0/U0/inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/addrb[3]) which is driven by a register (adc_bram_sample_inst/addrb_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#9 Warning
@@ -218,6 +220,16 @@ Related violations: <none>
 REQP-1839#20 Warning
 RAMB36 async control check  
 The RAMB36E1 design_1_wrapper_inst/design_1_i/blk_mem_gen_0/U0/inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.CASCADED_PRIM36.ram_B has an input control pin design_1_wrapper_inst/design_1_i/blk_mem_gen_0/U0/inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.CASCADED_PRIM36.ram_B/ADDRBWRADDR[9] (net: design_1_wrapper_inst/design_1_i/blk_mem_gen_0/U0/inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/addrb[9]) which is driven by a register (bram_read_fir_reload_inst/addra_reg[11]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-28#1 Advisory
+enum_USE_MULT_NONE_connects_CEM_GND  
+fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_madd_array_and_accum.g_accum.i_accum/i_add_accum/g_dsp.g_dsp48e1.i_dsp48e1: When the DSP48E1 USE_MULT attribute is set to NONE, the CEM input pin should be tied to GND to save power.
+Related violations: <none>
+
+REQP-30#1 Advisory
+enum_MREG_0_connects_CEM_GND  
+fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_madd_array_and_accum.g_accum.i_accum/i_add_accum/g_dsp.g_dsp48e1.i_dsp48e1: When the DSP48E1 MREG attribute is set to 0, the CEM input pin should be tied to GND to save power.
 Related violations: <none>
 
 

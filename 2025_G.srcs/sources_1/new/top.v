@@ -72,7 +72,7 @@ module Test_Top  (
   wire       rst_n_fir;            // FIR模式复位信号（未同步）
   wire       rst_n_fir_synced;     // 同步后的复位信号
   // 29bit有符号数偏移量 2^28，用于29bit→8bit转换
-  localparam signed OFFSET_28 = 29'sd268435456;
+  localparam signed OFFSET_28 = (28'd1 << 27);
   // 29bit有符号数最大值和最小值，用于饱和限幅（修复问题9）
   localparam signed DAC_DATA_MIN = -29'sd268435455; // -2^28
   localparam signed DAC_DATA_MAX =  29'sd268435455; //  2^28
@@ -185,14 +185,14 @@ assign fir_dac_mode = !fir_coef_reload_mode && !ctrl_start_end_flag[0] && !ctrl_
   // 饱和限幅后的38bit数据
   reg signed [37:0] dac_data_sat;
 
-  // ===================== 200kHz 采样分频（模式切换时同步复位） =====================
-  localparam DECIMATE_FIR = 250;
+  // ===================== 2MHz 采样分频（模式切换时同步复位） =====================
+  localparam DECIMATE_FIR = 25;
   localparam START_DELAY = 10; // 复位后延迟10个时钟周期再采样
   reg [7:0] dec_cnt_fir;
   reg [3:0] start_delay_cnt;
   reg        mode_prev; // 记录上一时刻的模式状态
   wire       mode_switch; // 模式切换标志
-  wire       sample_en_200k;  // 200kHz 全链路采样同步基准信号
+  wire       sample_en_1m;  // 1MHz 全链路采样同步基准信号
 
   // 检测模式切换（上升沿）
   always @(posedge FCLK_CLK0) begin
@@ -219,7 +219,7 @@ assign fir_dac_mode = !fir_coef_reload_mode && !ctrl_start_end_flag[0] && !ctrl_
       else
           dec_cnt_fir <= dec_cnt_fir + 1'd1;
   end
-  assign sample_en_200k = (start_delay_cnt >= START_DELAY) && (dec_cnt_fir == 0);
+  assign sample_en_1m = (start_delay_cnt >= START_DELAY) && (dec_cnt_fir == 0);
 
   // ===================== 饱和限幅逻辑 =====================
   always @(*) begin
@@ -267,7 +267,7 @@ assign fir_dac_mode = !fir_coef_reload_mode && !ctrl_start_end_flag[0] && !ctrl_
               2'b10: begin // FIR工作模式
                   // 仅在 dac_valid 上升沿时更新数据
                   if(dac_valid_pulse) begin
-                      dac_data_out_reg <= (dac_data_sat + OFFSET_28) >> 21;
+                      dac_data_out_reg <= (dac_data_sat + OFFSET_28) >> 20;
                   end
                   else begin
                       dac_data_out_reg <= dac_data_out_reg; // 保持不变，避免毛刺
@@ -325,9 +325,10 @@ assign fir_dac_mode = !fir_coef_reload_mode && !ctrl_start_end_flag[0] && !ctrl_
     .aclk           (FCLK_CLK0),                  // 固定50MHz时钟
     .aresetn        (rst_n_fir_synced),           // 修复：使用同步后的复位
     
-    // FIR使能 + 200kHz采样脉冲 双条件，保证采样率严格匹配
+    // FIR使能 + 1MHz采样脉冲 双条件，保证采样率严格匹配
     .adc_data       (adc_data_in_1),              
-    .adc_valid      (fir_dac_mode && sample_en_200k), 
+    .adc_valid      (fir_dac_mode), // FIR模式下，且采样使能时有效
+    // .adc_valid      (fir_dac_mode && sample_en_1m), // FIR模式下，且采样使能时有效
     
     .dac_data       (dac_data),    // 38bit滤波后数据
     .dac_valid      (dac_valid),   // 输出数据有效
