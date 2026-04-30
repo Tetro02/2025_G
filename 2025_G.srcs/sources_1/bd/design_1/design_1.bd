@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x14AAF8360B08A743",
+      "boundary_crc": "0x5C3B96A901BD3B7E",
       "device": "xc7z020clg484-1",
       "gen_directory": "../../../../2025_G.gen/sources_1/bd/design_1",
       "name": "design_1",
@@ -327,6 +327,16 @@
         }
       },
       "slv_reg0_o_0": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "slv_reg1_o_0": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "slv_reg2_o_0": {
         "direction": "O",
         "left": "31",
         "right": "0"
@@ -1803,6 +1813,18 @@
         "ports": [
           "AXI_Lite_PS_To_PL_PL_0/slv_reg0_o",
           "slv_reg0_o_0"
+        ]
+      },
+      "AXI_Lite_PS_To_PL_PL_0_slv_reg1_o": {
+        "ports": [
+          "AXI_Lite_PS_To_PL_PL_0/slv_reg1_o",
+          "slv_reg1_o_0"
+        ]
+      },
+      "AXI_Lite_PS_To_PL_PL_0_slv_reg2_o": {
+        "ports": [
+          "AXI_Lite_PS_To_PL_PL_0/slv_reg2_o",
+          "slv_reg2_o_0"
         ]
       },
       "IRQ_F2P_0_1": {

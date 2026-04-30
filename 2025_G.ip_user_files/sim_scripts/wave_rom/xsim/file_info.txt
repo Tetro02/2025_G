@@ -1,0 +1,2 @@
+wave_rom.v,verilog,xil_defaultlib,../../../../2025_G.gen/sources_1/ip/wave_rom/sim/wave_rom.v,incdir="D:/Tetro/Tools/Vivado/2025.2/Vivado/data/rsb/busdef"
+glbl.v,Verilog,xil_defaultlib,glbl.v

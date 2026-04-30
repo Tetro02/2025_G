@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Mon Apr 27 22:39:25 2026
+| Date         : Thu Apr 30 15:03:00 2026
 | Host         : LAPTOP-OJ78FPOQ running 64-bit major release  (build 9200)
 | Command      : report_methodology -file Test_Top_methodology_drc_routed.rpt -pb Test_Top_methodology_drc_routed.pb -rpx Test_Top_methodology_drc_routed.rpx
 | Design       : Test_Top
@@ -23,13 +23,14 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max checks: <unlimited>
-             Checks found: 37
-+-----------+----------+-------------------------------+--------+
-| Rule      | Severity | Description                   | Checks |
-+-----------+----------+-------------------------------+--------+
-| LUTAR-1   | Warning  | LUT drives async reset alert  | 2      |
-| TIMING-18 | Warning  | Missing input or output delay | 35     |
-+-----------+----------+-------------------------------+--------+
+             Checks found: 39
++-----------+----------+---------------------------------------------+--------+
+| Rule      | Severity | Description                                 | Checks |
++-----------+----------+---------------------------------------------+--------+
+| LUTAR-1   | Warning  | LUT drives async reset alert                | 3      |
+| TIMING-18 | Warning  | Missing input or output delay               | 35     |
+| ULMTCS-1  | Warning  | Control Sets use limits recommend reduction | 1      |
++-----------+----------+---------------------------------------------+--------+
 
 2. REPORT DETAILS
 -----------------
@@ -54,6 +55,18 @@ Related violations: <none>
 LUTAR-1#2 Warning
 LUT drives async reset alert  
 LUT cell design_1_wrapper_inst/rst_sync[1]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) rst_sync_reg[0]/CLR, rst_sync_reg[1]/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#3 Warning
+LUT drives async reset alert  
+LUT cell design_1_wrapper_inst/wave_mult[15]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_dds/phase_acc_reg[3]/CLR, u_dds/phase_acc_reg[4]/CLR,
+u_dds/phase_acc_reg[5]/CLR, u_dds/phase_acc_reg[6]/CLR,
+u_dds/phase_acc_reg[7]/CLR, u_dds/phase_acc_reg[8]/CLR,
+u_dds/phase_acc_reg[9]/CLR, u_dds/wave_mult_reg[10]/CLR,
+u_dds/wave_mult_reg[11]/CLR, u_dds/wave_mult_reg[12]/CLR,
+u_dds/wave_mult_reg[13]/CLR, u_dds/wave_mult_reg[14]/CLR,
+u_dds/wave_mult_reg[15]/CLR, u_dds/wave_mult_reg[8]/CLR,
+u_dds/wave_mult_reg[9]/CLR (the first 15 of 31 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 TIMING-18#1 Warning
@@ -229,6 +242,11 @@ Related violations: <none>
 TIMING-18#35 Warning
 Missing input or output delay  
 An output delay is missing on dac_data_out[7] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+Related violations: <none>
+
+ULMTCS-1#1 Warning
+Control Sets use limits recommend reduction  
+This design uses 1679 control sets (vs. available limit of 13300, determined by 1 control set per CLB). This exceeds the control set use guideline of 7.5 percent. This is at a level where reduction is RECOMMENDED (see UG949). Use report_control_sets to get more details.
 Related violations: <none>
 
 

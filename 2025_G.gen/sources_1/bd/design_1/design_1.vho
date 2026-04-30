@@ -85,7 +85,9 @@ COMPONENT design_1
     enb_0 : IN STD_LOGIC;
     web_0 : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
     IRQ_F2P_0 : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    slv_reg0_o_0 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+    slv_reg0_o_0 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+    slv_reg1_o_0 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+    slv_reg2_o_0 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
   );
 END COMPONENT;
 -- COMP_TAG_END ------  End cut for COMPONENT Declaration  ------
@@ -128,7 +130,9 @@ your_instance_name : design_1
     enb_0 => enb_0,
     web_0 => web_0,
     IRQ_F2P_0 => IRQ_F2P_0,
-    slv_reg0_o_0 => slv_reg0_o_0
+    slv_reg0_o_0 => slv_reg0_o_0,
+    slv_reg1_o_0 => slv_reg1_o_0,
+    slv_reg2_o_0 => slv_reg2_o_0
   );
 -- INST_TAG_END ------  End cut for INSTANTIATION Template  ------
 

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Apr 16 17:18:13 2026" VIVADOVERSION="2025.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Apr 30 12:57:37 2026" VIVADOVERSION="2025.2">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="design_1" PACKAGE="clg484" SPEEDGRADE="-1"/>
 
@@ -162,6 +162,16 @@
     <PORT DIR="O" LEFT="31" NAME="slv_reg0_o_0" RIGHT="0" SIGIS="undef" SIGNAME="AXI_Lite_PS_To_PL_PL_0_slv_reg0_o">
       <CONNECTIONS>
         <CONNECTION INSTANCE="AXI_Lite_PS_To_PL_PL_0" PORT="slv_reg0_o"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="slv_reg1_o_0" RIGHT="0" SIGIS="undef" SIGNAME="AXI_Lite_PS_To_PL_PL_0_slv_reg1_o">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="AXI_Lite_PS_To_PL_PL_0" PORT="slv_reg1_o"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="slv_reg2_o_0" RIGHT="0" SIGIS="undef" SIGNAME="AXI_Lite_PS_To_PL_PL_0_slv_reg2_o">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="AXI_Lite_PS_To_PL_PL_0" PORT="slv_reg2_o"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" LEFT="3" NAME="web_0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_web_0">
@@ -349,8 +359,16 @@
             <CONNECTION INSTANCE="External_Ports" PORT="slv_reg0_o_0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="slv_reg1_o" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="31" NAME="slv_reg2_o" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="31" NAME="slv_reg1_o" RIGHT="0" SIGIS="undef" SIGNAME="AXI_Lite_PS_To_PL_PL_0_slv_reg1_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="slv_reg1_o_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="slv_reg2_o" RIGHT="0" SIGIS="undef" SIGNAME="AXI_Lite_PS_To_PL_PL_0_slv_reg2_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="slv_reg2_o_0"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" LEFT="31" NAME="slv_reg3_o" RIGHT="0" SIGIS="undef"/>
       </PORTS>
       <BUSINTERFACES>
@@ -1883,7 +1901,7 @@
             <CONNECTION INSTANCE="axi_bram_ctrl_0" PORT="bram_clk_a"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clkb" SIGIS="clk" SIGNAME="External_Ports_clkb_0">
+        <PORT DIR="I" NAME="clkb" SIGIS="clk" SIGNAME="External_Ports_clkb_0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="clkb_0"/>
           </CONNECTIONS>
@@ -1923,7 +1941,7 @@
             <CONNECTION INSTANCE="axi_bram_ctrl_0" PORT="bram_rst_a"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="rstb" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rstb_0">
+        <PORT DIR="I" NAME="rstb" SIGIS="rst" SIGNAME="External_Ports_rstb_0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="rstb_0"/>
           </CONNECTIONS>

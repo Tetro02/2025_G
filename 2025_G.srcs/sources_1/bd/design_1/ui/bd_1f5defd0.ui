@@ -1,50 +1,54 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"1.08819",
-   "Default View_TopLeft":"396,160",
+   "Default View_ScaleFactor":"1.16629",
+   "Default View_TopLeft":"473,-449",
    "ExpandedHierarchyInLayout":"",
-   "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 threadsafe
+   "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 6 -x 1590 -y 50 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -lvl 6 -x 1590 -y 80 -defaultsOSRD
-preplace port UART_0_1 -pg 1 -lvl 6 -x 1590 -y 110 -defaultsOSRD
-preplace port port-id_FCLK_CLK0_0 -pg 1 -lvl 6 -x 1590 -y 610 -defaultsOSRD
+preplace port DDR -pg 1 -lvl 6 -x 1610 -y 50 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 6 -x 1610 -y 80 -defaultsOSRD
+preplace port UART_0_1 -pg 1 -lvl 6 -x 1610 -y 110 -defaultsOSRD
+preplace port port-id_FCLK_CLK0_0 -pg 1 -lvl 6 -x 1610 -y 610 -defaultsOSRD
 preplace port port-id_clkb_0 -pg 1 -lvl 0 -x -150 -y 440 -defaultsOSRD
 preplace port port-id_rstb_0 -pg 1 -lvl 0 -x -150 -y 530 -defaultsOSRD
 preplace port port-id_enb_0 -pg 1 -lvl 0 -x -150 -y 500 -defaultsOSRD
 preplace portBus dinb_0 -pg 1 -lvl 0 -x -150 -y 470 -defaultsOSRD
 preplace portBus addrb_0 -pg 1 -lvl 0 -x -150 -y 410 -defaultsOSRD
-preplace portBus doutb_0 -pg 1 -lvl 6 -x 1590 -y 640 -defaultsOSRD
+preplace portBus doutb_0 -pg 1 -lvl 6 -x 1610 -y 640 -defaultsOSRD
 preplace portBus web_0 -pg 1 -lvl 0 -x -150 -y 560 -defaultsOSRD
 preplace portBus IRQ_F2P_0 -pg 1 -lvl 0 -x -150 -y 120 -defaultsOSRD
-preplace portBus slv_reg0_o_0 -pg 1 -lvl 6 -x 1590 -y -180 -defaultsOSRD
+preplace portBus slv_reg0_o_0 -pg 1 -lvl 6 -x 1610 -y -180 -defaultsOSRD
+preplace portBus slv_reg1_o_0 -pg 1 -lvl 6 -x 1610 -y -220 -defaultsOSRD
+preplace portBus slv_reg2_o_0 -pg 1 -lvl 6 -x 1610 -y -90 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 2 -x 540 -y -60 -defaultsOSRD
-preplace inst blk_mem_gen_0 -pg 1 -lvl 5 -x 1460 -y 470 -defaultsOSRD
+preplace inst blk_mem_gen_0 -pg 1 -lvl 5 -x 1480 -y 470 -defaultsOSRD
 preplace inst axi_smc -pg 1 -lvl 3 -x 930 -y 270 -defaultsOSRD
 preplace inst rst_ps7_0_50M -pg 1 -lvl 2 -x 540 -y 160 -defaultsOSRD
-preplace inst axi_bram_ctrl_0 -pg 1 -lvl 4 -x 1220 -y 350 -defaultsOSRD
+preplace inst axi_bram_ctrl_0 -pg 1 -lvl 4 -x 1230 -y 350 -defaultsOSRD
 preplace inst AXI_Lite_PS_To_PL_PL_0 -pg 1 -lvl 1 -x 30 -y -100 -defaultsOSRD
-preplace netloc AXI_Lite_PS_To_PL_PL_0_slv_reg0_o 1 1 5 170J -180 NJ -180 NJ -180 NJ -180 NJ
-preplace netloc IRQ_F2P_0_1 1 0 2 -130J 40 170
-preplace netloc addrb_0_1 1 0 5 NJ 410 170 430 NJ 430 NJ 430 NJ
-preplace netloc blk_mem_gen_0_doutb 1 4 2 1360 640 NJ
-preplace netloc clkb_0_1 1 0 5 NJ 440 190 450 NJ 450 NJ 450 NJ
+preplace netloc AXI_Lite_PS_To_PL_PL_0_slv_reg0_o 1 1 5 190J -180 NJ -180 NJ -180 NJ -180 NJ
+preplace netloc IRQ_F2P_0_1 1 0 2 -130J -210 180
+preplace netloc addrb_0_1 1 0 5 NJ 410 N 410 NJ 410 1100J 270 1370J
+preplace netloc blk_mem_gen_0_doutb 1 4 2 1370 640 NJ
+preplace netloc clkb_0_1 1 0 5 NJ 440 170 450 NJ 450 NJ 450 NJ
 preplace netloc dinb_0_1 1 0 5 NJ 470 N 470 NJ 470 NJ 470 NJ
-preplace netloc enb_0_1 1 0 5 NJ 500 170 510 NJ 510 NJ 510 NJ
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 6 -120 -10 350 -170 760 350 1090 270 NJ 270 1560J
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 2 360 60 720
-preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 0 4 -110 50 N 50 730 370 NJ
+preplace netloc enb_0_1 1 0 5 NJ 500 220 510 NJ 510 NJ 510 NJ
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 6 -110 -190 340 -170 770 350 1090 260 NJ 260 1590J
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 2 350 60 730
+preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 0 4 -110 50 N 50 740 370 NJ
 preplace netloc rstb_0_1 1 0 5 NJ 530 N 530 NJ 530 NJ 530 NJ
-preplace netloc web_0_1 1 0 5 NJ 560 190 550 NJ 550 NJ 550 NJ
-preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 4 1 1350 350n
-preplace netloc axi_smc_M00_AXI 1 3 1 1070 260n
-preplace netloc axi_smc_M01_AXI 1 0 4 -110 -190 NJ -190 NJ -190 1060
-preplace netloc processing_system7_0_DDR 1 2 4 780J 50 NJ 50 NJ 50 NJ
-preplace netloc processing_system7_0_FIXED_IO 1 2 4 770J 80 NJ 80 NJ 80 NJ
-preplace netloc processing_system7_0_M_AXI_GP0 1 2 1 740 -50n
-preplace netloc processing_system7_0_UART_0 1 2 4 750J 110 NJ 110 NJ 110 NJ
-levelinfo -pg 1 -150 30 540 930 1220 1460 1590
-pagesize -pg 1 -db -bbox -sgen -300 -210 1770 660
+preplace netloc web_0_1 1 0 5 NJ 560 170 550 NJ 550 NJ 550 NJ
+preplace netloc AXI_Lite_PS_To_PL_PL_0_slv_reg1_o 1 1 5 170J -220 NJ -220 NJ -220 NJ -220 NJ
+preplace netloc AXI_Lite_PS_To_PL_PL_0_slv_reg2_o 1 1 5 200J -210 NJ -210 NJ -210 NJ -210 1590J
+preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 4 1 1360 350n
+preplace netloc axi_smc_M00_AXI 1 3 1 1080 260n
+preplace netloc axi_smc_M01_AXI 1 0 4 -120 -200 NJ -200 NJ -200 1070
+preplace netloc processing_system7_0_DDR 1 2 4 790J 50 NJ 50 NJ 50 NJ
+preplace netloc processing_system7_0_FIXED_IO 1 2 4 780J 80 NJ 80 NJ 80 NJ
+preplace netloc processing_system7_0_M_AXI_GP0 1 2 1 750 -50n
+preplace netloc processing_system7_0_UART_0 1 2 4 760J 110 NJ 110 NJ 110 NJ
+levelinfo -pg 1 -150 30 540 930 1230 1480 1610
+pagesize -pg 1 -db -bbox -sgen -300 -240 1780 660
 "
 }
 {

@@ -78,7 +78,10 @@ OPTRACE "Adding files" START { }
 add_files C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.srcs/sources_1/imports/ROM_mif/wave_rom.coe
 add_files C:/Users/Tetro/Desktop/FIR1.coe
 add_files C:/Users/Tetro/Desktop/G.coe
+add_files C:/Users/Tetro/Desktop/20000G_2M_800_HMwindow.coe
+add_files C:/Users/Tetro/Documents/FPGA_Project/2025_G/wave_rom.coe
 read_verilog -library xil_defaultlib {
+  C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.srcs/sources_1/new/DDS.v
   C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.srcs/sources_1/new/bram_ctrl_my.v
   C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.srcs/sources_1/new/bram_fir_reload.v
   C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v
@@ -116,6 +119,9 @@ set_property used_in_implementation false [get_files -all c:/Users/Tetro/Documen
 set_property used_in_implementation false [get_files -all c:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/smartconnect.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.gen/sources_1/bd/design_1/design_1_ooc.xdc]
+
+read_ip -quiet C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.srcs/sources_1/ip/wave_rom/wave_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.gen/sources_1/ip/wave_rom/wave_rom_ooc.xdc]
 
 read_ip -quiet C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.srcs/sources_1/ip/fir_compiler_0/fir_compiler_0.xci
 set_property used_in_implementation false [get_files -all c:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.gen/sources_1/ip/fir_compiler_0/constraints/fir_compiler_v7_2.xdc]

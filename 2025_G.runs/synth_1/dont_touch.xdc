@@ -114,6 +114,9 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_ax
 # IP: bd/design_1/ip/design_1_AXI_Lite_PS_To_PL_PL_0_0/design_1_AXI_Lite_PS_To_PL_PL_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_AXI_Lite_PS_To_PL_PL_0_0 || ORIG_REF_NAME==design_1_AXI_Lite_PS_To_PL_PL_0_0} -quiet] -quiet
 
+# IP: ip/wave_rom/wave_rom.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==wave_rom || ORIG_REF_NAME==wave_rom} -quiet] -quiet
+
 # IP: ip/fir_compiler_0/fir_compiler_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==fir_compiler_0 || ORIG_REF_NAME==fir_compiler_0} -quiet] -quiet
 
@@ -180,6 +183,8 @@ set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filte
 set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==design_1_rst_ps7_0_50M_0 || ORIG_REF_NAME==design_1_rst_ps7_0_50M_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
 # XDC: c:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.gen/sources_1/bd/design_1/design_1_ooc.xdc
+
+# XDC: c:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.gen/sources_1/ip/wave_rom/wave_rom_ooc.xdc
 
 # XDC: c:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.gen/sources_1/ip/fir_compiler_0/constraints/fir_compiler_v7_2.xdc
 set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==fir_compiler_0 || ORIG_REF_NAME==fir_compiler_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet

@@ -64,7 +64,10 @@ module Test_Top  (
 
   // ===================== 控制信号提前声明（修复：先声明后使用） =====================
   wire        FCLK_CLK0;          // PS输出50MHz时钟
-  wire [31:0] ctrl_start_end_flag;// PS控制总线
+  wire [31:0] ctrl_start_end_flag;// PS控制总线（slv_reg0）
+  wire [31:0] dds_ctrl_reg0;      // DDS控制寄存器0（slv_reg1）：频率字
+  wire [31:0] dds_ctrl_reg1;      // DDS控制寄存器1（slv_reg2）：相位/波形/幅度
+  wire [7:0]  dds_dac_out;        // DDS输出数据
 
   // ===================== 内部信号声明（新增，解决语法错误） =====================
   reg [7:0]  dac_data_out_reg;    // DAC数据中间寄存器
@@ -259,31 +262,25 @@ assign fir_dac_mode = !fir_coef_reload_mode && !ctrl_start_end_flag[0] && !ctrl_
   assign dac_valid_pulse = dac_valid && !dac_valid_prev; // 上升沿脉冲
 
   always @(posedge FCLK_CLK0) begin
-      if(!rst_n_fir_synced) begin
-          dac_data_out_reg <= 8'd128; // 复位默认输出DAC中点128
-      end
-      else begin
-          case({fir_dac_mode, dds_mode})
-              2'b10: begin // FIR工作模式
-                  // 仅在 dac_valid 上升沿时更新数据
-                  if(dac_valid_pulse) begin
-                      dac_data_out_reg <= (dac_data_sat + OFFSET_28) >> 20;
-                  end
-                  else begin
-                      dac_data_out_reg <= dac_data_out_reg; // 保持不变，避免毛刺
-                  end
+      case({fir_dac_mode, dds_mode})
+          2'b10: begin // FIR工作模式
+              if(!rst_n_fir_synced) begin
+                  dac_data_out_reg <= 8'd128; // FIR复位时输出中点
               end
-              2'b01: begin // DDS模式（预留）
-                  dac_data_out_reg <= 8'd0; // 这里后续接你的DDS数据
+              else if(dac_valid_pulse) begin
+                  dac_data_out_reg <= (dac_data_sat + OFFSET_28) >> 20;
               end
-              2'b00: begin // 空闲或仅ADC工作模式
-                  dac_data_out_reg <= 8'd0;
-              end
-              default: begin // 2'b11：FIR和DDS互斥，不会出现
-                  dac_data_out_reg <= 8'd128;
-              end
-          endcase
-      end
+          end
+          2'b01: begin // DDS模式
+              dac_data_out_reg <= dds_dac_out; // DDS输出数据（不受FIR复位影响）
+          end
+          2'b00: begin // 空闲或仅ADC工作模式
+              dac_data_out_reg <= 8'd0;
+          end
+          default: begin // 2'b11：FIR和DDS互斥，不会出现
+              dac_data_out_reg <= 8'd128;
+          end
+      endcase
   end
 
   // ==================================================================================
@@ -344,7 +341,24 @@ assign fir_dac_mode = !fir_coef_reload_mode && !ctrl_start_end_flag[0] && !ctrl_
   );
 
   // ==================================================================================
-  // 4. 原有BD wrapper（完全不动）
+  // 4. DDS模块（bit2控制）
+  // ==================================================================================
+  dds_10hz_2mhz #(
+      .PHASE_W  (23),
+      .ADDR_W   (10),
+      .DATA_W   (8)
+  ) u_dds (
+      .clk        (FCLK_CLK0),          // 50MHz时钟
+      .rst_n      (dds_mode),           // DDS模式使能时工作
+      .freq_word  (dds_ctrl_reg0[22:0]),// PS控制频率（slv_reg1低23位）
+      .phase_off  (dds_ctrl_reg1[9:0]), // PS控制相位（slv_reg2低10位）
+      .wave_sel   (dds_ctrl_reg1[11:10]),// PS控制波形（slv_reg2[11:10]）
+      .amplitude  (dds_ctrl_reg1[19:12]),// PS控制幅度（slv_reg2[19:12]）
+      .dac_out    (dds_dac_out)         // 输出波形
+  );
+
+  // ==================================================================================
+  // 5. BD wrapper（连接DDS寄存器）
   // ==================================================================================
   design_1_wrapper design_1_wrapper_inst
        (
@@ -372,7 +386,9 @@ assign fir_dac_mode = !fir_coef_reload_mode && !ctrl_start_end_flag[0] && !ctrl_
         .UART_0_1_rxd(UART_0_1_rxd),
         .UART_0_1_txd(UART_0_1_txd),
         .IRQ_F2P_0(end_adc_flag),         // 采样完成→PS中断
-        .slv_reg0_o_0(ctrl_start_end_flag),// PS控制信号
+        .slv_reg0_o_0(ctrl_start_end_flag),// PS控制信号（模式+中断）
+        .slv_reg1_o_0(dds_ctrl_reg0),     // DDS频率字
+        .slv_reg2_o_0(dds_ctrl_reg1),     // DDS相位/波形/幅度
 
 	    .FCLK_CLK0_0	(FCLK_CLK0),
 	    .addrb_0		({15'd0, bram_addr}),  // MUX切换后的最终地址
