@@ -60,7 +60,7 @@
 // interp_rate: 1
 // decim_rate: 1
 // zero_pack_factor: 1
-// coeff_padding: 1
+// coeff_padding: 7
 // num_coeffs: 801
 // coeff_sets: 1
 // reloadable: 1
@@ -93,7 +93,7 @@ static xip_fir_v7_2_config gen_fir_compiler_0_config() {
   config.decim_rate          = 1;
   config.zero_pack_factor    = 1;
   config.coeff               = &fir_compiler_0_coefficients[0];
-  config.coeff_padding       = 1;
+  config.coeff_padding       = 7;
   config.num_coeffs          = 801;
   config.coeff_sets          = 1;
   config.reloadable          = 1;

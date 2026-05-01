@@ -341,16 +341,16 @@ assign fir_dac_mode = !fir_coef_reload_mode && !ctrl_start_end_flag[0] && !ctrl_
   );
 
   // ==================================================================================
-  // 4. DDS模块（bit2控制）
+  // 4. DDS模块（bit2控制，28bit相位累加器）
   // ==================================================================================
   dds_10hz_2mhz #(
-      .PHASE_W  (23),
+      .PHASE_W  (28),
       .ADDR_W   (10),
       .DATA_W   (8)
   ) u_dds (
       .clk        (FCLK_CLK0),          // 50MHz时钟
       .rst_n      (dds_mode),           // DDS模式使能时工作
-      .freq_word  (dds_ctrl_reg0[22:0]),// PS控制频率（slv_reg1低23位）
+      .freq_word  (dds_ctrl_reg0[27:0]// PS控制频率（slv_reg1低28位）
       .phase_off  (dds_ctrl_reg1[9:0]), // PS控制相位（slv_reg2低10位）
       .wave_sel   (dds_ctrl_reg1[11:10]),// PS控制波形（slv_reg2[11:10]）
       .amplitude  (dds_ctrl_reg1[19:12]),// PS控制幅度（slv_reg2[19:12]）

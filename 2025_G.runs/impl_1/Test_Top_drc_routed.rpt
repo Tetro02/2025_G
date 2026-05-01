@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Thu Apr 30 15:02:48 2026
+| Date         : Thu Apr 30 23:32:25 2026
 | Host         : LAPTOP-OJ78FPOQ running 64-bit major release  (build 9200)
 | Command      : report_drc -file Test_Top_drc_routed.rpt -pb Test_Top_drc_routed.pb -rpx Test_Top_drc_routed.rpx
 | Design       : Test_Top
@@ -24,15 +24,15 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max checks: <unlimited>
-             Checks found: 47
+             Checks found: 39
 +-----------+----------+-------------------------------------+--------+
 | Rule      | Severity | Description                         | Checks |
 +-----------+----------+-------------------------------------+--------+
 | CHECK-3   | Warning  | Report rule limit reached           | 1      |
 | RBOR-1    | Warning  | RAMB output registers               | 16     |
 | REQP-1839 | Warning  | RAMB36 async control check          | 20     |
-| REQP-28   | Advisory | enum_USE_MULT_NONE_connects_CEM_GND | 5      |
-| REQP-30   | Advisory | enum_MREG_0_connects_CEM_GND        | 5      |
+| REQP-28   | Advisory | enum_USE_MULT_NONE_connects_CEM_GND | 1      |
+| REQP-30   | Advisory | enum_MREG_0_connects_CEM_GND        | 1      |
 +-----------+----------+-------------------------------------+--------+
 
 2. REPORT DETAILS
@@ -227,49 +227,9 @@ enum_USE_MULT_NONE_connects_CEM_GND
 fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_madd_array_and_accum.g_accum.i_accum/i_add_accum/g_dsp.g_dsp48e1.i_dsp48e1: When the DSP48E1 USE_MULT attribute is set to NONE, the CEM input pin should be tied to GND to save power.
 Related violations: <none>
 
-REQP-28#2 Advisory
-enum_USE_MULT_NONE_connects_CEM_GND  
-fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_madd_array_and_accum.g_madd[200].g_p_last.g_column_summation.g_sum[1].i_sum/i_add_accum/g_dsp.g_dsp48e1.i_dsp48e1: When the DSP48E1 USE_MULT attribute is set to NONE, the CEM input pin should be tied to GND to save power.
-Related violations: <none>
-
-REQP-28#3 Advisory
-enum_USE_MULT_NONE_connects_CEM_GND  
-fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_madd_array_and_accum.g_madd[200].g_p_last.g_column_summation.g_sum[2].i_sum/i_add_accum/g_dsp.g_dsp48e1.i_dsp48e1: When the DSP48E1 USE_MULT attribute is set to NONE, the CEM input pin should be tied to GND to save power.
-Related violations: <none>
-
-REQP-28#4 Advisory
-enum_USE_MULT_NONE_connects_CEM_GND  
-fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_madd_array_and_accum.g_madd[200].g_p_last.g_column_summation.g_sum[3].i_sum/i_add_accum/g_dsp.g_dsp48e1.i_dsp48e1: When the DSP48E1 USE_MULT attribute is set to NONE, the CEM input pin should be tied to GND to save power.
-Related violations: <none>
-
-REQP-28#5 Advisory
-enum_USE_MULT_NONE_connects_CEM_GND  
-fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_madd_array_and_accum.g_madd[200].g_p_last.g_column_summation.g_sum[4].i_sum/i_add_accum/g_dsp.g_dsp48e1.i_dsp48e1: When the DSP48E1 USE_MULT attribute is set to NONE, the CEM input pin should be tied to GND to save power.
-Related violations: <none>
-
 REQP-30#1 Advisory
 enum_MREG_0_connects_CEM_GND  
 fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_madd_array_and_accum.g_accum.i_accum/i_add_accum/g_dsp.g_dsp48e1.i_dsp48e1: When the DSP48E1 MREG attribute is set to 0, the CEM input pin should be tied to GND to save power.
-Related violations: <none>
-
-REQP-30#2 Advisory
-enum_MREG_0_connects_CEM_GND  
-fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_madd_array_and_accum.g_madd[200].g_p_last.g_column_summation.g_sum[1].i_sum/i_add_accum/g_dsp.g_dsp48e1.i_dsp48e1: When the DSP48E1 MREG attribute is set to 0, the CEM input pin should be tied to GND to save power.
-Related violations: <none>
-
-REQP-30#3 Advisory
-enum_MREG_0_connects_CEM_GND  
-fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_madd_array_and_accum.g_madd[200].g_p_last.g_column_summation.g_sum[2].i_sum/i_add_accum/g_dsp.g_dsp48e1.i_dsp48e1: When the DSP48E1 MREG attribute is set to 0, the CEM input pin should be tied to GND to save power.
-Related violations: <none>
-
-REQP-30#4 Advisory
-enum_MREG_0_connects_CEM_GND  
-fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_madd_array_and_accum.g_madd[200].g_p_last.g_column_summation.g_sum[3].i_sum/i_add_accum/g_dsp.g_dsp48e1.i_dsp48e1: When the DSP48E1 MREG attribute is set to 0, the CEM input pin should be tied to GND to save power.
-Related violations: <none>
-
-REQP-30#5 Advisory
-enum_MREG_0_connects_CEM_GND  
-fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_madd_array_and_accum.g_madd[200].g_p_last.g_column_summation.g_sum[4].i_sum/i_add_accum/g_dsp.g_dsp48e1.i_dsp48e1: When the DSP48E1 MREG attribute is set to 0, the CEM input pin should be tied to GND to save power.
 Related violations: <none>
 
 

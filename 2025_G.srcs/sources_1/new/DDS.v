@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 module dds_10hz_2mhz
 #(
-    parameter PHASE_W   = 23,
+    parameter PHASE_W   = 28,
     parameter ADDR_W    = 10,
     parameter DATA_W    = 8
 )
@@ -39,7 +39,7 @@ wave_rom rom_inst (
   .douta(wave_raw)
 );
 
-// ===================== 核心修复：无直流分量幅度缩放 =====================
+// ===================== 幅度缩放 — 四舍五入 + 钳位到[1,254]避免Vmin/Vmax =====================
 // 1. 无符号转有符号：减去中点128，范围 -128 ~ 127（交流0点对齐）
 wire signed [7:0]  wave_signed = wave_raw - 8'd128;
 
@@ -52,10 +52,16 @@ always @(posedge clk or negedge rst_n) begin
         wave_mult <= wave_signed * $signed({1'b0, amplitude}); // 无符号幅度转有符号计算
 end
 
-// 3. 归一化（右移8位）+ 恢复中点128 → 无直流输出
-wire [7:0] wave_scaled = (wave_mult >>> 8) + 8'd128;
+// 3. 归一化（右移8位）+ 恢复中点128
+//    ★ 使用四舍五入(+128)而非截断，避免波谷被切到0（Vmin）★
+//    ★ 钳位到[1,254]，保证DAC输出永远不出现0x00或0xFF ★
+wire [7:0] wave_scaled_round = ((wave_mult + 16'sd128) >>> 8) + 8'd128;
+wire [7:0] wave_scaled;
+assign wave_scaled = (wave_scaled_round == 8'd0)   ? 8'd1 :   // 钳位Vmin
+                     (wave_scaled_round == 8'd255) ? 8'd254 : // 钳位Vmax
+                     wave_scaled_round;
 
-// 最终输出：永远围绕128，无直流分量
+// 最终输出
 assign dac_out = wave_scaled;
 // ======================================================================
 

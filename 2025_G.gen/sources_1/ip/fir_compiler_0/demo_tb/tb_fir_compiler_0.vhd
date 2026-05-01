@@ -201,9 +201,9 @@ begin
         end loop;
         ip_count := ip_count + 1;
         wait for T_HOLD;
-      -- Input rate is 1 input each 2 clock cycles: drive valid inputs at this rate
+      -- Input rate is 1 input each 25 clock cycles: drive valid inputs at this rate
         s_axis_data_tvalid <= '0';
-        wait for CLOCK_PERIOD * 1;
+        wait for CLOCK_PERIOD * 24;
         exit when ip_count >= samples;
       end loop;
     end procedure drive_data;
@@ -217,7 +217,7 @@ begin
 
     -- Procedure to drive an impulse and let the impulse response emerge on the data master channel
     -- samples is the number of input samples to drive; default is enough for impulse response output to emerge
-    procedure drive_impulse ( samples : natural := 853 ) is
+    procedure drive_impulse ( samples : natural := 823 ) is
       variable impulse : std_logic_vector(15 downto 0);
     begin
       impulse := (others => '0');  -- initialize unused bits to zero
@@ -240,15 +240,15 @@ begin
     -- Drive another impulse, during which demonstrate use and effect of AXI handshaking signals
     drive_impulse(2);  -- start of impulse; data is now zero
     s_axis_data_tvalid <= '0';
-    wait for CLOCK_PERIOD * 10;  -- provide no data for 5 input samples worth
+    wait for CLOCK_PERIOD * 125;  -- provide no data for 5 input samples worth
     drive_zeros(2);  -- 2 normal input samples
     s_axis_data_tvalid <= '1';
-    wait for CLOCK_PERIOD * 10;  -- provide data as fast as the core can accept it for 5 input samples worth
-    drive_zeros(844);  -- back to normal operation
+    wait for CLOCK_PERIOD * 125;  -- provide data as fast as the core can accept it for 5 input samples worth
+    drive_zeros(814);  -- back to normal operation
 
     -- Drive another impulse, during which demonstrate:
     --   reset (aresetn)
-    drive_impulse(245);  -- to partway through impulse response
+    drive_impulse(206);  -- to partway through impulse response
     s_axis_data_tvalid <= '0';
     aresetn <= '0';  -- assert reset (active low)
     wait for CLOCK_PERIOD * 2;  -- hold reset active for 2 clock cycles, as recommended in FIR Compiler Datasheet
@@ -259,14 +259,14 @@ begin
     s_axis_data_tvalid   <= '0';
     s_axis_reload_tvalid <= '1';
     s_axis_reload_tdata  <= (others => '0');  -- clear unused bits of TDATA
-    -- The new coefficients are loaded serially, over 402 transactions.
+    -- The new coefficients are loaded serially, over 408 transactions.
     -- Load a constant value for each coefficient.
     -- For more information about reload packet order and length, please see the FIR Compiler Datasheet.
-    for coef in 0 to 401 loop
+    for coef in 0 to 407 loop
       s_axis_reload_tvalid <= '1';
       s_axis_reload_tdata <= (others => '0');  -- clear unused bits of TDATA
       s_axis_reload_tdata(15 downto 0) <= "0100000000000000";
-      if coef = 401 then
+      if coef = 407 then
         s_axis_reload_tlast <= '1';  -- signal last transaction in reload packet
       else
         s_axis_reload_tlast <= '0';
@@ -293,7 +293,7 @@ begin
 
     -- The loaded filter coefficient set has now been enabled.
     -- Drive an impulse to show the new configuration.
-    drive_impulse(1706);  -- drive for long enough to be sure to get full impulse response out
+    drive_impulse(1646);  -- drive for long enough to be sure to get full impulse response out
 
     -- End of test
     report "Not a real failure. Simulation finished successfully. Test completed successfully" severity failure;

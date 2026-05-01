@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Thu Apr 30 14:53:37 2026
-# Process ID         : 29644
+# Start of session at: Thu Apr 30 23:26:41 2026
+# Process ID         : 3708
 # Current directory  : C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.runs/synth_1
 # Command line       : vivado.exe -log Test_Top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Test_Top.tcl
 # Log file           : C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.runs/synth_1/Test_Top.vds
@@ -19,9 +19,10 @@
 # Host memory        : 16337 MB
 # Swap memory        : 21474 MB
 # Total Virtual      : 37812 MB
-# Available Virtual  : 11655 MB
+# Available Virtual  : 8204 MB
 #-----------------------------------------------------------
 source Test_Top.tcl -notrace
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 554.852 ; gain = 223.469
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Tetro/Documents/FPGA_Project/MyExample/ip_repo/AXI_Lite_PS_To_PL_PL_1_0'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Tetro/Tools/Vivado/2025.2/Vivado/data/ip'.
@@ -37,9 +38,9 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 31836
+INFO: [Synth 8-7075] Helper process launched with PID 36908
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1376.844 ; gain = 540.312
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1378.559 ; gain = 540.176
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'Test_Top' [C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.srcs/sources_1/new/top.v:1]
 INFO: [Synth 8-6157] synthesizing module 'ODDR' [D:/Tetro/Tools/Vivado/2025.2/Vivado/scripts/rt/data/unisim_comp.v:117225]
@@ -57,7 +58,7 @@ INFO: [Synth 8-638] synthesizing module 'fir_compiler_0' [c:/Users/Tetro/Documen
 	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
 	Parameter C_COMPONENT_NAME bound to: fir_compiler_0 - type: string 
 	Parameter C_COEF_FILE bound to: fir_compiler_0.mif - type: string 
-	Parameter C_COEF_FILE_LINES bound to: 804 - type: integer 
+	Parameter C_COEF_FILE_LINES bound to: 1088 - type: integer 
 	Parameter C_DATA_COEFFICIENT_TYPE bound to: 0 - type: integer 
 	Parameter C_FILTER_TYPE bound to: 0 - type: integer 
 	Parameter C_INTERP_RATE bound to: 1 - type: integer 
@@ -73,8 +74,8 @@ INFO: [Synth 8-638] synthesizing module 'fir_compiler_0' [c:/Users/Tetro/Documen
 	Parameter C_NUM_RELOAD_SLOTS bound to: 1 - type: integer 
 	Parameter C_COL_MODE bound to: 1 - type: integer 
 	Parameter C_COL_PIPE_LEN bound to: 4 - type: integer 
-	Parameter C_COL_CONFIG bound to: 20,20,60,60,41 - type: string 
-	Parameter C_OPTIMIZATION bound to: 2046 - type: integer 
+	Parameter C_COL_CONFIG bound to: 17 - type: string 
+	Parameter C_OPTIMIZATION bound to: 0 - type: integer 
 	Parameter C_DATA_PATH_WIDTHS bound to: 12 - type: string 
 	Parameter C_DATA_IP_PATH_WIDTHS bound to: 12 - type: string 
 	Parameter C_DATA_PX_PATH_WIDTHS bound to: 12 - type: string 
@@ -93,12 +94,12 @@ INFO: [Synth 8-638] synthesizing module 'fir_compiler_0' [c:/Users/Tetro/Documen
 	Parameter C_EXT_MULT_CNFG bound to: none - type: string 
 	Parameter C_DATA_PATH_PSAMP_SRC bound to: 0 - type: string 
 	Parameter C_OP_PATH_PSAMP_SRC bound to: 0 - type: string 
-	Parameter C_NUM_MADDS bound to: 201 - type: integer 
+	Parameter C_NUM_MADDS bound to: 17 - type: integer 
 	Parameter C_OPT_MADDS bound to: none - type: string 
-	Parameter C_OVERSAMPLING_RATE bound to: 2 - type: integer 
-	Parameter C_INPUT_RATE bound to: 2 - type: integer 
-	Parameter C_OUTPUT_RATE bound to: 2 - type: integer 
-	Parameter C_DATA_MEMTYPE bound to: 2 - type: integer 
+	Parameter C_OVERSAMPLING_RATE bound to: 24 - type: integer 
+	Parameter C_INPUT_RATE bound to: 25 - type: integer 
+	Parameter C_OUTPUT_RATE bound to: 25 - type: integer 
+	Parameter C_DATA_MEMTYPE bound to: 0 - type: integer 
 	Parameter C_COEF_MEMTYPE bound to: 2 - type: integer 
 	Parameter C_IPBUFF_MEMTYPE bound to: 0 - type: integer 
 	Parameter C_OPBUFF_MEMTYPE bound to: 0 - type: integer 
@@ -107,7 +108,7 @@ INFO: [Synth 8-638] synthesizing module 'fir_compiler_0' [c:/Users/Tetro/Documen
 	Parameter C_DATA_MEM_PACKING bound to: 0 - type: integer 
 	Parameter C_COEF_MEM_PACKING bound to: 0 - type: integer 
 	Parameter C_FILTS_PACKED bound to: 0 - type: integer 
-	Parameter C_LATENCY bound to: 88 - type: integer 
+	Parameter C_LATENCY bound to: 53 - type: integer 
 	Parameter C_HAS_ARESETn bound to: 2 - type: integer 
 	Parameter C_HAS_ACLKEN bound to: 0 - type: integer 
 	Parameter C_DATA_HAS_TLAST bound to: 0 - type: integer 
@@ -133,7 +134,7 @@ WARNING: [Synth 8-7023] instance 'u_fir' of module 'fir_compiler_0' has 16 conne
 INFO: [Synth 8-6155] done synthesizing module 'fir_adc12_dac8' (0#1) [C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.srcs/sources_1/new/fir.v:1]
 WARNING: [Synth 8-689] width (38) of port connection 'dac_data' does not match port width (29) of module 'fir_adc12_dac8' [C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.srcs/sources_1/new/top.v:330]
 INFO: [Synth 8-6157] synthesizing module 'dds_10hz_2mhz' [C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.srcs/sources_1/new/DDS.v:2]
-	Parameter PHASE_W bound to: 23 - type: integer 
+	Parameter PHASE_W bound to: 28 - type: integer 
 	Parameter ADDR_W bound to: 10 - type: integer 
 	Parameter DATA_W bound to: 8 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'wave_rom' [c:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.gen/sources_1/ip/wave_rom/synth/wave_rom.vhd:67]
@@ -730,19 +731,19 @@ WARNING: [Synth 8-7129] Port RDADDRECC_I[1] in module blk_mem_output_block__para
 WARNING: [Synth 8-7129] Port RDADDRECC_I[0] in module blk_mem_output_block__parameterized0 is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:51 ; elapsed = 00:00:54 . Memory (MB): peak = 2344.426 ; gain = 1507.895
+Finished RTL Elaboration : Time (s): cpu = 00:00:39 ; elapsed = 00:00:44 . Memory (MB): peak = 2230.422 ; gain = 1392.039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:52 ; elapsed = 00:00:54 . Memory (MB): peak = 2344.426 ; gain = 1507.895
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 2230.422 ; gain = 1392.039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:52 ; elapsed = 00:00:54 . Memory (MB): peak = 2344.426 ; gain = 1507.895
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 2230.422 ; gain = 1392.039
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2344.426 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 349 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2230.422 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 161 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -775,31 +776,31 @@ Resolution: To avoid this warning, move constraints listed in [.Xil/Test_Top_pro
 INFO: [Project 1-1714] 69 XPM XDC files have been applied to the design.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.115 . Memory (MB): peak = 2643.086 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.103 . Memory (MB): peak = 2345.770 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 7 instances were transformed.
   FDR => FDRE: 1 instance 
   MUXCY_L => MUXCY: 4 instances
   SRL16 => SRL16E: 2 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2643.086 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2345.770 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:54 ; elapsed = 00:01:57 . Memory (MB): peak = 2645.734 ; gain = 1809.203
+Finished Constraint Validation : Time (s): cpu = 00:01:21 ; elapsed = 00:01:30 . Memory (MB): peak = 2346.828 ; gain = 1508.445
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:54 ; elapsed = 00:01:57 . Memory (MB): peak = 2645.734 ; gain = 1809.203
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:21 ; elapsed = 00:01:30 . Memory (MB): peak = 2346.828 ; gain = 1508.445
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:55 ; elapsed = 00:01:57 . Memory (MB): peak = 2645.734 ; gain = 1809.203
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:21 ; elapsed = 00:01:30 . Memory (MB): peak = 2346.828 ; gain = 1508.445
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_write_reg' in module 'AXI_Lite_PS_To_PL_PL_slave_lite_v1_0_S00_AXI'
 INFO: [Synth 8-802] inferred FSM for state register 'state_read_reg' in module 'AXI_Lite_PS_To_PL_PL_slave_lite_v1_0_S00_AXI'
@@ -1004,13 +1005,8 @@ INFO: [Synth 8-3354] encoded FSM with state register 'ar_state_reg' using encodi
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'sc_transaction_regulator_v1_0_12_multithread'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:02:02 ; elapsed = 00:02:05 . Memory (MB): peak = 2645.734 ; gain = 1809.203
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:25 ; elapsed = 00:01:35 . Memory (MB): peak = 2346.828 ; gain = 1508.445
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-223] decloning instance 'fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_cntrl_signals[1].i_delay' (delay__parameterized15) to 'fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_cntrl_signals[11].i_delay'
-INFO: [Synth 8-223] decloning instance 'fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_cntrl_signals[2].i_delay' (delay__parameterized16) to 'fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_cntrl_signals[13].i_delay'
-INFO: [Synth 8-223] decloning instance 'fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_cntrl_signals[5].i_delay' (delay__parameterized16) to 'fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_cntrl_signals[6].i_delay'
-INFO: [Synth 8-223] decloning instance 'fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_cntrl_signals[5].i_delay' (delay__parameterized16) to 'fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_cntrl_signals[8].i_delay'
-INFO: [Synth 8-223] decloning instance 'fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_cntrl_signals[5].i_delay' (delay__parameterized16) to 'fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_cntrl_signals[12].i_delay'
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -1059,126 +1055,126 @@ WARNING: [Synth 8-3332] Sequential element (BSR_OUT_DFF[0].FDRE_BSR) is unused a
 WARNING: [Synth 8-3332] Sequential element (ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N) is unused and will be removed from module proc_sys_reset__parameterized1.
 WARNING: [Synth 8-3332] Sequential element (PR_OUT_DFF[0].FDRE_PER) is unused and will be removed from module proc_sys_reset__parameterized1.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:18 ; elapsed = 00:03:24 . Memory (MB): peak = 2645.734 ; gain = 1809.203
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:14 ; elapsed = 00:02:27 . Memory (MB): peak = 2346.828 ; gain = 1508.445
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:24 ; elapsed = 00:03:31 . Memory (MB): peak = 2645.734 ; gain = 1809.203
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:20 ; elapsed = 00:02:34 . Memory (MB): peak = 2393.602 ; gain = 1555.219
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:03:33 ; elapsed = 00:03:39 . Memory (MB): peak = 2677.668 ; gain = 1841.137
+Finished Timing Optimization : Time (s): cpu = 00:02:25 ; elapsed = 00:02:40 . Memory (MB): peak = 2505.902 ; gain = 1667.520
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[41].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[41].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[41].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[41].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[41].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[41].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[41].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[41].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[41].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[41].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[41].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[41].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[40].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[40].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[40].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[40].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[40].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[40].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[40].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[40].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[40].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[40].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[40].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[40].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[39].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[39].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[39].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[39].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[39].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[39].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[39].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[39].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[39].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[39].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[39].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[39].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[38].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[38].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[38].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[38].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[38].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[38].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[38].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[38].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[38].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[38].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[38].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[38].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[37].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[37].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[37].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[37].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[37].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[37].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[37].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[37].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[37].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[37].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[37].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[37].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[36].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[36].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[36].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[36].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[36].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[36].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[36].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[36].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[36].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[36].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[36].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[36].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[35].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[35].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[35].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[35].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[35].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[35].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[35].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[35].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[35].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[35].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[35].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[35].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[34].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[34].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[34].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[34].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[34].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[34].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[34].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[34].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[34].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[34].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[34].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[34].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[33].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[33].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[33].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
-WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_ratei_0/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[33].g_sym_data.g_sym_data_casc.i_data_sym_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_cnfg_and_reload.i_cnfg_and_reload/g_fsel_store.i_update_chan_dly/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_cnfg_and_reload.i_cnfg_and_reload/g_fsel_store.i_reset_fill_chan_dly/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[0].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[1].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[2].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[3].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[4].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[4].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[4].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[4].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[4].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[4].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[4].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[4].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[4].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[4].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[4].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[4].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[5].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[5].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[5].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[5].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[5].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[5].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[5].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[5].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[5].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[5].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[5].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[5].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[6].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[6].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[6].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[6].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[6].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[6].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[6].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[6].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[6].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[6].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[6].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[6].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[7].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[7].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[7].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][9] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[7].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][8] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[7].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][7] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[7].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][6] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[7].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][5] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[7].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][4] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[7].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][3] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[7].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][2] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[7].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][1] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[7].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][0] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[8].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][11] cannot be supported because of smaller than expected depth of fanout-free flop chain.
+WARNING: [Synth 8-5591] srl_style attribute value srl_reg on fir_adc12_dac8_inst/u_fir/U0/i_synth/g_single_rate.i_single_rate/g_semi_parallel_and_smac.g_paths[0].g_data_array.g_madd[8].g_data.i_data_casc_dly/g_buff.i_buff/gen_dly.gen_shiftreg.gen_rtl_delay.delay_bus_reg[0][10] cannot be supported because of smaller than expected depth of fanout-free flop chain.
 INFO: [Common 17-14] Message 'Synth 8-5591' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:03:47 ; elapsed = 00:03:55 . Memory (MB): peak = 2703.938 ; gain = 1867.406
+Finished Technology Mapping : Time (s): cpu = 00:02:30 ; elapsed = 00:02:46 . Memory (MB): peak = 2506.078 ; gain = 1667.695
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -1196,253 +1192,65 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:03:51 ; elapsed = 00:03:59 . Memory (MB): peak = 2823.055 ; gain = 1986.523
+Finished IO Insertion : Time (s): cpu = 00:02:34 ; elapsed = 00:02:50 . Memory (MB): peak = 2645.801 ; gain = 1807.418
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:03:51 ; elapsed = 00:03:59 . Memory (MB): peak = 2823.055 ; gain = 1986.523
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:34 ; elapsed = 00:02:50 . Memory (MB): peak = 2645.801 ; gain = 1807.418
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:00 ; elapsed = 00:04:08 . Memory (MB): peak = 2871.328 ; gain = 2034.797
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:35 ; elapsed = 00:02:51 . Memory (MB): peak = 2645.801 ; gain = 1807.418
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:04:00 ; elapsed = 00:04:09 . Memory (MB): peak = 2871.328 ; gain = 2034.797
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:35 ; elapsed = 00:02:51 . Memory (MB): peak = 2645.801 ; gain = 1807.418
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:04:01 ; elapsed = 00:04:09 . Memory (MB): peak = 2871.328 ; gain = 2034.797
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:35 ; elapsed = 00:02:51 . Memory (MB): peak = 2645.801 ; gain = 1807.418
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:04:01 ; elapsed = 00:04:09 . Memory (MB): peak = 2871.328 ; gain = 2034.797
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:35 ; elapsed = 00:02:51 . Memory (MB): peak = 2645.801 ; gain = 1807.418
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 DSP Final Report (the ' indicates corresponding REG is set)
-+--------------------------+------------------------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name               | DSP Mapping                                    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+--------------------------+------------------------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|calc__parameterized0_1408 | Dynamic                                        | -      | -      | -      | -      | 48     | -    | -    | -    | -    | -     | 0    | 1    | 
-|calc_1407                 | (C'+((D'+A')'*B')')'                           | 30     | 18     | 0      | 25     | 48     | 1    | 1    | 1    | 1    | 1     | 1    | 1    | 
-|calc_1406                 | (((D'+A')'*B')')'                              | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1405                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1404                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1403                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1402                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1401                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1400                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1399                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1398                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1397                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1396                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1395                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1394                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1393                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1392                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1391                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1390                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1389                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1388                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1387                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1386                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1385                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1384                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1383                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1382                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1381                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1380                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1379                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1378                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1377                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1376                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1375                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1374                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1373                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1372                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1371                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1370                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1369                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1368                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1367                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1366                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1365                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1364                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1363                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1362                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1361                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1360                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1359                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1358                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1357                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1356                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1355                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1354                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1353                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1352                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1351                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1350                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1349                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1348                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1347                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1346                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1345                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1344                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1343                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1342                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1341                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1340                 | (((D'+A')'*B')')'                              | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1339                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1338                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1337                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1336                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1335                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1334                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1333                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1332                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1331                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1330                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1329                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1328                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1327                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1326                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1325                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1324                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1323                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1322                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1321                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1320                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1319                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1318                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1317                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1316                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1315                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1314                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1313                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1312                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1311                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1310                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1309                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1308                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1307                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1306                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1305                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1304                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1303                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1302                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1301                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1300                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1299                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1298                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1297                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1296                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc__parameterized0_1294 | (C'+A':B')'                                    | 30     | 18     | 48     | -      | 48     | 1    | 1    | 1    | -    | -     | 0    | 1    | 
-|calc__parameterized0_1292 | (C'+A':B')'                                    | 30     | 18     | 48     | -      | 48     | 1    | 1    | 1    | -    | -     | 0    | 1    | 
-|calc__parameterized0_1290 | (C'+A':B')'                                    | 30     | 18     | 48     | -      | 48     | 1    | 1    | 1    | -    | -     | 0    | 1    | 
-|calc__parameterized0      | (C'+A':B')'                                    | 30     | 18     | 48     | -      | 48     | 1    | 1    | 1    | -    | -     | 0    | 1    | 
-|calc_1289                 | (PCIN+((Dynamically Configured Multiplier))')' | -      | -      | -      | -      | 48     | -    | -    | -    | -    | 1     | 1    | 1    | 
-|calc_1288                 | (((D'+A')'*B')')'                              | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1287                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1286                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1285                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1284                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1283                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1282                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1281                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1280                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1279                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1278                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1277                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1276                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1275                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1274                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1273                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1272                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1271                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1270                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1269                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1268                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1267                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1266                 | (((D'+A')'*B')')'                              | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1265                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1264                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1263                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1262                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1261                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1260                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1259                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1258                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1257                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1256                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1255                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1254                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1253                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1252                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1251                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1250                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1249                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1248                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1247                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1246                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1245                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1244                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1243                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1242                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1241                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1240                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1239                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1238                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1237                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1236                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1235                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1234                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1233                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1232                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1231                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1230                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1229                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1228                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1227                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1226                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1225                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1224                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1223                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1222                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1221                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1220                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1219                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1218                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1217                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1216                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1215                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1214                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1213                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1212                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1211                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1210                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1209                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1208                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1207                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1206                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1205                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1204                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1203                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc_1202                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-|calc                      | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
-+--------------------------+------------------------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
++---------------------+------------------------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name          | DSP Mapping                                    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++---------------------+------------------------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|calc__parameterized0 | Dynamic                                        | -      | -      | -      | -      | 48     | -    | -    | -    | -    | -     | 0    | 1    | 
+|calc_112             | (C'+((D'+A')'*B')')'                           | 30     | 18     | 0      | 25     | 48     | 1    | 1    | 1    | 1    | 1     | 1    | 1    | 
+|calc_111             | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_110             | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_109             | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_108             | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_107             | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_106             | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_105             | (PCIN+((Dynamically Configured Multiplier))')' | -      | -      | -      | -      | 48     | -    | -    | -    | -    | 1     | 1    | 1    | 
+|calc_104             | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_103             | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_102             | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_101             | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_100             | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_99              | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_98              | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_97              | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc                 | (PCIN+((D'+A')'*B')')'                         | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
++---------------------+------------------------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 
 Report BlackBoxes: 
@@ -1457,56 +1265,60 @@ Report Cell Usage:
 +------+---------+------+
 |1     |BIBUF    |   130|
 |2     |BUFG     |     1|
-|3     |CARRY4   |    70|
-|4     |DSP48E1  |   206|
-|6     |LUT1     |   265|
-|7     |LUT2     |   471|
-|8     |LUT3     |  1143|
+|3     |CARRY4   |    74|
+|4     |DSP48E1  |    18|
+|6     |LUT1     |   266|
+|7     |LUT2     |   484|
+|8     |LUT3     |  1093|
 |9     |LUT4     |   570|
-|10    |LUT5     |   683|
-|11    |LUT6     |  1272|
+|10    |LUT5     |   740|
+|11    |LUT6     |  1233|
 |12    |ODDR     |     3|
 |13    |PS7      |     1|
-|14    |RAM16X1D |  3201|
-|15    |RAM32M   |   879|
+|14    |RAM16X1D |     1|
+|15    |RAM32M   |    72|
 |16    |RAM32X1D |     9|
-|17    |RAMB36E1 |   129|
-|20    |SRL16    |     2|
-|21    |SRL16E   |   219|
-|22    |SRLC32E  |   220|
-|23    |FDCE     |   235|
-|24    |FDPE     |     2|
-|25    |FDRE     | 28702|
-|26    |FDSE     |   177|
-|27    |IBUF     |    25|
-|28    |OBUF     |    12|
+|17    |RAM64M   |     5|
+|18    |RAM64X1D |   257|
+|19    |RAMB36E1 |   129|
+|22    |SRL16    |     2|
+|23    |SRL16E   |    93|
+|24    |SRLC32E  |   420|
+|25    |FDCE     |   242|
+|26    |FDPE     |     2|
+|27    |FDRE     |  5912|
+|28    |FDSE     |   198|
+|29    |IBUF     |    25|
+|30    |OBUF     |    12|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:04:01 ; elapsed = 00:04:09 . Memory (MB): peak = 2871.328 ; gain = 2034.797
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:35 ; elapsed = 00:02:51 . Memory (MB): peak = 2645.801 ; gain = 1807.418
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 11701 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:12 ; elapsed = 00:03:13 . Memory (MB): peak = 2871.336 ; gain = 1733.496
-Synthesis Optimization Complete : Time (s): cpu = 00:04:01 ; elapsed = 00:04:10 . Memory (MB): peak = 2871.336 ; gain = 2034.805
+Synthesis finished with 0 errors, 0 critical warnings and 2500 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:21 ; elapsed = 00:02:13 . Memory (MB): peak = 2645.801 ; gain = 1691.012
+Synthesis Optimization Complete : Time (s): cpu = 00:02:36 ; elapsed = 00:02:52 . Memory (MB): peak = 2645.801 ; gain = 1807.418
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2900.352 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 4499 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 3 CPU seconds
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.558 . Memory (MB): peak = 2667.898 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 570 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.059 . Memory (MB): peak = 2940.500 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 2679.758 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 4091 instances were transformed.
-  RAM16X1D => RAM32X1D (RAMD32(x2)): 3201 instances
-  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 879 instances
+  A total of 346 instances were transformed.
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 1 instance 
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 72 instances
   RAM32X1D => RAM32X1D (RAMD32(x2)): 9 instances
+  RAM64M => RAM64M (RAMD64E(x4)): 5 instances
+  RAM64X1D => RAM64X1D (RAMD64E(x2)): 257 instances
   SRL16 => SRL16E: 2 instances
 
-Synth Design complete | Checksum: 2b687771
+Synth Design complete | Checksum: 7257be84
 INFO: [Common 17-83] Releasing license: Synthesis
-365 Infos, 252 Warnings, 0 Critical Warnings and 0 Errors encountered.
+360 Infos, 252 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:04:22 ; elapsed = 00:04:35 . Memory (MB): peak = 2940.500 ; gain = 2342.852
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.068 . Memory (MB): peak = 2940.500 ; gain = 0.000
+synth_design: Time (s): cpu = 00:02:43 ; elapsed = 00:03:05 . Memory (MB): peak = 2679.758 ; gain = 2081.984
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 2679.758 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.runs/synth_1/Test_Top.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file Test_Top_utilization_synth.rpt -pb Test_Top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Apr 30 14:58:26 2026...
+INFO: [Common 17-206] Exiting Vivado at Thu Apr 30 23:29:59 2026...

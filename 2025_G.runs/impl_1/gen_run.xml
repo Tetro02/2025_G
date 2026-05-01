@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1777532314">
+<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1777563007">
   <File Type="PA-TCL" Name="Test_Top.tcl"/>
   <File Type="REPORTS-TCL" Name="Test_Top_reports.tcl"/>
   <File Type="INIT-TIMING" Name="Test_Top_timing_summary_init.rpt"/>

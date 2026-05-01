@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Thu Apr 30 14:53:24 2026
-# Process ID         : 508
+# Start of session at: Thu Apr 30 23:26:22 2026
+# Process ID         : 26876
 # Current directory  : C:/Users/Tetro/Documents/FPGA_Project/2025_G
 # Command line       : vivado.exe -mode batch -source auto_build.tcl
 # Log file           : C:/Users/Tetro/Documents/FPGA_Project/2025_G/vivado.log
@@ -19,6 +19,6 @@
 # Host memory        : 16337 MB
 # Swap memory        : 21474 MB
 # Total Virtual      : 37812 MB
-# Available Virtual  : 12403 MB
+# Available Virtual  : 8677 MB
 #-----------------------------------------------------------
 source auto_build.tcl
