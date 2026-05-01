@@ -42,10 +42,10 @@
 #define DDS_WAVE_TRIANGLE 2 // 三角波
 #define DDS_WAVE_SAWTOOTH 3 // 锯齿波
 
-// 系统时钟：50MHz，相位位宽：23bit
-// 频率字 = (目标频率 * 2^23) / 50_000_000
+// 系统时钟：50MHz，相位位宽：28bit（匹配DDS.v的PHASE_W=28）
+// 频率字 = (目标频率 * 2^28) / 50_000_000
 #define DDS_CLK_FREQ 50000000.0f
-#define DDS_PHASE_BITS 23
+#define DDS_PHASE_BITS 28
 
 // ===================== 全局大数组 =====================
 float32_t fft_in[FFT_LENGTH * 2];
@@ -107,7 +107,7 @@ void SetDDS(float target_freq_hz, uint16_t phase_off, uint8_t wave_sel, uint8_t 
 
     // 限幅：不超过28bit最大值（匹配DDS.v的PHASE_W=28）
     if (freq_word > 0x0FFFFFFF)
-        freq_word = 0x007FFFFF;
+        freq_word = 0x0FFFFFFF;
 
     uint32_t ctrl = ((uint32_t)amplitude << 12) | ((uint32_t)wave_sel << 10) | (uint32_t)phase_off;
     Xil_Out32(DDS_FREQ_ADDR, freq_word);
@@ -327,7 +327,8 @@ int main(void)
     for (uint16_t i = 0; i < 4096; i++)
     {
         SetDDS(0.0f + i * 488.28125f, 0, DDS_WAVE_SIN, 255); // 频率从100kHz线性增加
-        delay1ms(10);                                        // 每10ms更新一次频率
+        delay1ms(10);
+        SetControlFlags(CTRL_BIT_DDS | 0x00); // 每10ms更新一次频率
     }
 
     while (1)
