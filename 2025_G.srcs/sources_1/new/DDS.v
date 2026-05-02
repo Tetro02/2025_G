@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-module dds_10hz_2mhz
+module dds_10hz_2mhz//到此一游
 #(
     parameter PHASE_W   = 28,
     parameter ADDR_W    = 11,            // 2^11 = 2048个采样点/波形
