@@ -75,11 +75,11 @@ set_property ip_output_repo c:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-add_files C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.srcs/sources_1/imports/ROM_mif/wave_rom.coe
 add_files C:/Users/Tetro/Desktop/FIR1.coe
 add_files C:/Users/Tetro/Desktop/G.coe
 add_files C:/Users/Tetro/Desktop/20000G_2M_800_HMwindow.coe
 add_files C:/Users/Tetro/Documents/FPGA_Project/2025_G/wave_rom.coe
+add_files C:/Users/Tetro/Documents/FPGA_Project/2025_G/dds_14bit_6144_total.coe
 read_verilog -library xil_defaultlib {
   C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.srcs/sources_1/new/DDS.v
   C:/Users/Tetro/Documents/FPGA_Project/2025_G/2025_G.srcs/sources_1/new/bram_ctrl_my.v

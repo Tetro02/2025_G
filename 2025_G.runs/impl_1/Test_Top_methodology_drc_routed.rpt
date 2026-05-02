@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Thu Apr 30 23:32:31 2026
+| Date         : Fri May  1 19:44:22 2026
 | Host         : LAPTOP-OJ78FPOQ running 64-bit major release  (build 9200)
 | Command      : report_methodology -file Test_Top_methodology_drc_routed.rpt -pb Test_Top_methodology_drc_routed.pb -rpx Test_Top_methodology_drc_routed.rpx
 | Design       : Test_Top
@@ -23,12 +23,12 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max checks: <unlimited>
-             Checks found: 38
+             Checks found: 44
 +-----------+----------+-------------------------------+--------+
 | Rule      | Severity | Description                   | Checks |
 +-----------+----------+-------------------------------+--------+
 | LUTAR-1   | Warning  | LUT drives async reset alert  | 3      |
-| TIMING-18 | Warning  | Missing input or output delay | 35     |
+| TIMING-18 | Warning  | Missing input or output delay | 41     |
 +-----------+----------+-------------------------------+--------+
 
 2. REPORT DETAILS
@@ -53,19 +53,19 @@ Related violations: <none>
 
 LUTAR-1#2 Warning
 LUT drives async reset alert  
-LUT cell design_1_wrapper_inst/rst_sync[1]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) rst_sync_reg[0]/CLR, rst_sync_reg[1]/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell design_1_wrapper_inst/phase_acc[0]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_dds/phase_acc_reg[22]/CLR, u_dds/phase_acc_reg[23]/CLR,
+u_dds/phase_acc_reg[24]/CLR, u_dds/phase_acc_reg[25]/CLR,
+u_dds/phase_acc_reg[26]/CLR, u_dds/phase_acc_reg[27]/CLR,
+u_dds/phase_acc_reg[2]/CLR, u_dds/phase_acc_reg[3]/CLR,
+u_dds/phase_acc_reg[4]/CLR, u_dds/phase_acc_reg[5]/CLR,
+u_dds/phase_acc_reg[6]/CLR, u_dds/phase_acc_reg[7]/CLR,
+u_dds/phase_acc_reg[8]/CLR, u_dds/phase_acc_reg[9]/CLR,
+wave_mult_rnd_carry_i_6/CLR (the first 15 of 29 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#3 Warning
 LUT drives async reset alert  
-LUT cell u_dds/wave_mult[15]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_dds/phase_acc_reg[5]/CLR, u_dds/phase_acc_reg[6]/CLR,
-u_dds/phase_acc_reg[7]/CLR, u_dds/phase_acc_reg[8]/CLR,
-u_dds/phase_acc_reg[9]/CLR, u_dds/wave_mult_reg[10]/CLR,
-u_dds/wave_mult_reg[11]/CLR, u_dds/wave_mult_reg[12]/CLR,
-u_dds/wave_mult_reg[13]/CLR, u_dds/wave_mult_reg[14]/CLR,
-u_dds/wave_mult_reg[15]/CLR, u_dds/wave_mult_reg[6]/CLR,
-u_dds/wave_mult_reg[7]/CLR, u_dds/wave_mult_reg[8]/CLR,
-u_dds/wave_mult_reg[9]/CLR (the first 15 of 38 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell design_1_wrapper_inst/rst_sync[1]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) rst_sync_reg[0]/CLR, rst_sync_reg[1]/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 TIMING-18#1 Warning
@@ -210,37 +210,67 @@ Related violations: <none>
 
 TIMING-18#29 Warning
 Missing input or output delay  
-An output delay is missing on dac_data_out[1] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+An output delay is missing on dac_data_out[10] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
 Related violations: <none>
 
 TIMING-18#30 Warning
 Missing input or output delay  
-An output delay is missing on dac_data_out[2] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+An output delay is missing on dac_data_out[11] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
 Related violations: <none>
 
 TIMING-18#31 Warning
 Missing input or output delay  
-An output delay is missing on dac_data_out[3] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+An output delay is missing on dac_data_out[12] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
 Related violations: <none>
 
 TIMING-18#32 Warning
 Missing input or output delay  
-An output delay is missing on dac_data_out[4] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+An output delay is missing on dac_data_out[13] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
 Related violations: <none>
 
 TIMING-18#33 Warning
 Missing input or output delay  
-An output delay is missing on dac_data_out[5] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+An output delay is missing on dac_data_out[1] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
 Related violations: <none>
 
 TIMING-18#34 Warning
 Missing input or output delay  
-An output delay is missing on dac_data_out[6] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+An output delay is missing on dac_data_out[2] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
 Related violations: <none>
 
 TIMING-18#35 Warning
 Missing input or output delay  
+An output delay is missing on dac_data_out[3] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+Related violations: <none>
+
+TIMING-18#36 Warning
+Missing input or output delay  
+An output delay is missing on dac_data_out[4] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+Related violations: <none>
+
+TIMING-18#37 Warning
+Missing input or output delay  
+An output delay is missing on dac_data_out[5] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+Related violations: <none>
+
+TIMING-18#38 Warning
+Missing input or output delay  
+An output delay is missing on dac_data_out[6] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+Related violations: <none>
+
+TIMING-18#39 Warning
+Missing input or output delay  
 An output delay is missing on dac_data_out[7] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+Related violations: <none>
+
+TIMING-18#40 Warning
+Missing input or output delay  
+An output delay is missing on dac_data_out[8] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+Related violations: <none>
+
+TIMING-18#41 Warning
+Missing input or output delay  
+An output delay is missing on dac_data_out[9] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
 Related violations: <none>
 
 

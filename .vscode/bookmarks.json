@@ -1,0 +1,24 @@
+{
+	"files": [
+		{
+			"path": "hello_world/src/helloworld.c",
+			"bookmarks": [
+				{
+					"line": 25,
+					"column": 27,
+					"label": ""
+				},
+				{
+					"line": 250,
+					"column": 49,
+					"label": ""
+				},
+				{
+					"line": 335,
+					"column": 0,
+					"label": ""
+				}
+			]
+		}
+	]
+}

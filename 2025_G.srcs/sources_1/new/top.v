@@ -59,33 +59,31 @@ module Test_Top  (
   output clk_out_adc_1;            // 输出到ADC的时钟
   output clk_out_adc_2;            // 输出到ADC的时钟
 
-  output [7:0] dac_data_out;       // FIR滤波输出数据
+  output [13:0] dac_data_out;       // 14bit无符号DAC输出数据
   output clk_out_dac;             // 输出到DAC的时钟
 
-  // ===================== 控制信号提前声明（修复：先声明后使用） =====================
+  // ===================== 控制信号提前声明 =====================
   wire        FCLK_CLK0;          // PS输出50MHz时钟
   wire [31:0] ctrl_start_end_flag;// PS控制总线（slv_reg0）
   wire [31:0] dds_ctrl_reg0;      // DDS控制寄存器0（slv_reg1）：频率字
   wire [31:0] dds_ctrl_reg1;      // DDS控制寄存器1（slv_reg2）：相位/波形/幅度
-  wire [7:0]  dds_dac_out;        // DDS输出数据
+  wire [13:0] dds_dac_out;        // DDS输出数据 [14bit]
 
-  // ===================== 内部信号声明（新增，解决语法错误） =====================
-  reg [7:0]  dac_data_out_reg;    // DAC数据中间寄存器
+  // ===================== 内部信号声明 =====================
+  reg [13:0] dac_data_out_reg;    // DAC数据中间寄存器 [14bit]
   reg        clk_out_dac_reg;      // DAC时钟中间寄存器
   wire       rst_n_fir;            // FIR模式复位信号（未同步）
   wire       rst_n_fir_synced;     // 同步后的复位信号
-  // 29bit有符号数偏移量 2^28，用于29bit→8bit转换
-  localparam signed OFFSET_28 = (28'd1 << 27);
-  // 29bit有符号数最大值和最小值，用于饱和限幅（修复问题9）
+
+  // 38bit有符号数 → 14bit无符号缩放参数
+  // FIR输出范围 ±2^28 = ±268435456, 映射到 0~16383 (14bit)
+  // 缩放因子: 16383 / 268435456 = 1/16384 ≈ 右移14位
+  localparam signed OFFSET_FIR_14 = (14'd1 << 13); // 8192, 14bit中点
+  // 饱和限幅边界
   localparam signed DAC_DATA_MIN = -29'sd268435455; // -2^28
   localparam signed DAC_DATA_MAX =  29'sd268435455; //  2^28
 
 // ===================== 模式互斥逻辑 =====================
-// 优先级规则：
-// 1. bit1（系数重载）：最高优先级，独占总线
-// 2. bit0（ADC采样）和 bit2（DDS输出）：可以同时工作
-// 3. bit3（FIR滤波）：独占DAC，与其他模式互斥
-
 wire       fir_coef_reload_mode;
 wire       adc_bram_mode;
 wire       dds_mode;
@@ -100,7 +98,7 @@ assign dds_mode = !fir_coef_reload_mode && !ctrl_start_end_flag[3] && ctrl_start
 // 4. FIR模式：仅在非系数重载、非ADC、非DDS模式时有效
 assign fir_dac_mode = !fir_coef_reload_mode && !ctrl_start_end_flag[0] && !ctrl_start_end_flag[2] && ctrl_start_end_flag[3];
 
-  // ===================== 复位同步器（修复问题5：异步复位同步化） =====================
+  // ===================== 复位同步器 =====================
   reg [1:0] rst_sync;
   assign rst_n_fir = fir_dac_mode;
   always @(posedge FCLK_CLK0 or negedge rst_n_fir) begin
@@ -111,8 +109,7 @@ assign fir_dac_mode = !fir_coef_reload_mode && !ctrl_start_end_flag[0] && !ctrl_
   end
   assign rst_n_fir_synced = rst_sync[1];
 
-  // ===================== ODDR 原语输出时钟（修复问题4：保证时钟质量） =====================
-  // 用 ODDR 输出 ADC 时钟，减少时钟偏斜，满足Xilinx时序要求
+  // ===================== ODDR 原语输出时钟 =====================
   ODDR #(
       .DDR_CLK_EDGE("OPPOSITE_EDGE"),
       .INIT(1'b0),
@@ -139,8 +136,7 @@ assign fir_dac_mode = !fir_coef_reload_mode && !ctrl_start_end_flag[0] && !ctrl_
       .R(1'b0),
       .S(1'b0)
   );
-  // ===================== DAC 时钟：50MHz 连续时钟 =====================
-  // 用 ODDR 输出持续的 50MHz 时钟给 DAC
+  // DAC时钟：50MHz 连续时钟
   ODDR #(
       .DDR_CLK_EDGE("OPPOSITE_EDGE"),
       .INIT(1'b0),
@@ -158,11 +154,7 @@ assign fir_dac_mode = !fir_coef_reload_mode && !ctrl_start_end_flag[0] && !ctrl_
   // DAC数据输出（通过中间reg assign）
   assign dac_data_out = dac_data_out_reg;
 
-  // ===================== 剩余控制信号定义（严格匹配你的注释） =====================
-  // ctrl_start_end_flag[0:0] ADC1&ADC2&BRAM写入使能信号  高有效/低复位
-  // ctrl_start_end_flag[1:1] FIR系数写入使能信号        高有效/低复位
-  // ctrl_start_end_flag[2:2] DAC&DDS扫频输出使能信号     高有效
-  // ctrl_start_end_flag[3:3] ADC1&DAC&FIR输出使能信号    高有效/低复位
+  // ===================== 控制信号定义 =====================
   wire        end_adc_flag;       // ADC采样完成标志
 
   // ===================== BRAM 接口信号 =====================
@@ -185,31 +177,28 @@ assign fir_dac_mode = !fir_coef_reload_mode && !ctrl_start_end_flag[0] && !ctrl_
   // ===================== FIR 数据通道信号 =====================
   wire signed [37:0] dac_data;       // FIR滤波输出（38bit有符号）
   wire        dac_valid;      // FIR输出有效
-  // 饱和限幅后的38bit数据
-  reg signed [37:0] dac_data_sat;
+  reg signed [37:0] dac_data_sat;    // 饱和限幅后的38bit数据
 
-  // ===================== 2MHz 采样分频（模式切换时同步复位） =====================
+  // ===================== 2MHz 采样分频 =====================
   localparam DECIMATE_FIR = 25;
-  localparam START_DELAY = 10; // 复位后延迟10个时钟周期再采样
+  localparam START_DELAY = 10;
   reg [7:0] dec_cnt_fir;
   reg [3:0] start_delay_cnt;
-  reg        mode_prev; // 记录上一时刻的模式状态
-  wire       mode_switch; // 模式切换标志
-  wire       sample_en_1m;  // 1MHz 全链路采样同步基准信号
+  reg        mode_prev;
+  wire       mode_switch;
+  wire       sample_en_1m;
 
-  // 检测模式切换（上升沿）
   always @(posedge FCLK_CLK0) begin
       mode_prev <= adc_bram_mode || fir_dac_mode;
   end
   assign mode_switch = (adc_bram_mode || fir_dac_mode) && !mode_prev;
 
-  // 修复：模式切换时同步复位计数器，保证相位对齐；加入启动延迟
   always @(posedge FCLK_CLK0) begin
       if(!adc_bram_mode && !fir_dac_mode) begin
           dec_cnt_fir <= 8'd0;
           start_delay_cnt <= 4'd0;
       end
-      else if(mode_switch) begin // 模式切换时复位
+      else if(mode_switch) begin
           dec_cnt_fir <= 8'd0;
           start_delay_cnt <= 4'd0;
       end
@@ -236,76 +225,78 @@ assign fir_dac_mode = !fir_coef_reload_mode && !ctrl_start_end_flag[0] && !ctrl_
 
   // ===================== BRAM 地址多路选择器 =====================
   always @(*) begin
-      if(adc_bram_mode)      // 写BRAM模式：ADC1/2写入，互斥保护
+      if(adc_bram_mode)
           bram_addr = addrb;
-      else if(fir_coef_reload_mode) // 读BRAM模式：FIR系数读取，优先级最高
+      else if(fir_coef_reload_mode)
           bram_addr = addra;
       else
-          bram_addr = 17'd0;          // 空闲模式：地址归零
+          bram_addr = 17'd0;
   end
 
-  // ===================== DAC 输出多路选择器（核心修复：问题1、6、7、10） =====================
-  // 规则：
-  // bit3=1 → FIR模式：输出滤波数据 + dac_valid作为时钟（时序天然匹配）
-  // bit2=1 → DDS模式：预留位置（后续添加DDS模块）
-  // 其他 → 输出0
-  // 组合逻辑改时序逻辑，和FIR有效信号同步，消除毛刺
-  // 用dac_valid作为DAC时钟，保证时钟和数据同源，时序天然匹配
-  // 完善case覆盖，明确所有状态行为
-  // 检测 dac_valid 的上升沿，保证数据只更新一次
+  // ===================== DAC 输出多路选择器（14bit适配） =====================
   reg        dac_valid_prev;
   wire       dac_valid_pulse;
   
   always @(posedge FCLK_CLK0) begin
       dac_valid_prev <= dac_valid;
   end
-  assign dac_valid_pulse = dac_valid && !dac_valid_prev; // 上升沿脉冲
+  assign dac_valid_pulse = dac_valid && !dac_valid_prev;
+
+  // FIR: 38bit有符号 → 14bit无符号
+  // dac_data_sat范围 ±2^28, 右移14位得 ±16384, 加8192得 0~16384, 钳位到1~16383
+  wire signed [13:0] fir_14bit_norm;
+  assign fir_14bit_norm = $signed(dac_data_sat[37:14]) + 15'sd8192;
 
   always @(posedge FCLK_CLK0) begin
       case({fir_dac_mode, dds_mode})
           2'b10: begin // FIR工作模式
               if(!rst_n_fir_synced) begin
-                  dac_data_out_reg <= 8'd128; // FIR复位时输出中点
+                  dac_data_out_reg <= 14'd8192; // FIR复位时输出中点
               end
               else if(dac_valid_pulse) begin
-                  dac_data_out_reg <= (dac_data_sat + OFFSET_28) >> 20;
+                  // 钳位到[1, 16382]
+                  if(fir_14bit_norm <= 14'd0)
+                      dac_data_out_reg <= 14'd1;
+                  else if(fir_14bit_norm >= 14'd16383)
+                      dac_data_out_reg <= 14'd16382;
+                  else
+                      dac_data_out_reg <= fir_14bit_norm;
               end
           end
           2'b01: begin // DDS模式
-              dac_data_out_reg <= dds_dac_out; // DDS输出数据（不受FIR复位影响）
+              dac_data_out_reg <= dds_dac_out;
           end
           2'b00: begin // 空闲或仅ADC工作模式
-              dac_data_out_reg <= 8'd0;
+              dac_data_out_reg <= 14'd0;
           end
-          default: begin // 2'b11：FIR和DDS互斥，不会出现
-              dac_data_out_reg <= 8'd128;
+          default: begin // 2'b11：不会出现
+              dac_data_out_reg <= 14'd8192;
           end
       endcase
   end
 
   // ==================================================================================
-  // 1. 原有验证正常模块：ADC1/2采样 + 写入BRAM（bit0控制，修复问题2：复位逻辑）
+  // 1. ADC1/2采样 + 写入BRAM（bit0控制）
   // ==================================================================================
   adc_bram_sample adc_bram_sample_inst(
-	.clk_bram	    (FCLK_CLK0),                  // 50MHz时钟
-	.rst_n	        (adc_bram_mode),              // 修复：互斥模式下复位，避免冲突
-	.addrb	        (addrb),                      // 写地址输出
-	.dinb	        (dinb),                       // 写数据输出
-	.web	        (web),                        // 写使能输出
-    .adc_data_1     (adc_data_in_1),              // ADC1数据
-    .adc_data_2     (adc_data_in_2),              // ADC2数据
-    .adc_end_flag   (end_adc_flag)                // 采样完成标志
+	.clk_bram	    (FCLK_CLK0),
+	.rst_n	        (adc_bram_mode),
+	.addrb	        (addrb),
+	.dinb	        (dinb),
+	.web	        (web),
+    .adc_data_1     (adc_data_in_1),
+    .adc_data_2     (adc_data_in_2),
+    .adc_end_flag   (end_adc_flag)
   ); 
 
   // ==================================================================================
-  // 2. 新增模块：BRAM读取系数 + FIR重载（bit1控制，完全不动）
+  // 2. BRAM读取系数 + FIR重载（bit1控制）
   // ==================================================================================
   bram_read_fir_reload bram_read_fir_reload_inst(
-    .clk_bram       (FCLK_CLK0),                  // 50MHz时钟
-    .rst_n          (fir_coef_reload_mode),        // 修复：使用互斥模式复位
-    .addra          (addra),                      // 读地址输出
-    .douta          (doutb),                      // BRAM读出数据
-    // FIR重载端口
+    .clk_bram       (FCLK_CLK0),
+    .rst_n          (fir_coef_reload_mode),
+    .addra          (addra),
+    .douta          (doutb),
     .s_axis_reload_tvalid (s_axis_reload_tvalid),
     .s_axis_reload_tready (s_axis_reload_tready),
     .s_axis_reload_tlast  (s_axis_reload_tlast),
@@ -316,21 +307,15 @@ assign fir_dac_mode = !fir_coef_reload_mode && !ctrl_start_end_flag[0] && !ctrl_
   );
 
   // ==================================================================================
-  // 3. FIR 滤波模块（修复：使能逻辑优化，和采样基准同步）
+  // 3. FIR 滤波模块
   // ==================================================================================
   fir_adc12_dac8 fir_adc12_dac8_inst(
-    .aclk           (FCLK_CLK0),                  // 固定50MHz时钟
-    .aresetn        (rst_n_fir_synced),           // 修复：使用同步后的复位
-    
-    // FIR使能 + 1MHz采样脉冲 双条件，保证采样率严格匹配
-    .adc_data       (adc_data_in_1),              
-    .adc_valid      (fir_dac_mode), // FIR模式下，且采样使能时有效
-    // .adc_valid      (fir_dac_mode && sample_en_1m), // FIR模式下，且采样使能时有效
-    
-    .dac_data       (dac_data),    // 38bit滤波后数据
-    .dac_valid      (dac_valid),   // 输出数据有效
-    
-    // 系数重载端口
+    .aclk           (FCLK_CLK0),
+    .aresetn        (rst_n_fir_synced),
+    .adc_data       (adc_data_in_1),
+    .adc_valid      (fir_dac_mode),
+    .dac_data       (dac_data),
+    .dac_valid      (dac_valid),
     .s_axis_reload_tvalid (s_axis_reload_tvalid),
     .s_axis_reload_tready (s_axis_reload_tready),
     .s_axis_reload_tlast  (s_axis_reload_tlast),
@@ -341,24 +326,24 @@ assign fir_dac_mode = !fir_coef_reload_mode && !ctrl_start_end_flag[0] && !ctrl_
   );
 
   // ==================================================================================
-  // 4. DDS模块（bit2控制，28bit相位累加器）
+  // 4. DDS模块（bit2控制，14bit输出适配）
   // ==================================================================================
   dds_10hz_2mhz #(
       .PHASE_W  (28),
-      .ADDR_W   (10),
-      .DATA_W   (8)
+      .ADDR_W   (11),          // 2048点/波形
+      .DATA_W   (14)           // 14bit无符号输出
   ) u_dds (
-      .clk        (FCLK_CLK0),          // 50MHz时钟
-      .rst_n      (dds_mode),           // DDS模式使能时工作
-      .freq_word  (dds_ctrl_reg0[27:0]// PS控制频率（slv_reg1低28位）
-      .phase_off  (dds_ctrl_reg1[9:0]), // PS控制相位（slv_reg2低10位）
-      .wave_sel   (dds_ctrl_reg1[11:10]),// PS控制波形（slv_reg2[11:10]）
-      .amplitude  (dds_ctrl_reg1[19:12]),// PS控制幅度（slv_reg2[19:12]）
-      .dac_out    (dds_dac_out)         // 输出波形
+      .clk        (FCLK_CLK0),
+      .rst_n      (dds_mode),
+      .freq_word  (dds_ctrl_reg0[27:0]),
+      .phase_off  (dds_ctrl_reg1[10:0]),  // 11bit相位偏移
+      .wave_sel   (dds_ctrl_reg1[12:11]), // 注意：因ADDR_W增大，wave_sel位置调整
+      .amplitude  (dds_ctrl_reg1[20:13]), // 注意：幅度位置偏移
+      .dac_out    (dds_dac_out)
   );
 
   // ==================================================================================
-  // 5. BD wrapper（连接DDS寄存器）
+  // 5. BD wrapper
   // ==================================================================================
   design_1_wrapper design_1_wrapper_inst
        (
@@ -385,18 +370,18 @@ assign fir_dac_mode = !fir_coef_reload_mode && !ctrl_start_end_flag[0] && !ctrl_
         .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
         .UART_0_1_rxd(UART_0_1_rxd),
         .UART_0_1_txd(UART_0_1_txd),
-        .IRQ_F2P_0(end_adc_flag),         // 采样完成→PS中断
-        .slv_reg0_o_0(ctrl_start_end_flag),// PS控制信号（模式+中断）
-        .slv_reg1_o_0(dds_ctrl_reg0),     // DDS频率字
-        .slv_reg2_o_0(dds_ctrl_reg1),     // DDS相位/波形/幅度
+        .IRQ_F2P_0(end_adc_flag),
+        .slv_reg0_o_0(ctrl_start_end_flag),
+        .slv_reg1_o_0(dds_ctrl_reg0),
+        .slv_reg2_o_0(dds_ctrl_reg1),
 
 	    .FCLK_CLK0_0	(FCLK_CLK0),
-	    .addrb_0		({15'd0, bram_addr}),  // MUX切换后的最终地址
+	    .addrb_0		({15'd0, bram_addr}),
 	    .clkb_0    	(FCLK_CLK0),
 	    .dinb_0		(dinb),
 	    .doutb_0		(doutb),
-	    .enb_0		(1'b1),                // BRAM总使能
-	    .web_0		(web)                  // 写使能
+	    .enb_0		(1'b1),
+	    .web_0		(web)
 );
 
 endmodule

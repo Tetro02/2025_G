@@ -56,8 +56,8 @@
 //----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
 wave_rom your_instance_name (
   .clka(clka),    // input wire clka
-  .addra(addra),  // input wire [11 : 0] addra
-  .douta(douta)  // output wire [7 : 0] douta
+  .addra(addra),  // input wire [12 : 0] addra
+  .douta(douta)  // output wire [13 : 0] douta
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
 

@@ -56,9 +56,9 @@ module wave_rom_sv (
   (* X_INTERFACE_IGNORE = "true" *)
   input wire clka,
   (* X_INTERFACE_IGNORE = "true" *)
-  input wire [11:0] addra,
+  input wire [12:0] addra,
   (* X_INTERFACE_IGNORE = "true" *)
-  output wire [7:0] douta
+  output wire [13:0] douta
 );
 
   wave_rom inst (

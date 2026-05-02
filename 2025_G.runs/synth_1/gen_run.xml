@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1777562798" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Test_Top.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1777635485" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Test_Top.dcp">
   <File Type="PA-TCL" Name="Test_Top.tcl"/>
   <File Type="REPORTS-TCL" Name="Test_Top_reports.tcl"/>
   <File Type="RDS-RDS" Name="Test_Top.vds"/>
@@ -11,14 +11,6 @@
   <File Type="VDS-TIMING-PB" Name="Test_Top_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/imports/ROM_mif/wave_rom.coe">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../Desktop/FPGA/ROM_mif/wave_rom.coe"/>
-        <Attr Name="ImportTime" Val="1774958469"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PPRDIR/../../../Desktop/FIR1.coe">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -38,6 +30,12 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/wave_rom.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/dds_14bit_6144_total.coe">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
