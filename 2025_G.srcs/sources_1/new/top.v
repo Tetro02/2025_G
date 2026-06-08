@@ -1,42 +1,42 @@
 module Test_Top (
     // ===================== DDR（Zynq PS 固定端口） =====================
-    inout  [14:0]  DDR_addr,
-    inout  [2:0]   DDR_ba,
-    inout          DDR_cas_n,
-    inout          DDR_ck_n,
-    inout          DDR_ck_p,
-    inout          DDR_cke,
-    inout          DDR_cs_n,
-    inout  [3:0]   DDR_dm,
-    inout  [31:0]  DDR_dq,
-    inout  [3:0]   DDR_dqs_n,
-    inout  [3:0]   DDR_dqs_p,
-    inout          DDR_odt,
-    inout          DDR_ras_n,
-    inout          DDR_reset_n,
-    inout          DDR_we_n,
+    inout [14:0] DDR_addr,
+    inout [ 2:0] DDR_ba,
+    inout        DDR_cas_n,
+    inout        DDR_ck_n,
+    inout        DDR_ck_p,
+    inout        DDR_cke,
+    inout        DDR_cs_n,
+    inout [ 3:0] DDR_dm,
+    inout [31:0] DDR_dq,
+    inout [ 3:0] DDR_dqs_n,
+    inout [ 3:0] DDR_dqs_p,
+    inout        DDR_odt,
+    inout        DDR_ras_n,
+    inout        DDR_reset_n,
+    inout        DDR_we_n,
 
     // ===================== FIXED_IO（Zynq PS 固定端口） =====================
-    inout          FIXED_IO_ddr_vrn,
-    inout          FIXED_IO_ddr_vrp,
-    inout  [53:0]  FIXED_IO_mio,
-    inout          FIXED_IO_ps_clk,
-    inout          FIXED_IO_ps_porb,
-    inout          FIXED_IO_ps_srstb,
+    inout        FIXED_IO_ddr_vrn,
+    inout        FIXED_IO_ddr_vrp,
+    inout [53:0] FIXED_IO_mio,
+    inout        FIXED_IO_ps_clk,
+    inout        FIXED_IO_ps_porb,
+    inout        FIXED_IO_ps_srstb,
 
     // ===================== UART（PS 引出） =====================
-    input          UART_0_1_rxd,
-    output         UART_0_1_txd,
+    input  UART_0_1_rxd,
+    output UART_0_1_txd,
 
     // ===================== ADC 接口 =====================
-    input  [11:0]  adc_data_in_1,
-    input  [11:0]  adc_data_in_2,
-    output         clk_out_adc_1,
-    output         clk_out_adc_2,
+    input  [11:0] adc_data_in_1,
+    input  [11:0] adc_data_in_2,
+    output        clk_out_adc_1,
+    output        clk_out_adc_2,
 
     // ===================== DAC 接口 =====================
-    output [13:0]  dac_data_out,
-    output         clk_out_dac
+    output [13:0] dac_data_out,
+    output        clk_out_dac
 );
 
     // =========================================================
@@ -44,28 +44,28 @@ module Test_Top (
     // =========================================================
 
     // PS 主时钟 50MHz
-    wire         FCLK_CLK0;
+    wire        FCLK_CLK0;
 
     // slv_reg0: 控制/状态
-    wire [31:0]  ctrl_start_end_flag;
+    wire [31:0] ctrl_start_end_flag;
 
     // slv_reg1: DDS 频率字
-    wire [31:0]  dds_ctrl_reg0;
+    wire [31:0] dds_ctrl_reg0;
 
     // slv_reg2: DDS 控制（波形、相位、幅度）
-    wire [31:0]  dds_ctrl_reg1;
+    wire [31:0] dds_ctrl_reg1;
 
     // slv_reg3: 校准参数
-    wire [31:0]  slv_reg3;
+    wire [31:0] slv_reg3;
 
     // DDS 原始输出（14-bit unsigned）
-    wire [13:0]  dds_dac_out;
+    wire [13:0] dds_dac_out;
 
     // =========================================================
     //  2. DAC 输出寄存器
     // =========================================================
 
-    reg [13:0] dac_data_out_reg;
+    reg  [13:0] dac_data_out_reg;
     assign dac_data_out = dac_data_out_reg;
 
     // =========================================================
@@ -73,10 +73,10 @@ module Test_Top (
     // =========================================================
 
     // 粗调位移 0~31（右移位数）
-    wire [4:0]  cal_shift = slv_reg3[4:0];
+    wire [4:0] cal_shift = slv_reg3[4:0];
 
     // 微调乘数 Q1.15（0x8000 = 1.0）
-    wire [15:0] cal_coef  = slv_reg3[20:5];
+    wire [15:0] cal_coef = slv_reg3[20:5];
 
     // =========================================================
     //  4. 模式互斥（多路复用控制）
@@ -90,12 +90,10 @@ module Test_Top (
     wire use_fir_chain;
 
     // bit1 最高优先级 — FIR 系数重载
-    assign fir_coef_reload_mode =  ctrl_start_end_flag[1];
+    assign fir_coef_reload_mode = ctrl_start_end_flag[1];
 
     // bit4 — 校准模式
-    assign cal_mode    = !ctrl_start_end_flag[1]
-                      && !ctrl_start_end_flag[3]
-                      &&  ctrl_start_end_flag[4];
+    assign cal_mode = !ctrl_start_end_flag[1] && !ctrl_start_end_flag[3] && ctrl_start_end_flag[4];
 
     // bit2 — DDS 独立输出（扫频）；bit4 — 校准模式下也跑 DDS
     assign dds_mode    = !ctrl_start_end_flag[1]
@@ -125,10 +123,8 @@ module Test_Top (
     wire       rst_n_fir_synced;
 
     always @(posedge FCLK_CLK0 or negedge use_fir_chain) begin
-        if (!use_fir_chain)
-            rst_sync <= 2'b0;
-        else
-            rst_sync <= {rst_sync[0], 1'b1};
+        if (!use_fir_chain) rst_sync <= 2'b0;
+        else rst_sync <= {rst_sync[0], 1'b1};
     end
 
     assign rst_n_fir_synced = rst_sync[1];
@@ -183,25 +179,25 @@ module Test_Top (
     //  7. ADC / BRAM 接口信号
     // =========================================================
 
-    wire         end_adc_flag;
-    wire [16:0]  addrb;
-    wire [16:0]  addra;
-    wire [31:0]  dinb;
-    wire [31:0]  doutb;
-    wire [3:0]   web;
-    reg  [16:0]  bram_addr;
+    wire               end_adc_flag;
+    wire        [16:0] addrb;
+    wire        [16:0] addra;
+    wire        [31:0] dinb;
+    wire        [31:0] doutb;
+    wire        [ 3:0] web;
+    reg         [16:0] bram_addr;
 
     // =========================================================
     //  8. FIR 系数重载通道（AXI-Stream）
     // =========================================================
 
-    wire        s_axis_reload_tvalid;
-    wire        s_axis_reload_tready;
-    wire        s_axis_reload_tlast;
-    wire [15:0] s_axis_reload_tdata;
-    wire        s_axis_config_tvalid;
-    wire        s_axis_config_tready;
-    wire [7:0]  s_axis_config_tdata;
+    wire               s_axis_reload_tvalid;
+    wire               s_axis_reload_tready;
+    wire               s_axis_reload_tlast;
+    wire        [15:0] s_axis_reload_tdata;
+    wire               s_axis_config_tvalid;
+    wire               s_axis_config_tready;
+    wire        [ 7:0] s_axis_config_tdata;
 
     // =========================================================
     //  9. FIR 数据通道
@@ -211,7 +207,31 @@ module Test_Top (
     wire               dac_valid;
 
     // =========================================================
-    //  10. FIR 输入 MUX
+    //  10. 1MHz 采样使能 (50MHz / 50)
+    //      校准模式 — DDS 单频 244Hz≈DC, 50MHz 足够
+    //      模仿模式 — 需要 1MHz 匹配 FIR 设计采样率
+    // =========================================================
+
+    reg [5:0] dec_cnt;
+    wire      sample_en_1m;
+
+    always @(posedge FCLK_CLK0 or negedge use_fir_chain) begin
+        if (!use_fir_chain)
+            dec_cnt <= 6'd0;
+        else if (dec_cnt == 6'd49)
+            dec_cnt <= 6'd0;
+        else
+            dec_cnt <= dec_cnt + 1'd1;
+    end
+
+    assign sample_en_1m = (dec_cnt == 6'd49);
+
+    // FIR 采样有效: 校准=连续, 模仿=1MHz 脉冲
+    wire fir_valid;
+    assign fir_valid = cal_mode ? 1'b1 : sample_en_1m;
+
+    // =========================================================
+    //  11. FIR 输入 MUX
     //      校准模式 — 用 DDS 作为激励源
     //      模仿模式 — 用 ADC 实时数据
     // =========================================================
@@ -221,10 +241,11 @@ module Test_Top (
     assign dds_to_fir = $signed(dds_dac_out[13:2]) - 12'sd2048;
 
     wire [11:0] fir_adc_input;
-    assign fir_adc_input = cal_mode ? dds_to_fir : adc_data_in_1;
+    // 校准: DDS 激励; 模仿: ADC2 (参考/输入通道, H = ADC1/ADC2)
+    assign fir_adc_input = cal_mode ? (dds_to_fir + 12'd2048) : adc_data_in_2;
 
     // =========================================================
-    //  11. shift + multiplier 链路
+    //  12. shift + multiplier 链路
     //      FIR 输出 40-bit signed → 粗调右移 → 微调乘 Q1.15 → 截位 → +DC
     // =========================================================
 
@@ -245,22 +266,19 @@ module Test_Top (
     assign cal_dac_signed = mult_scaled[14:0] + 15'sd8192;
 
     // =========================================================
-    //  12. BRAM 地址 MUX
+    //  13. BRAM 地址 MUX
     //      ADC 采样 → BRAM 写地址
     //      系数重载 → BRAM 读地址
     // =========================================================
 
     always @(*) begin
-        if (adc_bram_mode)
-            bram_addr = addrb;
-        else if (fir_coef_reload_mode)
-            bram_addr = addra;
-        else
-            bram_addr = 17'd0;
+        if (adc_bram_mode) bram_addr = addrb;
+        else if (fir_coef_reload_mode) bram_addr = addra;
+        else bram_addr = 17'd0;
     end
 
     // =========================================================
-    //  13. DAC 输出 MUX
+    //  14. DAC 输出 MUX
     //      use_fir_chain — FIR→shift→mult 链路的输出
     //      dds_mode     — 原始 DDS 直通
     //      其他          — 输出 0
@@ -268,23 +286,18 @@ module Test_Top (
 
     always @(posedge FCLK_CLK0) begin
         if (use_fir_chain) begin
-            if (cal_dac_signed <= 0)
-                dac_data_out_reg <= 14'd1;
-            else if (cal_dac_signed >= 16383)
-                dac_data_out_reg <= 14'd16382;
-            else
-                dac_data_out_reg <= cal_dac_signed[13:0];
-        end
-        else if (dds_mode) begin
+            if (cal_dac_signed <= 0) dac_data_out_reg <= 14'd1;
+            else if (cal_dac_signed >= 16383) dac_data_out_reg <= 14'd16382;
+            else dac_data_out_reg <= cal_dac_signed[13:0];
+        end else if (dds_mode) begin
             dac_data_out_reg <= dds_dac_out;
-        end
-        else begin
+        end else begin
             dac_data_out_reg <= 14'd0;
         end
     end
 
     // =========================================================
-    //  14. 子模块例化
+    //  15. 子模块例化
     // =========================================================
 
     // -------------------------------------------------------
@@ -305,106 +318,106 @@ module Test_Top (
     //  2) BRAM 读系数 + FIR 重载（AXI-Stream）
     // -------------------------------------------------------
     bram_read_fir_reload bram_read_fir_reload_inst (
-        .clk_bram               (FCLK_CLK0),
-        .rst_n                  (fir_coef_reload_mode),
-        .addra                  (addra),
-        .douta                  (doutb),
+        .clk_bram(FCLK_CLK0),
+        .rst_n   (fir_coef_reload_mode),
+        .addra   (addra),
+        .douta   (doutb),
 
-        .s_axis_reload_tvalid   (s_axis_reload_tvalid),
-        .s_axis_reload_tready   (s_axis_reload_tready),
-        .s_axis_reload_tlast    (s_axis_reload_tlast),
-        .s_axis_reload_tdata    (s_axis_reload_tdata),
+        .s_axis_reload_tvalid(s_axis_reload_tvalid),
+        .s_axis_reload_tready(s_axis_reload_tready),
+        .s_axis_reload_tlast (s_axis_reload_tlast),
+        .s_axis_reload_tdata (s_axis_reload_tdata),
 
-        .s_axis_config_tvalid   (s_axis_config_tvalid),
-        .s_axis_config_tready   (s_axis_config_tready),
-        .s_axis_config_tdata    (s_axis_config_tdata)
+        .s_axis_config_tvalid(s_axis_config_tvalid),
+        .s_axis_config_tready(s_axis_config_tready),
+        .s_axis_config_tdata (s_axis_config_tdata)
     );
 
     // -------------------------------------------------------
     //  3) FIR 滤波器（1001-tap 对称）
     // -------------------------------------------------------
     fir_adc12_dac8 fir_adc12_dac8_inst (
-        .aclk                   (FCLK_CLK0),
-        .aresetn                (rst_n_fir_synced),
+        .aclk   (FCLK_CLK0),
+        .aresetn(rst_n_fir_synced),
 
-        .adc_data               (fir_adc_input),
-        .adc_valid              (use_fir_chain),
+        .adc_data (fir_adc_input),
+        .adc_valid(fir_valid),
 
-        .dac_data               (dac_data),
-        .dac_valid              (dac_valid),
+        .dac_data (dac_data),
+        .dac_valid(dac_valid),
 
-        .s_axis_reload_tvalid   (s_axis_reload_tvalid),
-        .s_axis_reload_tready   (s_axis_reload_tready),
-        .s_axis_reload_tlast    (s_axis_reload_tlast),
-        .s_axis_reload_tdata    (s_axis_reload_tdata),
+        .s_axis_reload_tvalid(s_axis_reload_tvalid),
+        .s_axis_reload_tready(s_axis_reload_tready),
+        .s_axis_reload_tlast (s_axis_reload_tlast),
+        .s_axis_reload_tdata (s_axis_reload_tdata),
 
-        .s_axis_config_tvalid   (s_axis_config_tvalid),
-        .s_axis_config_tready   (s_axis_config_tready),
-        .s_axis_config_tdata    (s_axis_config_tdata)
+        .s_axis_config_tvalid(s_axis_config_tvalid),
+        .s_axis_config_tready(s_axis_config_tready),
+        .s_axis_config_tdata (s_axis_config_tdata)
     );
 
     // -------------------------------------------------------
     //  4) DDS（10Hz ~ 2MHz）
     // -------------------------------------------------------
     dds_10hz_2mhz #(
-        .PHASE_W (28),
-        .ADDR_W  (11),
-        .DATA_W  (14)
+        .PHASE_W(28),
+        .ADDR_W (11),
+        .DATA_W (14)
     ) u_dds (
-        .clk       (FCLK_CLK0),
-        .rst_n     (dds_mode),
-        .freq_word (dds_ctrl_reg0[27:0]),
-        .phase_off (dds_ctrl_reg1[10:0]),
-        .wave_sel  (dds_ctrl_reg1[12:11]),
-        .amplitude (dds_ctrl_reg1[20:13]),
-        .dac_out   (dds_dac_out)
+        .clk      (FCLK_CLK0),
+        .rst_n    (dds_mode),
+        .freq_word(dds_ctrl_reg0[27:0]),
+        .phase_off(dds_ctrl_reg1[10:0]),
+        .wave_sel (dds_ctrl_reg1[12:11]),
+        .amplitude(dds_ctrl_reg1[20:13]),
+        .dac_out  (dds_dac_out)
     );
 
     // -------------------------------------------------------
     //  5) PS 端 BD wrapper
     // -------------------------------------------------------
     design_1_wrapper design_1_wrapper_inst (
-        .DDR_addr           (DDR_addr),
-        .DDR_ba             (DDR_ba),
-        .DDR_cas_n          (DDR_cas_n),
-        .DDR_ck_n           (DDR_ck_n),
-        .DDR_ck_p           (DDR_ck_p),
-        .DDR_cke            (DDR_cke),
-        .DDR_cs_n           (DDR_cs_n),
-        .DDR_dm             (DDR_dm),
-        .DDR_dq             (DDR_dq),
-        .DDR_dqs_n          (DDR_dqs_n),
-        .DDR_dqs_p          (DDR_dqs_p),
-        .DDR_odt            (DDR_odt),
-        .DDR_ras_n          (DDR_ras_n),
-        .DDR_reset_n        (DDR_reset_n),
-        .DDR_we_n           (DDR_we_n),
+        .DDR_addr   (DDR_addr),
+        .DDR_ba     (DDR_ba),
+        .DDR_cas_n  (DDR_cas_n),
+        .DDR_ck_n   (DDR_ck_n),
+        .DDR_ck_p   (DDR_ck_p),
+        .DDR_cke    (DDR_cke),
+        .DDR_cs_n   (DDR_cs_n),
+        .DDR_dm     (DDR_dm),
+        .DDR_dq     (DDR_dq),
+        .DDR_dqs_n  (DDR_dqs_n),
+        .DDR_dqs_p  (DDR_dqs_p),
+        .DDR_odt    (DDR_odt),
+        .DDR_ras_n  (DDR_ras_n),
+        .DDR_reset_n(DDR_reset_n),
+        .DDR_we_n   (DDR_we_n),
 
-        .FIXED_IO_ddr_vrn   (FIXED_IO_ddr_vrn),
-        .FIXED_IO_ddr_vrp   (FIXED_IO_ddr_vrp),
-        .FIXED_IO_mio       (FIXED_IO_mio),
-        .FIXED_IO_ps_clk    (FIXED_IO_ps_clk),
-        .FIXED_IO_ps_porb   (FIXED_IO_ps_porb),
-        .FIXED_IO_ps_srstb  (FIXED_IO_ps_srstb),
+        .FIXED_IO_ddr_vrn (FIXED_IO_ddr_vrn),
+        .FIXED_IO_ddr_vrp (FIXED_IO_ddr_vrp),
+        .FIXED_IO_mio     (FIXED_IO_mio),
+        .FIXED_IO_ps_clk  (FIXED_IO_ps_clk),
+        .FIXED_IO_ps_porb (FIXED_IO_ps_porb),
+        .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
 
-        .UART_0_1_rxd       (UART_0_1_rxd),
-        .UART_0_1_txd       (UART_0_1_txd),
+        .UART_0_1_rxd(UART_0_1_rxd),
+        .UART_0_1_txd(UART_0_1_txd),
 
-        .IRQ_F2P_0          (end_adc_flag),
-        .slv_reg0_o_0       (ctrl_start_end_flag),
-        .slv_reg1_o_0       (dds_ctrl_reg0),
-        .slv_reg2_o_0       (dds_ctrl_reg1),
-        .slv_reg3_o_0       (slv_reg3),
+        .IRQ_F2P_0   (end_adc_flag),
+        .slv_reg0_o_0(ctrl_start_end_flag),
+        .slv_reg1_o_0(dds_ctrl_reg0),
+        .slv_reg2_o_0(dds_ctrl_reg1),
+        .slv_reg3_o_0(slv_reg3),
 
-        .FCLK_CLK0_0        (FCLK_CLK0),
+        .FCLK_CLK0_0(FCLK_CLK0),
 
-        .addrb_0            ({15'd0, bram_addr}),
-        .clkb_0             (FCLK_CLK0),
-        .dinb_0             (dinb),
-        .doutb_0            (doutb),
-        .enb_0              (1'b1),
-        .web_0              (web),
-        .rstb_0             (1'b0)
+        .addrb_0({15'd0, bram_addr}),
+        .clkb_0 (FCLK_CLK0),
+        .dinb_0 (dinb),
+        .doutb_0(doutb),
+        .enb_0  (1'b1),
+        .web_0  (web),
+        .rstb_0 (1'b0)
     );
 
 endmodule

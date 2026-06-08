@@ -14,6 +14,13 @@
 		memory_type = "memory";
 		reg = <0x0 0x40000000 0x0 0x80000>;
 	};
+	ps7_qspi_linear_0_memory: memory@fc000000 {
+		compatible = "xlnx,ps7-qspi-linear-1.00.a-memory";
+		xlnx,ip-name = "ps7_qspi_linear";
+		device_type = "memory";
+		memory_type = "linear_flash";
+		reg = <0xfc000000 0x1000000>;
+	};
 	ps7_ddr_0_memory: memory@00100000 {
 		compatible = "xlnx,ps7-ddr-1.00.a";
 		xlnx,ip-name = "ps7_ddr";
@@ -40,6 +47,7 @@
 	};
 	aliases {
 		serial0 = &uart0;
+		spi0 = &qspi;
 		serial1 = &coresight;
 	};
 	cpus_a9: cpus-a9@0 {
@@ -67,6 +75,8 @@
 			      <0xf8f02000 &L2 0xf8f02000 0x1000>, 
 			      <0xf800c000 &ps7_ocmc_0 0xf800c000 0x1000>, 
 			      <0xf8891000 &ps7_pmu_0 0xf8891000 0x1000>, 
+			      <0xe000d000 &qspi 0xe000d000 0x1000>, 
+			      <0xfc000000 &ps7_qspi_linear_0_memory 0xfc000000 0x1000000>, 
 			      <0xf8f00000 &ps7_scuc_0 0xf8f00000 0xfd>, 
 			      <0xf8f00600 &scutimer 0xf8f00600 0x20>, 
 			      <0xf8f00620 &scuwdt 0xf8f00620 0xe0>, 

@@ -185,6 +185,10 @@ drv_info:
   ps7_ocmc_0: None
   ps7_pl310_0: None
   ps7_pmu_0: None
+  ps7_qspi_0:
+    driver: qspips
+    ip_name: ps7_qspi
+    path: D:\Tetro\Tools\Vivado\2025.2\Vitis\data\embeddedsw\XilinxProcessorIPLib\drivers\qspips_v3_14
   ps7_scuc_0: None
   ps7_scutimer_0:
     driver: scutimer

@@ -396,7 +396,7 @@
             "value": "200.000000"
           },
           "PCW_ACT_QSPI_PERIPHERAL_FREQMHZ": {
-            "value": "10.000000"
+            "value": "200.000000"
           },
           "PCW_ACT_SDIO_PERIPHERAL_FREQMHZ": {
             "value": "10.000000"
@@ -681,7 +681,7 @@
             "value": "0"
           },
           "PCW_EN_QSPI": {
-            "value": "0"
+            "value": "1"
           },
           "PCW_EN_RST0_PORT": {
             "value": "1"
@@ -812,14 +812,56 @@
           "PCW_IRQ_F2P_MODE": {
             "value": "DIRECT"
           },
+          "PCW_MIO_1_IOTYPE": {
+            "value": "LVCMOS 3.3V"
+          },
+          "PCW_MIO_1_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_1_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_2_IOTYPE": {
+            "value": "LVCMOS 3.3V"
+          },
+          "PCW_MIO_2_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_3_IOTYPE": {
+            "value": "LVCMOS 3.3V"
+          },
+          "PCW_MIO_3_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_4_IOTYPE": {
+            "value": "LVCMOS 3.3V"
+          },
+          "PCW_MIO_4_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_5_IOTYPE": {
+            "value": "LVCMOS 3.3V"
+          },
+          "PCW_MIO_5_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_6_IOTYPE": {
+            "value": "LVCMOS 3.3V"
+          },
+          "PCW_MIO_6_SLEW": {
+            "value": "slow"
+          },
           "PCW_MIO_PRIMITIVE": {
             "value": "54"
           },
           "PCW_MIO_TREE_PERIPHERALS": {
-            "value": "unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned"
+            "value": [
+              "unassigned#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#Quad SPI",
+              "Flash#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned"
+            ]
           },
           "PCW_MIO_TREE_SIGNALS": {
-            "value": "unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned"
+            "value": "unassigned#qspi0_ss_b#qspi0_io[0]#qspi0_io[1]#qspi0_io[2]#qspi0_io[3]/HOLD_B#qspi0_sclk#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned"
           },
           "PCW_M_AXI_GP0_ENABLE_STATIC_REMAP": {
             "value": "0"
@@ -853,9 +895,6 @@
           },
           "PCW_NAND_CYCLES_T_WP": {
             "value": "1"
-          },
-          "PCW_NAND_PERIPHERAL_ENABLE": {
-            "value": "0"
           },
           "PCW_NOR_CS0_T_CEOE": {
             "value": "1"
@@ -897,9 +936,6 @@
             "value": "1"
           },
           "PCW_NOR_CS1_WE_TIME": {
-            "value": "0"
-          },
-          "PCW_NOR_PERIPHERAL_ENABLE": {
             "value": "0"
           },
           "PCW_NOR_SRAM_CS0_T_CEOE": {
@@ -996,10 +1032,25 @@
             "value": "LVCMOS 3.3V"
           },
           "PCW_PRESET_BANK1_VOLTAGE": {
-            "value": "LVCMOS 3.3V"
+            "value": "LVCMOS 1.8V"
           },
           "PCW_PS7_SI_REV": {
             "value": "PRODUCTION"
+          },
+          "PCW_QSPI_GRP_FBCLK_ENABLE": {
+            "value": "0"
+          },
+          "PCW_QSPI_GRP_IO1_ENABLE": {
+            "value": "0"
+          },
+          "PCW_QSPI_GRP_SINGLE_SS_ENABLE": {
+            "value": "1"
+          },
+          "PCW_QSPI_GRP_SINGLE_SS_IO": {
+            "value": "MIO 1 .. 6"
+          },
+          "PCW_QSPI_GRP_SS1_ENABLE": {
+            "value": "0"
           },
           "PCW_QSPI_INTERNAL_HIGHADDRESS": {
             "value": "0xFCFFFFFF"
@@ -1008,7 +1059,13 @@
             "value": "IO PLL"
           },
           "PCW_QSPI_PERIPHERAL_ENABLE": {
-            "value": "0"
+            "value": "1"
+          },
+          "PCW_QSPI_PERIPHERAL_FREQMHZ": {
+            "value": "200"
+          },
+          "PCW_QSPI_QSPI_IO": {
+            "value": "MIO 1 .. 6"
           },
           "PCW_SD0_PERIPHERAL_ENABLE": {
             "value": "0"
@@ -1021,6 +1078,9 @@
           },
           "PCW_SDIO_PERIPHERAL_VALID": {
             "value": "0"
+          },
+          "PCW_SINGLE_QSPI_DATA_MODE": {
+            "value": "x4"
           },
           "PCW_SMC_CYCLE_T0": {
             "value": "NA"

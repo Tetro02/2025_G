@@ -46,6 +46,13 @@ C:/Users/Tetro/Documents/FPGA_Project/2025_G/platform/zynq_fsbl/zynq_fsbl_bsp/li
 C:/Users/Tetro/Documents/FPGA_Project/2025_G/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/dmaps/src/CMakeFiles/install.dir
 C:/Users/Tetro/Documents/FPGA_Project/2025_G/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/dmaps/src/CMakeFiles/install/local.dir
 C:/Users/Tetro/Documents/FPGA_Project/2025_G/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/dmaps/src/CMakeFiles/install/strip.dir
+C:/Users/Tetro/Documents/FPGA_Project/2025_G/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/qspips/src/CMakeFiles/qspips.dir
+C:/Users/Tetro/Documents/FPGA_Project/2025_G/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/qspips/src/CMakeFiles/edit_cache.dir
+C:/Users/Tetro/Documents/FPGA_Project/2025_G/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/qspips/src/CMakeFiles/rebuild_cache.dir
+C:/Users/Tetro/Documents/FPGA_Project/2025_G/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/qspips/src/CMakeFiles/list_install_components.dir
+C:/Users/Tetro/Documents/FPGA_Project/2025_G/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/qspips/src/CMakeFiles/install.dir
+C:/Users/Tetro/Documents/FPGA_Project/2025_G/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/qspips/src/CMakeFiles/install/local.dir
+C:/Users/Tetro/Documents/FPGA_Project/2025_G/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/qspips/src/CMakeFiles/install/strip.dir
 C:/Users/Tetro/Documents/FPGA_Project/2025_G/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/scugic/src/CMakeFiles/scugic.dir
 C:/Users/Tetro/Documents/FPGA_Project/2025_G/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/scugic/src/CMakeFiles/edit_cache.dir
 C:/Users/Tetro/Documents/FPGA_Project/2025_G/platform/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp/libsrc/scugic/src/CMakeFiles/rebuild_cache.dir
