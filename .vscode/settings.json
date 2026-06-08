@@ -1,3 +1,4 @@
 {
-    "C_Cpp.errorSquiggles": "disabled"
+    "C_Cpp.errorSquiggles": "disabled",
+    "cmake.sourceDirectory": "C:/Users/Tetro/Documents/FPGA_Project/2025_G/hello_world/src"
 }

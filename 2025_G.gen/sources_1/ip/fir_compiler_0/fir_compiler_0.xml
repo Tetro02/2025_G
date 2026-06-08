@@ -1035,7 +1035,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:5e0295e2</spirit:value>
+            <spirit:value>9:a6215e51</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1050,11 +1050,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Apr 30 13:41:42 UTC 2026</spirit:value>
+            <spirit:value>Tue Jun 02 09:48:11 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:5e0295e2</spirit:value>
+            <spirit:value>9:a6215e51</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1068,11 +1068,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Apr 30 13:41:43 UTC 2026</spirit:value>
+            <spirit:value>Tue Jun 02 09:48:16 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:5e0295e2</spirit:value>
+            <spirit:value>9:a6215e51</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1083,7 +1083,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:5e0295e2</spirit:value>
+            <spirit:value>9:a6215e51</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1098,11 +1098,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Apr 30 13:41:39 UTC 2026</spirit:value>
+            <spirit:value>Tue Jun 02 09:48:01 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:5e0295e2</spirit:value>
+            <spirit:value>9:a6215e51</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1116,11 +1116,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Apr 30 13:41:43 UTC 2026</spirit:value>
+            <spirit:value>Tue Jun 02 09:48:16 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:5e0295e2</spirit:value>
+            <spirit:value>9:a6215e51</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1145,11 +1145,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Apr 30 13:41:41 UTC 2026</spirit:value>
+            <spirit:value>Tue Jun 02 09:48:06 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:17e499d7</spirit:value>
+            <spirit:value>9:fc6faff5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1165,11 +1165,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Apr 30 13:41:41 UTC 2026</spirit:value>
+            <spirit:value>Tue Jun 02 09:48:06 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:17e499d7</spirit:value>
+            <spirit:value>9:fc6faff5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1194,11 +1194,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Apr 30 13:41:41 UTC 2026</spirit:value>
+            <spirit:value>Tue Jun 02 09:48:06 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:5e0295e2</spirit:value>
+            <spirit:value>9:a6215e51</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1214,11 +1214,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Apr 30 13:41:41 UTC 2026</spirit:value>
+            <spirit:value>Tue Jun 02 09:48:06 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:5e0295e2</spirit:value>
+            <spirit:value>9:a6215e51</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1234,11 +1234,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Apr 30 13:41:42 UTC 2026</spirit:value>
+            <spirit:value>Tue Jun 02 09:48:11 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:5e0295e2</spirit:value>
+            <spirit:value>9:a6215e51</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1887,7 +1887,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_COEF_FILE_LINES</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_COEF_FILE_LINES">1088</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_COEF_FILE_LINES">1408</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_DATA_COEFFICIENT_TYPE</spirit:name>
@@ -1919,7 +1919,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_NUM_TAPS</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_NUM_TAPS">801</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_NUM_TAPS">1001</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_NUM_CHANNELS</spirit:name>
@@ -1951,7 +1951,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="string">
         <spirit:name>C_COL_CONFIG</spirit:name>
-        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_COL_CONFIG">17</spirit:value>
+        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_COL_CONFIG">11</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_OPTIMIZATION</spirit:name>
@@ -2031,7 +2031,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_NUM_MADDS</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_NUM_MADDS">17</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_NUM_MADDS">11</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="string">
         <spirit:name>C_OPT_MADDS</spirit:name>
@@ -2039,15 +2039,15 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_OVERSAMPLING_RATE</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OVERSAMPLING_RATE">24</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OVERSAMPLING_RATE">46</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_INPUT_RATE</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_INPUT_RATE">25</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_INPUT_RATE">50</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_OUTPUT_RATE</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OUTPUT_RATE">25</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OUTPUT_RATE">50</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_DATA_MEMTYPE</spirit:name>
@@ -2087,7 +2087,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_LATENCY</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_LATENCY">53</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_LATENCY">69</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_HAS_ARESETn</spirit:name>
@@ -2514,7 +2514,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Coefficient_File</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Coefficient_File" spirit:order="5">../../../../../../../Desktop/20000G_2M_800_HMwindow.coe</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Coefficient_File" spirit:order="5">../../../../../../../Desktop/FIR/20000D_1M_1000.coe</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Coefficient_Sets</spirit:name>
@@ -2574,15 +2574,15 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SamplePeriod</spirit:name>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.SamplePeriod" spirit:order="20" spirit:minimum="0.00390625" spirit:maximum="1e+07">1</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.SamplePeriod" spirit:order="20" spirit:minimum="1" spirit:maximum="1e+07">1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Sample_Frequency</spirit:name>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.Sample_Frequency" spirit:order="21" spirit:minimum="1e-06" spirit:maximum="189952">2</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.Sample_Frequency" spirit:order="21" spirit:minimum="1e-06" spirit:maximum="189952">1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Clock_Frequency</spirit:name>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.Clock_Frequency" spirit:order="22" spirit:minimum="0.0078125" spirit:maximum="742">50</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.Clock_Frequency" spirit:order="22" spirit:minimum="0.00390625" spirit:maximum="742">50</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Coefficient_Sign</spirit:name>
@@ -2594,7 +2594,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Coefficient_Width</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Coefficient_Width" spirit:order="25" spirit:minimum="11" spirit:maximum="49" spirit:rangeType="long">16</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Coefficient_Width" spirit:order="25" spirit:minimum="15" spirit:maximum="49" spirit:rangeType="long">16</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>BestPrecision</spirit:name>
@@ -2726,7 +2726,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>ColumnConfig</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.ColumnConfig" spirit:order="43">17</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.ColumnConfig" spirit:order="43">11</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DATA_Has_TLAST</spirit:name>
@@ -2837,9 +2837,7 @@
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXIS_DATA.TDEST_WIDTH" xilinx:valueSource="constant"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXIS_DATA.TID_WIDTH" xilinx:valueSource="constant"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXIS_CONFIG.HAS_TKEEP" xilinx:valueSource="constant"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXIS_CONFIG.HAS_TREADY" xilinx:valueSource="auto"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXIS_CONFIG.HAS_TSTRB" xilinx:valueSource="constant"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXIS_CONFIG.TDATA_NUM_BYTES" xilinx:valueSource="auto"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXIS_CONFIG.TDEST_WIDTH" xilinx:valueSource="constant"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXIS_CONFIG.TID_WIDTH" xilinx:valueSource="constant"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXIS_CONFIG.TUSER_WIDTH" xilinx:valueSource="constant"/>
@@ -2851,7 +2849,6 @@
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXIS_DATA.TID_WIDTH" xilinx:valueSource="constant"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXIS_RELOAD.HAS_TKEEP" xilinx:valueSource="constant"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXIS_RELOAD.HAS_TLAST" xilinx:valueSource="auto"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXIS_RELOAD.HAS_TREADY" xilinx:valueSource="auto"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXIS_RELOAD.HAS_TSTRB" xilinx:valueSource="constant"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXIS_RELOAD.TDATA_NUM_BYTES" xilinx:valueSource="auto"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXIS_RELOAD.TDEST_WIDTH" xilinx:valueSource="constant"/>

@@ -66,13 +66,13 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="36"/>
-    <Option Name="WTModelSimExportSim" Val="36"/>
-    <Option Name="WTQuestaExportSim" Val="36"/>
+    <Option Name="WTXSimExportSim" Val="40"/>
+    <Option Name="WTModelSimExportSim" Val="40"/>
+    <Option Name="WTQuestaExportSim" Val="40"/>
     <Option Name="WTIesExportSim" Val="0"/>
     <Option Name="WTVcsExportSim" Val="0"/>
-    <Option Name="WTRivieraExportSim" Val="36"/>
-    <Option Name="WTActivehdlExportSim" Val="36"/>
+    <Option Name="WTRivieraExportSim" Val="40"/>
+    <Option Name="WTActivehdlExportSim" Val="40"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -90,19 +90,19 @@
   <FileSets Version="1" Minor="32">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../../../Desktop/FIR1.coe">
+      <File Path="$PPRDIR/../../../Desktop/FIR/FIR1.coe">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../Desktop/G.coe">
+      <File Path="$PPRDIR/../../../Desktop/FIR/G.coe">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../Desktop/20000G_2M_800_HMwindow.coe">
+      <File Path="$PPRDIR/../../../Desktop/FIR/20000G_2M_800_HMwindow.coe">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -115,6 +115,12 @@
         </FileInfo>
       </File>
       <File Path="$PPRDIR/dds_14bit_6144_total.coe">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../../../Desktop/FIR/20000D_1M_1000.coe">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>

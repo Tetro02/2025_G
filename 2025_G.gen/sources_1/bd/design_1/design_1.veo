@@ -88,7 +88,8 @@ design_1 your_instance_name (
   .IRQ_F2P_0(IRQ_F2P_0), // input wire [0:0] IRQ_F2P_0
   .slv_reg0_o_0(slv_reg0_o_0), // output wire [31:0] slv_reg0_o_0
   .slv_reg1_o_0(slv_reg1_o_0), // output wire [31:0] slv_reg1_o_0
-  .slv_reg2_o_0(slv_reg2_o_0) // output wire [31:0] slv_reg2_o_0
+  .slv_reg2_o_0(slv_reg2_o_0), // output wire [31:0] slv_reg2_o_0
+  .slv_reg3_o_0(slv_reg3_o_0) // output wire [31:0] slv_reg3_o_0
 );
 // INST_TAG_END ------  End cut for INSTANTIATION Template  ------
 

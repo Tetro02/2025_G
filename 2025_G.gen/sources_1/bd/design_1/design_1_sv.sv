@@ -122,7 +122,9 @@ module design_1_sv (
   (* X_INTERFACE_IGNORE = "true" *)
   output wire [31:0] slv_reg1_o_0,
   (* X_INTERFACE_IGNORE = "true" *)
-  output wire [31:0] slv_reg2_o_0
+  output wire [31:0] slv_reg2_o_0,
+  (* X_INTERFACE_IGNORE = "true" *)
+  output wire [31:0] slv_reg3_o_0
 );
 
   design_1 inst (
@@ -160,7 +162,8 @@ module design_1_sv (
     .IRQ_F2P_0(IRQ_F2P_0),
     .slv_reg0_o_0(slv_reg0_o_0),
     .slv_reg1_o_0(slv_reg1_o_0),
-    .slv_reg2_o_0(slv_reg2_o_0)
+    .slv_reg2_o_0(slv_reg2_o_0),
+    .slv_reg3_o_0(slv_reg3_o_0)
   );
 
 endmodule

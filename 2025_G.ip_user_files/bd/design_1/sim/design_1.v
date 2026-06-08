@@ -2,7 +2,7 @@
 //Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-//Date        : Thu Apr 30 12:57:35 2026
+//Date        : Tue Jun  2 17:45:36 2026
 //Host        : LAPTOP-OJ78FPOQ running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -46,6 +46,7 @@ module design_1
     slv_reg0_o_0,
     slv_reg1_o_0,
     slv_reg2_o_0,
+    slv_reg3_o_0,
     web_0);
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR ADDR" *) (* X_INTERFACE_MODE = "Master" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250" *) inout [14:0]DDR_addr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR BA" *) inout [2:0]DDR_ba;
@@ -81,6 +82,7 @@ module design_1
   output [31:0]slv_reg0_o_0;
   output [31:0]slv_reg1_o_0;
   output [31:0]slv_reg2_o_0;
+  output [31:0]slv_reg3_o_0;
   input [3:0]web_0;
 
   wire [14:0]DDR_addr;
@@ -214,6 +216,7 @@ module design_1
   wire [31:0]slv_reg0_o_0;
   wire [31:0]slv_reg1_o_0;
   wire [31:0]slv_reg2_o_0;
+  wire [31:0]slv_reg3_o_0;
   wire [3:0]web_0;
 
   design_1_AXI_Lite_PS_To_PL_PL_0_0 AXI_Lite_PS_To_PL_PL_0
@@ -240,7 +243,8 @@ module design_1
         .s00_axi_wvalid(axi_smc_M01_AXI_WVALID),
         .slv_reg0_o(slv_reg0_o_0),
         .slv_reg1_o(slv_reg1_o_0),
-        .slv_reg2_o(slv_reg2_o_0));
+        .slv_reg2_o(slv_reg2_o_0),
+        .slv_reg3_o(slv_reg3_o_0));
   (* BMM_INFO_ADDRESS_SPACE = "byte  0x40000000 32 > design_1 blk_mem_gen_0" *) 
   (* KEEP_HIERARCHY = "YES" *) 
   design_1_axi_bram_ctrl_0_0 axi_bram_ctrl_0

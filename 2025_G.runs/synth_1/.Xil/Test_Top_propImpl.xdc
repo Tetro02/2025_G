@@ -157,9 +157,9 @@ set_property src_info {type:SCOPED_XDC file:1 line:350 export:INPUT save:INPUT r
 set_property PACKAGE_PIN "F7" [get_ports "PS_CLK"]
 current_instance
 set_property src_info {type:XDC file:2 line:1 export:INPUT save:INPUT read:READ} [current_design]
-set_property PACKAGE_PIN L17 [get_ports UART_0_1_txd]
+set_property PACKAGE_PIN AB16 [get_ports UART_0_1_txd]
 set_property src_info {type:XDC file:2 line:2 export:INPUT save:INPUT read:READ} [current_design]
-set_property PACKAGE_PIN M17 [get_ports UART_0_1_rxd]
+set_property PACKAGE_PIN AA16 [get_ports UART_0_1_rxd]
 set_property src_info {type:XDC file:2 line:6 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN AA13 [get_ports clk_out_adc_1]
 set_property src_info {type:XDC file:2 line:7 export:INPUT save:INPUT read:READ} [current_design]

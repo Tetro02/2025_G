@@ -2,7 +2,7 @@
 //Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-//Date        : Thu Apr 30 12:57:35 2026
+//Date        : Tue Jun  2 17:45:36 2026
 //Host        : LAPTOP-OJ78FPOQ running 64-bit major release  (build 9200)
 //Command     : generate_target design_1_wrapper.bd
 //Design      : design_1_wrapper
@@ -45,6 +45,7 @@ module design_1_wrapper
     slv_reg0_o_0,
     slv_reg1_o_0,
     slv_reg2_o_0,
+    slv_reg3_o_0,
     web_0);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
@@ -80,6 +81,7 @@ module design_1_wrapper
   output [31:0]slv_reg0_o_0;
   output [31:0]slv_reg1_o_0;
   output [31:0]slv_reg2_o_0;
+  output [31:0]slv_reg3_o_0;
   input [3:0]web_0;
 
   wire [14:0]DDR_addr;
@@ -116,6 +118,7 @@ module design_1_wrapper
   wire [31:0]slv_reg0_o_0;
   wire [31:0]slv_reg1_o_0;
   wire [31:0]slv_reg2_o_0;
+  wire [31:0]slv_reg3_o_0;
   wire [3:0]web_0;
 
   design_1 design_1_i
@@ -153,5 +156,6 @@ module design_1_wrapper
         .slv_reg0_o_0(slv_reg0_o_0),
         .slv_reg1_o_0(slv_reg1_o_0),
         .slv_reg2_o_0(slv_reg2_o_0),
+        .slv_reg3_o_0(slv_reg3_o_0),
         .web_0(web_0));
 endmodule
