@@ -1,5 +1,5 @@
-set_property PACKAGE_PIN L17 [get_ports UART_0_1_txd]
-set_property PACKAGE_PIN M17 [get_ports UART_0_1_rxd]
+set_property PACKAGE_PIN AB16 [get_ports UART_0_1_txd]
+set_property PACKAGE_PIN AA16 [get_ports UART_0_1_rxd]
 set_property IOSTANDARD LVCMOS33 [get_ports UART_0_1_rxd]
 set_property IOSTANDARD LVCMOS33 [get_ports UART_0_1_txd]
 
@@ -88,3 +88,4 @@ set_property IOSTANDARD LVCMOS33 [get_ports {dac_data_out[11]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {dac_data_out[10]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {dac_data_out[9]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {dac_data_out[8]}]
+

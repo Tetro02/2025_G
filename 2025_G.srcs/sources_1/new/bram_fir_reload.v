@@ -1,12 +1,12 @@
 module bram_read_fir_reload(
-    input         clk_bram,   // 50MHz Ê±ÖÓ
-    input         rst_n,      // µÍµçÆ½¸´Î»
+    input         clk_bram,   // 50MHz æ—¶é’Ÿ
+    input         rst_n,      // ä½ç”µå¹³å¤ä½
 
-    // BRAM ¶Á½Ó¿Ú£¨ºÍÄãµÄÄ£¿éÍêÈ«Ò»Ñù£©
+    // BRAM è¯»æ¥å£ï¼ˆå’Œä½ çš„æ¨¡å—å®Œå…¨ä¸€æ ·ï¼‰
     output reg [16:0] addra,
     input      [31:0] douta,
 
-    // FIR ÏµÊıÖØÔØ¶Ë¿Ú
+    // FIR ç³»æ•°é‡è½½ç«¯å£
     output reg        s_axis_reload_tvalid,
     input             s_axis_reload_tready,
     output reg        s_axis_reload_tlast,
@@ -17,41 +17,41 @@ module bram_read_fir_reload(
     output reg [7:0]  s_axis_config_tdata
 );
 
-// ===================== ²ÎÊı =====================
+// ===================== å‚æ•° =====================
 localparam START_ADDR     = 17'd16400;  // 4100 * 4
-localparam COEFF_CNT_MAX  = 8'd150;     // 151¸öÏµÊı (0~150)
+localparam COEFF_CNT_MAX  = 9'd505;     // 151ä¸ªç³»æ•° (0~150)
 
-// ===================== ÏµÊı¼ÆÊıÆ÷ =====================
-reg [7:0] coeff_cnt;
+// ===================== ç³»æ•°è®¡æ•°å™¨ =====================
+reg [9:0] coeff_cnt;
 
 always @(posedge clk_bram or negedge rst_n) begin
     if(!rst_n)
-        coeff_cnt <= 8'd0;
-    // ÎÕÊÖ³É¹¦²Å¼ÆÊı +1
+        coeff_cnt <= 10'd0;
+    // æ¡æ‰‹æˆåŠŸæ‰è®¡æ•° +1
     else if (s_axis_reload_tvalid && s_axis_reload_tready && coeff_cnt <= COEFF_CNT_MAX)
         coeff_cnt <= coeff_cnt + 1'd1;
 end
 
-// ===================== ¶Á BRAM µØÖ· =====================
+// ===================== è¯» BRAM åœ°å€ =====================
 always @(posedge clk_bram or negedge rst_n) begin
     if(!rst_n)
         addra <= START_ADDR;
-    // Ã¿³É¹¦¶ÁÒ»¸ö£¬µØÖ· +4£¨32bit ¶ÔÆë£©
+    // æ¯æˆåŠŸè¯»ä¸€ä¸ªï¼Œåœ°å€ +4ï¼ˆ32bit å¯¹é½ï¼‰
     else if (s_axis_reload_tvalid && s_axis_reload_tready)
         addra <= addra + 17'd4;
 end
 
-// ===================== FIR ÖØÔØÍ¨µÀ¿ØÖÆ =====================
+// ===================== FIR é‡è½½é€šé“æ§åˆ¶ =====================
 always @(posedge clk_bram or negedge rst_n) begin
     if(!rst_n) begin
         s_axis_reload_tvalid <= 1'b0;
         s_axis_reload_tlast  <= 1'b0;
         s_axis_reload_tdata  <= 16'd0;
     end
-    // ¸´Î»ºóÒ»Ö±·¢ËÍ£¬Ö±µ½ 151 ¸ö·¢Íê
+    // å¤ä½åä¸€ç›´å‘é€ï¼Œç›´åˆ° 151 ä¸ªå‘å®Œ
     else if (coeff_cnt <= COEFF_CNT_MAX) begin
         s_axis_reload_tvalid <= 1'b1;
-        s_axis_reload_tdata  <= douta[31:16];  // È¡¸ß16bit×÷ÎªÏµÊı
+        s_axis_reload_tdata  <= douta[31:16];  // å–é«˜16bitä½œä¸ºç³»æ•°
         s_axis_reload_tlast  <= (coeff_cnt == COEFF_CNT_MAX);
     end
     else begin
@@ -60,18 +60,18 @@ always @(posedge clk_bram or negedge rst_n) begin
     end
 end
 
-// ===================== FIR ÅäÖÃÉúĞ§ =====================
+// ===================== FIR é…ç½®ç”Ÿæ•ˆ =====================
 always @(posedge clk_bram or negedge rst_n) begin
     if(!rst_n) begin
         s_axis_config_tvalid <= 1'b0;
         s_axis_config_tdata  <= 8'd0;
     end
-    // 151 ¸öÏµÊı·¢Íê ¡ú ×Ô¶¯ÉúĞ§
+    // 151 ä¸ªç³»æ•°å‘å®Œ â†’ è‡ªåŠ¨ç”Ÿæ•ˆ
     else if (coeff_cnt == COEFF_CNT_MAX + 1) begin
         s_axis_config_tvalid <= 1'b1;
         s_axis_config_tdata  <= 8'd1;
     end
-    // ÎÕÊÖÍê³ÉºóÀ­µÍ
+    // æ¡æ‰‹å®Œæˆåæ‹‰ä½
     else if (s_axis_config_tvalid && s_axis_config_tready) begin
         s_axis_config_tvalid <= 1'b0;
     end

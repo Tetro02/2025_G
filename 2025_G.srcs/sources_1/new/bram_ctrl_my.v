@@ -1,20 +1,20 @@
 module adc_bram_sample(
     input         clk_bram,   // 50MHz
-    input         rst_n,      // µÍµçÆ½¸´Î»
+    input         rst_n,      // ä½ç”µå¹³å¤ä½
 
-    input  [11:0] adc_data_1,   // AD9226Êä³ö
-    input  [11:0] adc_data_2,   // AD9226Êä³ö
+    input  [11:0] adc_data_1,   // AD9226è¾“å‡º
+    input  [11:0] adc_data_2,   // AD9226è¾“å‡º
     output reg [16:0] addrb,
     output reg [31:0] dinb,
     output reg [3:0]  web,
     output reg        adc_end_flag
 );
 
-// ===================== ²ÎÊı =====================
-localparam SAMPLE_MAX = 12'd4095;  // 4096¸öµã (0~4095)
-localparam DECIMATE   = 167;       // ³éÈ¡±È
+// ===================== å‚æ•° =====================
+localparam SAMPLE_MAX = 12'd4095;  // 4096ä¸ªç‚¹ (0~4095)
+localparam DECIMATE   = 167;       // æŠ½å–æ¯”
 
-// ===================== ³éÈ¡¼ÆÊıÆ÷ =====================
+// ===================== æŠ½å–è®¡æ•°å™¨ =====================
 reg [7:0] dec_cnt;
 wire sample_en;
 
@@ -29,7 +29,7 @@ end
 
 assign sample_en = (dec_cnt == 0);
 
-// ===================== ²ÉÑù¼ÆÊıÆ÷ + Íê³É±êÖ¾£¨ÍêÈ«ÕıÈ·£¬²»¶¯£© =====================
+// ===================== é‡‡æ ·è®¡æ•°å™¨ + å®Œæˆæ ‡å¿—ï¼ˆå®Œå…¨æ­£ç¡®ï¼Œä¸åŠ¨ï¼‰ =====================
 reg [11:0] sample_cnt;
 
 always @(posedge clk_bram or negedge rst_n) begin
@@ -37,32 +37,32 @@ always @(posedge clk_bram or negedge rst_n) begin
         sample_cnt   <= 12'd0;
         adc_end_flag <= 1'b0;
     end
-    // Î´²ÉÂú£º¼ÆÊı+1
+    // æœªé‡‡æ»¡ï¼šè®¡æ•°+1
     else if (sample_en && sample_cnt < SAMPLE_MAX) begin
         sample_cnt   <= sample_cnt + 1'd1;
         adc_end_flag <= 1'b0;
     end
-    // ²ÉÂú£ºÖÃÎ»Íê³É±êÖ¾
+    // é‡‡æ»¡ï¼šç½®ä½å®Œæˆæ ‡å¿—
     else if (sample_en && sample_cnt == SAMPLE_MAX) begin
         adc_end_flag <= 1'b1;
     end
 end
 
-// ===================== Ğ´BRAM =====================
+// ===================== å†™BRAM =====================
 always @(posedge clk_bram or negedge rst_n) begin
     if(!rst_n) begin
         addrb <= 17'd0;
         dinb  <= 32'd0;
         web   <= 4'b0000;
     end
-    // ºËĞÄÕıÈ·Ìõ¼ş£º²É¼¯ÖĞ£¨Î´Íê³É£© + ²ÉÑùÊ¹ÄÜ ¡ú Ğ´Èë
+    // æ ¸å¿ƒæ­£ç¡®æ¡ä»¶ï¼šé‡‡é›†ä¸­ï¼ˆæœªå®Œæˆï¼‰ + é‡‡æ ·ä½¿èƒ½ â†’ å†™å…¥
     else if(sample_en && !adc_end_flag) begin
-        addrb <= sample_cnt * 4;  // ×Ö½ÚµØÖ·£º32Î»Êı¾İ = 4×Ö½Ú
-        dinb  <= {4'd0, adc_data_1, 4'd0, adc_data_2}; // ¸ß16Î»£ºadc_data_1£¬µÍ16Î»£ºadc_data_2
-        web   <= 4'b1111;         // Ğ´Ê¹ÄÜ
+        addrb <= sample_cnt * 4;  // å­—èŠ‚åœ°å€ï¼š32ä½æ•°æ® = 4å­—èŠ‚
+        dinb  <= {4'd0, adc_data_1, 4'd0, adc_data_2}; // é«˜16ä½ï¼šadc_data_1ï¼Œä½16ä½ï¼šadc_data_2
+        web   <= 4'b1111;         // å†™ä½¿èƒ½
     end
     else begin
-        web   <= 4'b0000;         // ÆäÓàÊ±¼ä½ûÖ¹Ğ´Èë
+        web   <= 4'b0000;         // å…¶ä½™æ—¶é—´ç¦æ­¢å†™å…¥
     end
 end
 

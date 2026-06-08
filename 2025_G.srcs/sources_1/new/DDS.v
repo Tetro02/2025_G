@@ -1,21 +1,21 @@
 `timescale 1ns / 1ps
-module dds_10hz_2mhz//ÎŞ¸ü¸Ä
+module dds_10hz_2mhz//æ— æ›´æ”¹
 #(
     parameter PHASE_W   = 28,
-    parameter ADDR_W    = 11,            // 2^11 = 2048¸ö²ÉÑùµã/²¨ĞÎ
-    parameter DATA_W    = 14             // 14bitÎŞ·ûºÅDACÊä³ö
+    parameter ADDR_W    = 11,            // 2^11 = 2048ä¸ªé‡‡æ ·ç‚¹/æ³¢å½¢
+    parameter DATA_W    = 14             // 14bitæ— ç¬¦å·DACè¾“å‡º
 )
 (
     input                   clk,
     input                   rst_n,
-    input  [PHASE_W-1:0]    freq_word,    // PS¿ØÖÆ£ºÆµÂÊ
-    input  [ADDR_W-1:0]     phase_off,    // PS¿ØÖÆ£ºÏàÎ»
-    input  [1:0]            wave_sel,     // PS¿ØÖÆ£º²¨ĞÎ
-    input  [7:0]            amplitude,    // PS¿ØÖÆ£º·ù¶È 0~255
-    output [DATA_W-1:0]     dac_out       // ÎŞÖ±Á÷·ÖÁ¿£¬14bit£¬ÖĞµã8192
+    input  [PHASE_W-1:0]    freq_word,    // PSæ§åˆ¶ï¼šé¢‘ç‡
+    input  [ADDR_W-1:0]     phase_off,    // PSæ§åˆ¶ï¼šç›¸ä½
+    input  [1:0]            wave_sel,     // PSæ§åˆ¶ï¼šæ³¢å½¢
+    input  [7:0]            amplitude,    // PSæ§åˆ¶ï¼šå¹…åº¦ 0~255
+    output [DATA_W-1:0]     dac_out       // æ— ç›´æµåˆ†é‡ï¼Œ14bitï¼Œä¸­ç‚¹8192
 );
 
-// ÏàÎ»ÀÛ¼ÓÆ÷
+// ç›¸ä½ç´¯åŠ å™¨
 reg [PHASE_W-1:0] phase_acc;
 always @(posedge clk or negedge rst_n) begin
     if(!rst_n)
@@ -24,14 +24,14 @@ always @(posedge clk or negedge rst_n) begin
         phase_acc <= phase_acc + freq_word;
 end
 
-// ÏàÎ»Æ«ÒÆ£¨È¡¸ß ADDR_W bit ×÷Îª²¨ĞÎROMµØÖ·£©
+// ç›¸ä½åç§»ï¼ˆå–é«˜ ADDR_W bit ä½œä¸ºæ³¢å½¢ROMåœ°å€ï¼‰
 wire [ADDR_W-1:0] base_addr = phase_acc[PHASE_W-1 -: ADDR_W];
 wire [ADDR_W-1:0] final_addr = base_addr + phase_off;
 
-// ²¨ĞÎROMµØÖ·£º{wave_sel[1:0], final_addr[10:0]} ¡ú 13bit¿ÉÑ°Ö·8192Éî¶È
+// æ³¢å½¢ROMåœ°å€ï¼š{wave_sel[1:0], final_addr[10:0]} â†’ 13bitå¯å¯»å€8192æ·±åº¦
 wire [12:0] rom_addr = {wave_sel, final_addr};
 
-// ROM¶Á³öÔ­Ê¼ÎŞ·ûºÅ²¨ĞÎ (0~16383, ÖĞµã8192)
+// ROMè¯»å‡ºåŸå§‹æ— ç¬¦å·æ³¢å½¢ (0~16383, ä¸­ç‚¹8192)
 wire [13:0] wave_raw;
 wave_rom rom_inst (
   .clka(clk),
@@ -39,30 +39,30 @@ wave_rom rom_inst (
   .douta(wave_raw)
 );
 
-// ===================== ·ù¶ÈËõ·Å ¡ª ËÄÉáÎåÈë + Ç¯Î» =====================
-// 1. ÎŞ·ûºÅ×ªÓĞ·ûºÅ£º¼õÈ¥ÖĞµã8192£¬·¶Î§ -8192 ~ 8191
+// ===================== å¹…åº¦ç¼©æ”¾ â€” å››èˆäº”å…¥ + é’³ä½ =====================
+// 1. æ— ç¬¦å·è½¬æœ‰ç¬¦å·ï¼šå‡å»ä¸­ç‚¹8192ï¼ŒèŒƒå›´ -8192 ~ 8191
 wire signed [14:0] wave_signed = $signed({1'b0, wave_raw}) - 15'sd8192;
 
-// 2. ÓĞ·ûºÅÊı ¡Á ·ù¶È£¨±£³Ö0µã²»±ä£©
+// 2. æœ‰ç¬¦å·æ•° Ã— å¹…åº¦ï¼ˆä¿æŒ0ç‚¹ä¸å˜ï¼‰
 reg signed [22:0] wave_mult;
 always @(posedge clk or negedge rst_n) begin
     if(!rst_n)
         wave_mult <= 23'd0;
     else
-        wave_mult <= wave_signed * $signed({7'b0, amplitude}); // 15bit ¡Á 8bit = 23bit
+        wave_mult <= wave_signed * $signed({7'b0, amplitude}); // 15bit Ã— 8bit = 23bit
 end
 
-// 3. ¹éÒ»»¯£¨ÓÒÒÆ8Î»£¬ËÄÉáÎåÈë£©+ »Ö¸´ÖĞµã8192
-//    ¡ï Ç¯Î»µ½[1,16382]£¬±£Ö¤DACÊä³öÓÀÔ¶²»³öÏÖ0x0000»ò0x3FFF ¡ï
+// 3. å½’ä¸€åŒ–ï¼ˆå³ç§»8ä½ï¼Œå››èˆäº”å…¥ï¼‰+ æ¢å¤ä¸­ç‚¹8192
+//    â˜… é’³ä½åˆ°[1,16382]ï¼Œä¿è¯DACè¾“å‡ºæ°¸è¿œä¸å‡ºç°0x0000æˆ–0x3FFF â˜…
 wire signed [22:0] wave_mult_rnd = wave_mult + 23'sd128;
 wire signed [14:0] wave_norm = $signed(wave_mult_rnd[22:8]) + 15'sd8192;
 
 wire [13:0] wave_scaled;
-assign wave_scaled = (wave_norm[14:0] <= 15'd0)         ? 14'd1 :     // Ç¯Î»Vmin
-                     (wave_norm[14:0] >= 15'd16383)      ? 14'd16382 : // Ç¯Î»Vmax
+assign wave_scaled = (wave_norm[14:0] <= 15'd0)         ? 14'd1 :     // é’³ä½Vmin
+                     (wave_norm[14:0] >= 15'd16383)      ? 14'd16382 : // é’³ä½Vmax
                      wave_norm[13:0];
 
-// ×îÖÕÊä³ö
+// æœ€ç»ˆè¾“å‡º
 assign dac_out = wave_scaled;
 // ======================================================================
 

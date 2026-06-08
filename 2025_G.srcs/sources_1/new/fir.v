@@ -2,15 +2,15 @@ module fir_adc12_dac8(
     input  wire         aclk,
     input  wire         aresetn,
 
-    // ADC Êı¾İÊäÈë
+    // ADC æ•°æ®è¾“å…¥
     input  wire [11:0]  adc_data,
     input  wire         adc_valid,
 
-    // DAC Êı¾İÊä³ö
-    output wire [28:0]  dac_data,
+    // DAC æ•°æ®è¾“å‡º
+    output wire [39:0]  dac_data,
     output wire         dac_valid,
 
-    // ---------------- ĞÂÔö£ºFIR ÏµÊıÖØÔØ¶Ë¿Ú ----------------
+    // ---------------- æ–°å¢ï¼šFIR ç³»æ•°é‡è½½ç«¯å£ ----------------
     input  wire         s_axis_reload_tvalid,
     output wire         s_axis_reload_tready,
     input  wire         s_axis_reload_tlast,
@@ -21,51 +21,51 @@ module fir_adc12_dac8(
     input  wire [7:0]   s_axis_config_tdata
     // --------------------------------------------------------
 
-    // ¿ÉÑ¡£ºÒì³£ÊÂ¼şÊä³ö£¨µ÷ÊÔÓÃ£©
+    // å¯é€‰ï¼šå¼‚å¸¸äº‹ä»¶è¾“å‡ºï¼ˆè°ƒè¯•ç”¨ï¼‰
     // output wire         event_tlast_missing,
     // output wire         event_tlast_unexpected
 );
 
     // =========================================================
-    // 1. ADC£º0~4095 ¡ú signed centered (-2048 ~ +2047)
+    // 1. ADCï¼š0~4095 â†’ signed centered (-2048 ~ +2047)
     // =========================================================
     wire signed [11:0] adc_signed;
     assign adc_signed = $signed(adc_data) - 12'sd2048;
 
     // =========================================================
-    // 2. À©Õ¹µ½ FIR ÊäÈëÎ»¿í£¨16bit£©
+    // 2. æ‰©å±•åˆ° FIR è¾“å…¥ä½å®½ï¼ˆ16bitï¼‰
     // =========================================================
     wire signed [15:0] fir_in;
     assign fir_in = {{4{adc_signed[11]}}, adc_signed};
 
     // =========================================================
-    // 3. FIR IP Àı»¯£¨ÍêÕû¶Ë¿Ú£©
+    // 3. FIR IP ä¾‹åŒ–ï¼ˆå®Œæ•´ç«¯å£ï¼‰
     // =========================================================
     fir_compiler_0 u_fir (
         .aresetn                        (aresetn),
         .aclk                           (aclk),
 
-        // Êı¾İÍ¨µÀ
+        // æ•°æ®é€šé“
         .s_axis_data_tvalid             (adc_valid),
         .s_axis_data_tready             (),
         .s_axis_data_tdata              (fir_in),
 
-        // ÖØÔØÍ¨µÀ£¨ÓÉÍâ²¿TB¿ØÖÆ£©
+        // é‡è½½é€šé“ï¼ˆç”±å¤–éƒ¨TBæ§åˆ¶ï¼‰
         .s_axis_reload_tvalid           (s_axis_reload_tvalid),
         .s_axis_reload_tready           (s_axis_reload_tready),
         .s_axis_reload_tlast            (s_axis_reload_tlast),
         .s_axis_reload_tdata            (s_axis_reload_tdata),
 
-        // ÅäÖÃÍ¨µÀ£¨ÓÉÍâ²¿TB¿ØÖÆ£©
+        // é…ç½®é€šé“ï¼ˆç”±å¤–éƒ¨TBæ§åˆ¶ï¼‰
         .s_axis_config_tvalid           (s_axis_config_tvalid),
         .s_axis_config_tready           (s_axis_config_tready),
         .s_axis_config_tdata            (s_axis_config_tdata),
 
-        // Êı¾İÊä³ö
+        // æ•°æ®è¾“å‡º
         .m_axis_data_tvalid             (dac_valid),
         .m_axis_data_tdata              (dac_data)
 
-        // Òì³£ÊÂ¼ş
+        // å¼‚å¸¸äº‹ä»¶
         // .event_s_reload_tlast_missing   (event_tlast_missing),
         // .event_s_reload_tlast_unexpected(event_tlast_unexpected)
     );
