@@ -1,22 +1,52 @@
-# Ignore build output directory
-/build
-/export
+# ===== Vivado 生成/缓存 =====
+2025_G.cache/
+2025_G.gen/
+2025_G.runs/
+2025_G.sim/
+2025_G.ip_user_files/
+2025_G.hw/
+.Xil/
 
-# Ignore object files and dependent files
-.o
-.d
-
-#Ignore logs folder and log files
-/logs
+# ===== Vivado 日志/临时 =====
 *.log
 *.jou
+*.backup.*
+*.str
+*.rpt
+*.rpx
+*.pb
+*.dcp
+*.vdi
+dfx_runtime.txt
+ip_upgrade.log
+vivado_*.backup.*
+project.wpc
+project.wdf
+*.wdf
+webtalk*.xml
 
-#Ignore lock files
-.lock
-
-.bin
-.pdi
+# ===== Vitis / 平台生成文件 =====
+platform/
+_ide/
 .vitisWorkspace.json
+*.xsa
+*.bit
+*.mmi
+*.elf
 
-_ide/logs
-_ide/.wsdata
+# ===== hello_world 构建产物 =====
+hello_world/build/
+hello_world/_ide/
+hello_world/compile_commands.json
+hello_world/src/compile_commands.json
+
+# ===== IDE =====
+.vscode/
+*.swp
+
+# ===== 日志 =====
+logs/
+
+# ===== 临时文件 =====
+*.tmp
+*.bak
