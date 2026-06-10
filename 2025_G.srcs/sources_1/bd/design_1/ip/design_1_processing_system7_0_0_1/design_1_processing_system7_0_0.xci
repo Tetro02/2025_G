@@ -469,8 +469,8 @@
         "PCW_DUAL_PARALLEL_QSPI_DATA_MODE": [ { "value": "<Select>", "resolve_type": "user", "enabled": false, "usage": "all" } ],
         "PCW_QSPI_GRP_IO1_ENABLE": [ { "value": "0", "value_src": "user", "resolve_type": "user", "usage": "all" } ],
         "PCW_QSPI_GRP_IO1_IO": [ { "value": "<Select>", "resolve_type": "user", "enabled": false, "usage": "all" } ],
-        "PCW_QSPI_GRP_FBCLK_ENABLE": [ { "value": "0", "value_src": "user", "resolve_type": "user", "usage": "all" } ],
-        "PCW_QSPI_GRP_FBCLK_IO": [ { "value": "<Select>", "resolve_type": "user", "enabled": false, "usage": "all" } ],
+        "PCW_QSPI_GRP_FBCLK_ENABLE": [ { "value": "1", "value_src": "user", "resolve_type": "user", "usage": "all" } ],
+        "PCW_QSPI_GRP_FBCLK_IO": [ { "value": "MIO 8", "value_src": "user", "resolve_type": "user", "usage": "all" } ],
         "PCW_QSPI_INTERNAL_HIGHADDRESS": [ { "value": "0xFCFFFFFF", "value_src": "user", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
         "PCW_ENET0_PERIPHERAL_ENABLE": [ { "value": "0", "value_src": "user", "resolve_type": "user", "usage": "all" } ],
         "PCW_ENET0_ENET0_IO": [ { "value": "<Select>", "resolve_type": "user", "enabled": false, "usage": "all" } ],
@@ -648,10 +648,10 @@
         "PCW_MIO_7_IOTYPE": [ { "value": "<Select>", "resolve_type": "user", "enabled": false, "usage": "all" } ],
         "PCW_MIO_7_DIRECTION": [ { "value": "<Select>", "resolve_type": "user", "enabled": false, "usage": "all" } ],
         "PCW_MIO_7_SLEW": [ { "value": "<Select>", "resolve_type": "user", "enabled": false, "usage": "all" } ],
-        "PCW_MIO_8_PULLUP": [ { "value": "<Select>", "resolve_type": "user", "enabled": false, "usage": "all" } ],
-        "PCW_MIO_8_IOTYPE": [ { "value": "<Select>", "resolve_type": "user", "enabled": false, "usage": "all" } ],
-        "PCW_MIO_8_DIRECTION": [ { "value": "<Select>", "resolve_type": "user", "enabled": false, "usage": "all" } ],
-        "PCW_MIO_8_SLEW": [ { "value": "<Select>", "resolve_type": "user", "enabled": false, "usage": "all" } ],
+        "PCW_MIO_8_PULLUP": [ { "value": "disabled", "resolve_type": "user", "enabled": false, "usage": "all" } ],
+        "PCW_MIO_8_IOTYPE": [ { "value": "LVCMOS 3.3V", "value_src": "user", "resolve_type": "user", "usage": "all" } ],
+        "PCW_MIO_8_DIRECTION": [ { "value": "out", "resolve_type": "user", "enabled": false, "usage": "all" } ],
+        "PCW_MIO_8_SLEW": [ { "value": "slow", "value_src": "user", "resolve_type": "user", "usage": "all" } ],
         "PCW_MIO_9_PULLUP": [ { "value": "<Select>", "resolve_type": "user", "enabled": false, "usage": "all" } ],
         "PCW_MIO_9_IOTYPE": [ { "value": "<Select>", "resolve_type": "user", "enabled": false, "usage": "all" } ],
         "PCW_MIO_9_DIRECTION": [ { "value": "<Select>", "resolve_type": "user", "enabled": false, "usage": "all" } ],
@@ -834,8 +834,8 @@
         "PCW_MIO_53_SLEW": [ { "value": "<Select>", "resolve_type": "user", "enabled": false, "usage": "all" } ],
         "preset": [ { "value": "None", "value_src": "user", "resolve_type": "user", "usage": "all" } ],
         "PCW_UIPARAM_GENERATE_SUMMARY": [ { "value": "NA", "value_src": "user", "resolve_type": "user", "usage": "all" } ],
-        "PCW_MIO_TREE_PERIPHERALS": [ { "value": "unassigned#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned", "value_src": "user", "resolve_type": "user", "usage": "all" } ],
-        "PCW_MIO_TREE_SIGNALS": [ { "value": "unassigned#qspi0_ss_b#qspi0_io[0]#qspi0_io[1]#qspi0_io[2]#qspi0_io[3]/HOLD_B#qspi0_sclk#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned", "value_src": "user", "resolve_type": "user", "usage": "all" } ],
+        "PCW_MIO_TREE_PERIPHERALS": [ { "value": "unassigned#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#unassigned#Quad SPI Flash#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned", "value_src": "user", "resolve_type": "user", "usage": "all" } ],
+        "PCW_MIO_TREE_SIGNALS": [ { "value": "unassigned#qspi0_ss_b#qspi0_io[0]#qspi0_io[1]#qspi0_io[2]#qspi0_io[3]/HOLD_B#qspi0_sclk#unassigned#qspi_fbclk#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned", "value_src": "user", "resolve_type": "user", "usage": "all" } ],
         "PCW_PS7_SI_REV": [ { "value": "PRODUCTION", "value_src": "user", "resolve_type": "user", "usage": "all" } ],
         "PCW_FPGA_FCLK0_ENABLE": [ { "value": "1", "value_src": "user", "resolve_type": "user", "usage": "all" } ],
         "PCW_FPGA_FCLK1_ENABLE": [ { "value": "0", "resolve_type": "user", "enabled": false, "usage": "all" } ],
@@ -1286,5 +1286,5 @@
       }
     }
   },
-  "checksum": "a6ae3c93"
+  "checksum": "ce3a5564"
 }
