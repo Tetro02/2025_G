@@ -160,6 +160,15 @@ void set_dds(float freq_hz)
     Xil_Out32(DDS_FREQ, fw);
     Xil_Out32(DDS_CTRL, (255 << 13) | (DDS_WAVE_SIN << 11) | 0);
 }
+void set_dds_amp(float freq_hz, uint8_t amp)
+{
+    uint32_t fw = (uint32_t)(freq_hz * (float)(1u << DDS_PHASE_B) / DDS_CLK + 0.5f);
+    if (fw > 0x0FFFFFFF)
+        fw = 0x0FFFFFFF;
+    if (amp < 1) amp = 1;
+    Xil_Out32(DDS_FREQ, fw);
+    Xil_Out32(DDS_CTRL, ((uint32_t)amp << 13) | (DDS_WAVE_SIN << 11) | 0);
+}
 void set_cal(uint8_t shift, uint16_t coef)
 {
     Xil_Out32(CAL_REG, ((uint32_t)coef << 5) | (shift & 0x1F));
@@ -374,11 +383,15 @@ void reload_fir(int16_t *coeffs)
 }
 
 // ========== 校准 ==========
-int calibrate_shift(float freq)
+int calibrate_shift(float freq, float ref_ch2)
 {
     printf("--- 粗调 shift (全扫31→0) ---\r\n");
     set_ctrl(CTRL_BIT_CAL);
-    set_dds(freq);
+    // DDS 幅值匹配学习阶段的输入幅值 (ch2 ADC单位→DDS 0~255)
+    uint8_t dds_amp = (uint8_t)(ref_ch2 / 2048.0f * 255.0f + 0.5f);
+    if (dds_amp < 1) dds_amp = 1;
+    set_dds_amp(freq, dds_amp);
+    printf("DDS amp=%d (ch2_ref=%.1f)\r\n", dds_amp, ref_ch2);
     delay_us(2000);
     set_ctrl(CTRL_BIT_CAL | CTRL_BIT_ADC_SAMPLE);
 
@@ -402,7 +415,7 @@ int calibrate_shift(float freq)
     for (int s = 31; s > 0; s--)
     {
         float ratio = amps[s - 1] / amps[s];  // s-1 是更低 shift, 应有更大输出
-        if (ratio > 1.5f && ratio < 2.5f)
+        if (ratio > 1.7f && ratio < 2.3f)
             opt_s = s - 1;  // 仍在正常翻倍区, 更新最优
         else if (opt_s > 0)
             break;  // 翻倍链断裂, 停止
@@ -411,9 +424,13 @@ int calibrate_shift(float freq)
     return opt_s;
 }
 
-uint16_t calibrate_coef(int shift, float freq, float target)
+uint16_t calibrate_coef(int shift, float freq, float target, float ref_ch2)
 {
     printf("--- 微调 coef ---\r\n");
+    // DDS 幅值匹配学习阶段的输入幅值
+    uint8_t dds_amp = (uint8_t)(ref_ch2 / 2048.0f * 255.0f + 0.5f);
+    if (dds_amp < 1) dds_amp = 1;
+    set_dds_amp(freq, dds_amp);
     float best_err = 1e9f;
     uint16_t best_c = 0x8000;
     // 扩大范围: 0xFFFF → 0x0080, 步长 0x0200 (更密)
@@ -465,9 +482,9 @@ void calibrate(void)
     peak_amp = H_amp_out[pi];
     printf("峰值: f=%.1f Hz, ch1_out=%.1f ch2_ref=%.1f |H|=%.4f (idx=%d)\r\n",
            peak_freq, peak_ch1, ref_ch2, peak_amp, pi);
-    cal_opt_shift = calibrate_shift(peak_freq);
-    // 校准目标: 让输出(ch1)恢复到扫频时的最大输出幅值
-    cal_opt_coef = calibrate_coef(cal_opt_shift, peak_freq, peak_ch1);
+    // DDS 以学习阶段的输入幅值(ref_ch2)输出, 目标=输出峰值(ch1)
+    cal_opt_shift = calibrate_shift(peak_freq, ref_ch2);
+    cal_opt_coef = calibrate_coef(cal_opt_shift, peak_freq, peak_ch1, ref_ch2);
     set_ctrl(0x00);
     printf("校准完成: shift=%d, coef=0x%04X\r\n", cal_opt_shift, cal_opt_coef);
 }
@@ -623,15 +640,16 @@ int main(void)
 
     // ---- 校准: 硬编码峰值参数 (取自扫频数据) ----
     // 跳过 5 秒等待, 直接进入校准
-    peak_freq = 244.0f;        // 扫频峰值频率
-    float target_adc = 673.5f; // 峰值处 ch2 参考幅值 (来自扫频数据)
+    peak_freq = 244.0f;           // 扫频峰值频率
+    float peak_ch1 = 100.0f;      // 峰值处输出幅值 (ch1, 需根据实际扫频数据修改)
+    float ref_ch2  = 600.0f;      // 峰值处输入幅值 (ch2, 需根据实际扫频数据修改)
     printf("\r\n========== 校准模式 (硬编码峰值) ==========\r\n");
-    printf("峰值: f=%.1f Hz, target ch2_amp=%.1f\r\n", peak_freq, target_adc);
+    printf("峰值: f=%.1f Hz, ch1_out=%.1f ch2_ref=%.1f\r\n", peak_freq, peak_ch1, ref_ch2);
     fflush(stdout);
 
     calib_mode = 1;
-    cal_opt_shift = calibrate_shift(peak_freq);
-    cal_opt_coef = calibrate_coef(cal_opt_shift, peak_freq, target_adc);
+    cal_opt_shift = calibrate_shift(peak_freq, ref_ch2);
+    cal_opt_coef = calibrate_coef(cal_opt_shift, peak_freq, peak_ch1, ref_ch2);
     set_ctrl(0x00);
     printf("校准完成: shift=%d, coef=0x%04X\r\n", cal_opt_shift, cal_opt_coef);
     fflush(stdout);

@@ -226,9 +226,20 @@ module Test_Top (
 
     assign sample_en_1m = (dec_cnt == 6'd49);
 
-    // FIR 采样有效: 校准=连续, 模仿=1MHz 脉冲
-    wire fir_valid;
-    assign fir_valid = cal_mode ? 1'b1 : sample_en_1m;
+    // 模仿模式: 1MHz 锁存 ADC2 数据, valid 延迟一拍确保数据稳定
+    reg [11:0] fir_data_1m;
+    reg        fir_valid_1m;
+    always @(posedge FCLK_CLK0) begin
+        if (sample_en_1m)
+            fir_data_1m <= fir_adc_input;    // 在脉冲沿锁存数据
+        fir_valid_1m <= sample_en_1m;         // valid 延迟 1 拍, 数据已稳定
+    end
+
+    // 校准=连续(数据+valid都实时), 模仿=1MHz锁存数据+延迟valid
+    wire [11:0] fir_data;
+    wire        fir_valid;
+    assign fir_data  = cal_mode ? fir_adc_input : fir_data_1m;
+    assign fir_valid = cal_mode ? 1'b1          : fir_valid_1m;
 
     // =========================================================
     //  11. FIR 输入 MUX
@@ -340,7 +351,7 @@ module Test_Top (
         .aclk   (FCLK_CLK0),
         .aresetn(rst_n_fir_synced),
 
-        .adc_data (fir_adc_input),
+        .adc_data (fir_data),
         .adc_valid(fir_valid),
 
         .dac_data (dac_data),
