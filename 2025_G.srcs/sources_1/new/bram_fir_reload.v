@@ -19,7 +19,7 @@ module bram_read_fir_reload (
 
     // ===================== 参数 =====================
     localparam START_ADDR = 17'd16400;  // 4100 * 4
-    localparam COEFF_CNT_MAX = 9'd505;  // 151个系数 (0~150)
+    localparam COEFF_CNT_MAX = 10'd1007;  // 1008个系数 (Non-Symmetric, 21x48)
 
     // ===================== 系数计数器 =====================
     reg [9:0] coeff_cnt;
