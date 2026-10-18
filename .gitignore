@@ -50,3 +50,16 @@ logs/
 # ===== 临时文件 =====
 *.tmp
 *.bak
+
+# Release housekeeping
+.rigel_lopper/
+.cache/
+*.bin
+*.BIN
+*.bif
+.env
+.env.*
+*.pem
+*.key
+build/
+__pycache__/

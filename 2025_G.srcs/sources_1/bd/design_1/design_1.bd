@@ -989,6 +989,9 @@
           "PCW_OVERRIDE_BASIC_CLOCK": {
             "value": "0"
           },
+          "PCW_P2F_QSPI_INTR": {
+            "value": "0"
+          },
           "PCW_P2F_UART0_INTR": {
             "value": "0"
           },

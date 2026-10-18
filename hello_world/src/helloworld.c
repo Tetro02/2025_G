@@ -476,7 +476,8 @@ void reload_fir(int16_t *coeffs)
     printf("写入 BRAM (addr=%d, %d coeffs)...\r\n", BRAM_COEFF_START, N_COEFFS_RELOAD);
     for (int i = 0; i < N_COEFFS_RELOAD; i++)
     {
-        int16_t v = coeffs[reload_map[i]]; // 按 FIR IP reload_order 重排
+        int index = reload_map[i];
+        int16_t v = (index < FIR_TAPS) ? coeffs[index] : 0; // IP 的 7 个补齐位置写零
         Xil_Out32(BRAM_ADDR + BRAM_COEFF_START + i * 4, ((uint32_t)(uint16_t)v) << 16);
     }
     set_ctrl(CTRL_BIT_FIR_COEF);
@@ -710,7 +711,8 @@ int main(void)
     printf("static const int16_t reload_coeffs[%d] = {\r\n", N_COEFFS_RELOAD);
     for (int i = 0; i < N_COEFFS_RELOAD; i++)
     {
-        printf("%6d", fir_coeffs[i]);
+        int index = reload_map[i];
+        printf("%6d", (index < FIR_TAPS) ? fir_coeffs[index] : 0);
         if (i < N_COEFFS_RELOAD - 1)
             printf(",");
         if ((i & 7) == 7)

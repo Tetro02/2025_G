@@ -1,0 +1,10 @@
+
+
+OPTION psf_version = 2.1;
+
+BEGIN DRIVER AXI_Lite_PS_To_PL_PL
+	OPTION supported_peripherals = (AXI_Lite_PS_To_PL_PL);
+	OPTION copyfiles = all;
+	OPTION VERSION = 1.0;
+	OPTION NAME = AXI_Lite_PS_To_PL_PL;
+END DRIVER
