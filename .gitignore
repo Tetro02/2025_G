@@ -63,3 +63,4 @@ logs/
 *.key
 build/
 __pycache__/
+*.bda
